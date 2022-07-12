@@ -4,6 +4,8 @@ import YouTubeIcon from '@mui/icons-material/YouTube';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import { ColorTheme } from "../../ColorTheme";
 
+import * as React from 'react';
+
 const Container = styled.div`
     background-color:${ColorTheme.bg1};
     opacity: 0.95;
@@ -138,6 +140,7 @@ const Footer = () => {
                     <Link> Coffee Shop </Link>
                     <Link> About Us</Link>
                     <Link> Contact</Link>
+                    
                 </Links>
                 <SearchBox>
                     <Input placeholder="Your email" />

@@ -8,6 +8,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import { ColorTheme } from "../../ColorTheme"
 import SearchBar from "../SearchBar";
 import Cart from "../CartComponents/Cart";
+import { NavLink } from "react-router-dom";
 
 
 const Left = styled.div`
@@ -217,10 +218,12 @@ const NavBar = () => {
                 </Right>
             </TopCenter>
             <BottomCenter>
-                <Link> Home</Link>
-                <Link> Coffee Shop</Link>
-                <Link> About</Link>
-                <Link> Contact</Link>
+            
+                <NavLink to="/"> Home</NavLink>
+                
+                <NavLink to="shop" >Coffee Shop</NavLink>
+                <NavLink to= "about"> About</NavLink>
+                <NavLink to="contact"> Contact</NavLink>
             </BottomCenter>
         </Container>
 
