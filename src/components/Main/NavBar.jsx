@@ -20,6 +20,7 @@ const Left = styled.div`
     justify-content:center;
 `
 const Container = styled.div`
+    margin:40px auto;
     max-height: 15vh;
     display: flex;
     flex-direction: column;
@@ -110,9 +111,9 @@ const RightText = styled.div`
 `
 const BottomCenter = styled.div`
     display: flex;
-    width: 40%;
+    width: 100%;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
     margin: 20px 0px;
   
     
@@ -126,6 +127,7 @@ justify-content: center;
     font-size: 16px;
     cursor: pointer;
     color: #C8765A;
+    padding: 0px 20px;
     /* &:hover {
         transform: scaleY(1.4);
         transform: scaleX(1.4);
@@ -202,9 +204,9 @@ const NavBar = () => {
                         <Language langague="vn"> VN  </Language>
                     </LanguageContainer>
                     <IconContainer>
-                        <Icon color ="4267B2" ><FacebookIcon style={{ fontSize: 17 }} /> </Icon>
-                        <Icon color = "E1306C" ><InstagramIcon style={{ fontSize: 17 }} /></Icon>
-                        <Icon color = "FF0000" > <YouTubeIcon style={{ fontSize: 17 }} /></Icon>
+                        <Icon color="4267B2" ><FacebookIcon style={{ fontSize: 17 }} /> </Icon>
+                        <Icon color="E1306C" ><InstagramIcon style={{ fontSize: 17 }} /></Icon>
+                        <Icon color="FF0000" > <YouTubeIcon style={{ fontSize: 17 }} /></Icon>
                     </IconContainer>
                 </Left>
                 <Center>
@@ -221,8 +223,8 @@ const NavBar = () => {
                             </CartItem>
                         </Cart>
                     </CartContainer> */}
-                    <Cart/>
-                    <SearchBar/>
+                    <Cart />
+                    <SearchBar />
                 </Right>
             </TopCenter>
             <Link>
