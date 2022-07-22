@@ -5,6 +5,7 @@ import RelatedProducts from "../components/Products/RelatedProducts"
 import Slider from "../components/Slider"
 import VideoBG from "../components/VideoBG"
 const Container = styled.div`
+
 `
 
 const Home = () => {
