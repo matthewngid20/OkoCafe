@@ -29,6 +29,7 @@ const VideoBG = ({width, height}) => {
             <VideoContainer>
                 <Video width = {width} autoPlay muted loop >
                     <source src={video} type='video/mp4' />
+                    
                 </Video>
             </VideoContainer>
         </Container>

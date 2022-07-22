@@ -2,9 +2,11 @@ body {
   margin: 0;
   font-family: 'Abril Fatface', cursive;
   font-family: 'Oswald', sans-serif;
-  //font-family: 'Allerta Stencil',sans-serif;
+  
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+ 
+  
 }
 
 code {

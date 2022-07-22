@@ -6,6 +6,9 @@ import { ColorTheme } from "../../ColorTheme";
 
 import * as React from 'react';
 
+
+import { 
+    NavLink} from "react-router-dom";
 const Container = styled.div`
     background-color:${ColorTheme.bg1};
     opacity: 0.95;
@@ -136,10 +139,10 @@ const Footer = () => {
                     <Logo>Smooth Curve</Logo>
                 </LogoContainer>
                 <Links>
-                    <Link> Home </Link>
-                    <Link> Coffee Shop </Link>
-                    <Link> About Us</Link>
-                    <Link> Contact</Link>
+                    <NavLink to="/"> Home </NavLink>
+                    <NavLink to="/shop"> Coffee Shop </NavLink>
+                    <NavLink to="/about"> About Us</NavLink>
+                    <NavLink to="/contact"> Contact</NavLink>
                     
                 </Links>
                 <SearchBox>

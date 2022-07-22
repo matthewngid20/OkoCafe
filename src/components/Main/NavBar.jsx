@@ -8,7 +8,9 @@ import SearchIcon from '@mui/icons-material/Search';
 import { ColorTheme } from "../../ColorTheme"
 import SearchBar from "../SearchBar";
 import Cart from "../CartComponents/Cart";
-import { NavLink } from "react-router-dom";
+
+import { 
+     NavLink} from "react-router-dom";
 
 
 const Left = styled.div`
@@ -112,8 +114,14 @@ const BottomCenter = styled.div`
     align-items: center;
     justify-content: space-evenly;
     margin: 20px 0px;
+  
+    
+
+    
 `
 const Link = styled.a`
+
+justify-content: center;
     font-weight: 200;
     font-size: 16px;
     cursor: pointer;
@@ -217,14 +225,31 @@ const NavBar = () => {
                     <SearchBar/>
                 </Right>
             </TopCenter>
+            <Link>
             <BottomCenter>
+         
+
+             
+                <NavLink to="/">Home</NavLink>
+           
+                <NavLink to="/shop">Coffee Shop</NavLink>
+         
+        
+                <NavLink to="/about">About</NavLink>
+          
+                <NavLink to="/blog">Blog</NavLink>
+              
+                <NavLink to="/contact"> Contact</NavLink>
+
+        
+             
+
+     
             
-                <NavLink to="/"> Home</NavLink>
-                
-                <NavLink to="shop" >Coffee Shop</NavLink>
-                <NavLink to= "about"> About</NavLink>
-                <NavLink to="contact"> Contact</NavLink>
+
+
             </BottomCenter>
+           </Link>
         </Container>
 
 

@@ -10,12 +10,14 @@ const Container = styled.div`
 const Home = () => {
     return (
         <Container>
+            
             <NavBar/>
             <VideoBG width = "100%"/>
             <Slider/>
             <RelatedProducts/>
             <Footer/>
         </Container>
+        
     )
 }
 export default Home
