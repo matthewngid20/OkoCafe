@@ -11,10 +11,15 @@ import Home from './pages/Home';
 import Shop from './pages/Shop';
 import ProductDetail from './pages/ProductDetail';
 import AboutUs from './pages/AboutUs';
+import Blog   from './pages/Blog';
 import TeamMember from './components/TeamMember';
 import Contact from './pages/Contact';
 import ShoppingCart from './pages/ShoppingCart';
-import { Routes, Route} from "react-router-dom";
+import { 
+
+    Route,
+    Routes, 
+    } from "react-router-dom";
 
 
 const Container = styled.div`
@@ -29,15 +34,20 @@ function App() {
 
   return (
     <Container>
+      
       <NavBar />
       
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="shop" element={<Shop />} />
+       
+        <Route path="/"  element={<Home />} />
+        <Route path="shop"  element={<Shop />} />
         <Route path="productDetail" element={<ProductDetail />} />
-        <Route path="about" element={<AboutUs />} />
-        <Route path="contact" element={<Contact />} />
-        <Route path="shoppingCart" element={<ShoppingCart />} />
+        <Route path="about"  element={<AboutUs />} />
+        <Route path="contact"  element={<Contact />} />
+        <Route path="blog"  element={<Blog />} />
+        <Route path="shoppingCart"  end element={<ShoppingCart />} />
+        
+
 
 
       </Routes>
