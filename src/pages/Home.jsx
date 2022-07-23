@@ -8,11 +8,11 @@ const Container = styled.div`
 
 `
 
-const Home = () => {
+const Home = (props) => {
     return (
         <Container>
             <VideoBG width="100%" />
-            <Slider />
+            <Slider stories = {props.stories} />
             <RelatedProducts />
         </Container>
 

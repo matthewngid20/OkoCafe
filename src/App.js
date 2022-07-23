@@ -21,7 +21,10 @@ import {
   Routes,
 } from "react-router-dom";
 
-
+import * as API from "./APIs/getRouter" 
+import { useEffect } from 'react';
+import axios from "axios"
+import { useState } from 'react';
 const Container = styled.div`
  position: relative; 
  background-color: rgba(0,0,0,0.2); 
@@ -29,12 +32,41 @@ const Container = styled.div`
 `
 
 function App() {
+  
+  const [stories, setStories] = useState()
+  useEffect(() => {
+    getStory()
+    getProduct()
+    return () => {
+    }
+  }, [])
 
+  var getStory = () => {
+    axios.get("http://localhost:3307/story").then( (res, rej) => {
+      if(res){
+        setStories(res.data)
+      }else{
+        console.log(rej);
+        return
+      }
+    })
+  }
+  var getProduct = () => {
+    axios.get("http://localhost:3307/products").then( (res, rej) => {
+      if(res){
+        console.log(res);
+      }else{
+        console.log(rej);
+        return
+      }
+    })
+  }
   return (
+    
     <Container>
       <NavBar />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home stories = {stories} />} />
         <Route path="shop" element={<Shop />} />
         <Route path="productdetail" element={<ProductDetail />} />
         <Route path="about" element={<AboutUs />} />
@@ -42,7 +74,7 @@ function App() {
         <Route path="blog" element={<Blog />} />
         <Route path="shoppingCart" end element={<ShoppingCart />} />
       </Routes>
-      <Footer/>
+      <Footer />
     </Container>
   );
 }

@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { story } from "../FakeData";
 import ArrowForwardIosOutlinedIcon from '@mui/icons-material/ArrowForwardIosOutlined';
 import ArrowBackIosOutlinedIcon from '@mui/icons-material/ArrowBackIosOutlined';
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Stories from "./Stories";
 import { ColorTheme } from "../ColorTheme";
 
@@ -100,7 +100,15 @@ const Image = styled.img`
     border-radius: 50% 50% 0 0;
 `
 
-const Slider = () => {
+const Slider = (props) => {
+    useEffect(() => {
+        
+    
+      return () => {
+        
+      }
+    }, [props.data])
+    
     const [slideIndex, setSlideIndex] = useState(0);
     const handleClick = (direction) => {
         if (direction === "left") {
@@ -116,18 +124,19 @@ const Slider = () => {
                 <Stories/>
             </Intro>
             <Wrapper slideIndex={slideIndex}>
-                {story.map((item,index) => (
+               {props.stories ? props.stories.map((item,index) => (
                     <Slide key = {index}>
                         <LeftColumn >
-                            <StoryNumber>{item.id}</StoryNumber>
+                            <StoryNumber>{item.storyid}</StoryNumber>
                             <Title>{item.title}</Title>
                             <Desc> {item.desc}</Desc>
                             <Button onClick={() => handleClick()}> View more </Button>
                         </LeftColumn>
                         <ImgContainer>
-                            <Image src={item.img} />
+                            <Image src={item.imageurl} />
                         </ImgContainer>
-                    </Slide>))}
+                    </Slide>)): <h1>Loading</h1>}
+               
             </Wrapper>
             <Arrow direction="right" onClick={() => handleClick("right")}><ArrowForwardIosOutlinedIcon style={{ backgroundColor: "white" }} /></Arrow>
         </Container>
