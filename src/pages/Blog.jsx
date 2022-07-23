@@ -1,14 +1,12 @@
-import NavBar from "../components/Main/NavBar"
 import styled from "styled-components"
-import Footer from "../components/Main/Footer"
 import BlogSearch from "../components/BlogSearch"
 import BlogBottom from "../components/Blog/BlogBottom"
 
 
 const Container = styled.div`
-
-
-background-image: linear-gradient(#211D1C, #211D1C);
+  position: relative; 
+  // background-color: rgba(0,0,0,0.8); 
+  // background: linear-gradient(180deg, #211D1C 0%, rgba(33, 29, 28, 0) 49.29%); 
 
 `
 const Blog = () => {

@@ -27,7 +27,7 @@ const BlogBottom = () => {
             <Wrapper>
                 {Blogs.map(item => 
                     (<BlogImage 
-                     subject={item.subejct}
+                    subject={item.subejct}
                     url = {item.img}
                     fullName={item.name}
                     position={item.position} />))}

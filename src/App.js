@@ -1,7 +1,7 @@
 import './App.css';
 import styled from "styled-components"
 import NavBar from './components/Main/NavBar';
-import VideoBG from './components/VideoBG';
+import VideoBG from "./components/VideoBG";
 import Slider from './components/Slider';
 import RelatedProducts from './components/Products/RelatedProducts';
 import Product from './components/Products/Product';
