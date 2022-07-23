@@ -1,0 +1,15 @@
+
+.nav-bar-link {
+    color: #C8765A;
+    margin: 0 10px;
+}
+
+.active {
+    color: #F8E6DB;
+    text-decoration: none;
+}
+
+a {
+    /* color: green; */
+    text-decoration: none;
+}

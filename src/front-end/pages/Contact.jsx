@@ -14,10 +14,7 @@ const Container = styled.div`
 const Contact = () => {
     return (
         <Container>
-            <NavBar />
             <ContactForm />
-            <Footer />
-            
         </Container>
     )
 }

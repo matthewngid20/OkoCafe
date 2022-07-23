@@ -11,10 +11,8 @@ const Container = styled.div`
 const Shop = () => {
     return (
         <Container>
-            <NavBar/>
             <Announcement/>
             <Products/>
-            <Footer/>
         </Container> 
     )
 }

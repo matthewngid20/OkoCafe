@@ -6,9 +6,7 @@ import NavBar from '../components/Main/NavBar'
 const ShoppingCart = () => {
     return (
         <div>
-            <NavBar/>
-            <CartDetails/>
-            <Footer/>
+            <CartDetails />
         </div>
     )
 }

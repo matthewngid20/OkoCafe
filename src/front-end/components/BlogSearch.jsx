@@ -7,9 +7,6 @@ import './header.css';
 import { coffeeProduct } from '../FakeData';
 
 
-
-
-
 const Container = styled.div` 
 
 `

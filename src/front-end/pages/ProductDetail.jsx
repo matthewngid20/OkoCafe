@@ -8,17 +8,15 @@ import RelatedProducts from "../components/Products/RelatedProducts"
 
 
 
-const ProductDetail = ({}) => {
+const ProductDetail = ({ }) => {
 
     return (
         <div >
-            <NavBar/>
-            <ProductDetails/>
-            <Title title ="Coffee Story" alignment="center"/>
-            <VideoBG width = "50%" height = "50vh"/>
-            <SubTitle  />
-             <RelatedProducts/>
-            <Footer />
+            <ProductDetails />
+            <Title title="Coffee Story" alignment="center" />
+            <VideoBG width="50%" height="50vh" />
+            <SubTitle />
+            <RelatedProducts />
         </div>
     )
 }

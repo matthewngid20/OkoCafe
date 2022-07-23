@@ -116,9 +116,9 @@ const Slider = () => {
                 <Stories/>
             </Intro>
             <Wrapper slideIndex={slideIndex}>
-                {story.map(item => (
-                    <Slide>
-                        <LeftColumn>
+                {story.map((item,index) => (
+                    <Slide key = {index}>
+                        <LeftColumn >
                             <StoryNumber>{item.id}</StoryNumber>
                             <Title>{item.title}</Title>
                             <Desc> {item.desc}</Desc>
