@@ -19,9 +19,10 @@ import {
 
   Route,
   Routes,
+ 
 } from "react-router-dom";
 
-import * as API from "./APIs/getRouter" 
+import * as API from "./APIs/getRouter"
 import { useEffect } from 'react';
 import axios from "axios"
 import { useState } from 'react';
@@ -32,8 +33,8 @@ const Container = styled.div`
 `
 
 function App() {
-  
   const [stories, setStories] = useState()
+  const [products, setProducts] = useState()
   useEffect(() => {
     getStory()
     getProduct()
@@ -42,33 +43,35 @@ function App() {
   }, [])
 
   var getStory = () => {
-    axios.get("http://localhost:3307/story").then( (res, rej) => {
-      if(res){
+    axios.get("http://localhost:3307/story").then((res, rej) => {
+      if (res) {
         setStories(res.data)
-      }else{
+      } else {
         console.log(rej);
         return
       }
     })
   }
   var getProduct = () => {
-    axios.get("http://localhost:3307/products").then( (res, rej) => {
-      if(res){
-        console.log(res);
-      }else{
+    axios.get("http://localhost:3307/products").then((res, rej) => {
+      if (res) {
+        setProducts(res.data)
+        //console.log(res);
+      } else {
         console.log(rej);
         return
       }
     })
   }
   return (
-    
+
     <Container>
       <NavBar />
       <Routes>
-        <Route path="/" element={<Home stories = {stories} />} />
-        <Route path="shop" element={<Shop />} />
-        <Route path="productdetail" element={<ProductDetail />} />
+        <Route path="/" element={<Home stories={stories} products={products} />} />
+        <Route path="shop" element={<Shop products={products} />} />
+        <Route path="productdetail" element={<ProductDetail products={products} />} />
+        <Route path="productdetails/:productId" element={<ProductDetail products={products} />} />
         <Route path="about" element={<AboutUs />} />
         <Route path="contact" element={<Contact />} />
         <Route path="blog" element={<Blog />} />

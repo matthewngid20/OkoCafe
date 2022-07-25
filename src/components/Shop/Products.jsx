@@ -47,8 +47,7 @@ const PaginationContainer = styled.div`
     margin-top: 40px;
 `
 
-const Products = () => {
-
+const Products = (props) => {
     return (
         <Container>
             <Title> Coffee</Title>
@@ -56,11 +55,11 @@ const Products = () => {
                 <Filter type="espresso"> Espresso </Filter>
                 <Filter type="filter"> Filter  </Filter>
             </FilterType>
-            <ProductContainer>
-                {coffeeProduct.map(item => (
-                    <Product key={item.id} item={item} />
+            {props.products ? <><ProductContainer>
+                {props.products.map(product => (
+                    <Product key={product.productid} product={product} />
                 ))}
-            </ProductContainer>
+            </ProductContainer></> : <h1> Nothing found</h1>}
             <PaginationContainer>
                 <Pagination color="secondary" count={7} shape="rounded" />
             </PaginationContainer>

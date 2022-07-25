@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import { ColorTheme } from "../../ColorTheme"
+import { useParams } from "react-router-dom"
 
 const item = {
     "id": "04",
@@ -134,60 +135,63 @@ const RowContent = styled.div`
     color: ${ColorTheme.brand1};
 `
 
-const ProductDetails = ({prod}) => {
+const ProductDetails = (props) => {
+    console.log(props);
+    const {productId} = useParams()
+    const thisProduct = props.products.find(prod => prod.productid === productId)
+    console.log("thisProduct " + thisProduct);
     return (
         <Container>
             <Hr />
             <ProductContainer>
-                <ImgContainer>
+                {props.products ? <> <ImgContainer>
                     <BigImg>
-                        <Img src={item.img} />
+                        <Img src={thisProduct.img} />
                     </BigImg>
                     <SmallImgs>
-                        <SmallImg style={{ width: "200px" }} src={item.img} />
-                        <SmallImg style={{ width: "200px" }} src={item.img}/>
-                        <SmallImg style={{ width: "200px" }} src={item.img}/>
-                        <SmallImg style={{ width: "200px" }} src={item.img}/>
+                        <SmallImg style={{ width: "200px" }} src={thisProduct.img} />
+                        <SmallImg style={{ width: "200px" }} src={thisProduct.img} />
+                        <SmallImg style={{ width: "200px" }} src={thisProduct.img} />
+                        <SmallImg style={{ width: "200px" }} src={thisProduct.img} />
                     </SmallImgs>
                 </ImgContainer>
-                <ProductInfo>
-                    <TopContent>
-                        <Title>{item.name}</Title>
-                        <Desc> RARE COFFEE TO DATE</Desc>
-                        <PriceContainer>
-                            <Price> $24</Price>
-                            <Vr />
-                            <Volume> 500G </Volume>
-                        </PriceContainer>
-                        <Button>ADD TO CART</Button>
-                    </TopContent>
-                    <BottomContent>
-                        <SmallTitle> INGREDIENT DETAILS: </SmallTitle>
-                        <DetailsContainer>
-                            <Col>
-                                <RowTitle> WASHING STATION:</RowTitle>
-                                <RowContent> NANO GENJI </RowContent>
-                                <RowTitle> ORIGIN:</RowTitle>
-                                <RowContent> ETHIOPIA</RowContent>
-                                <RowTitle> PROCESS:</RowTitle>
-                                <RowContent> NANO GENJI </RowContent>
-                                <RowTitle> VARIETAL: </RowTitle>
-                                <RowContent> ETHIOPIA HEIRLOOM</RowContent>
-                            </ Col>
-                            < Col>
-                                <RowTitle> ALTITUDE:</RowTitle>
-                                <RowContent> 1,900 - 2,200 METERS </RowContent>
-                                <RowTitle> TASTING NOTES:</RowTitle>
-                                <RowContent> JUICY PEACH, KEY LIME PIE, BLACK CHERRY TART.</RowContent>
-                                <RowTitle> ROAST LEVEL:</RowTitle>
-                                <RowContent> LIGHT </RowContent>
-                                <RowTitle> ROASTED</RowTitle>
-                                <RowContent> WEEKDAYS</RowContent>
-                            </ Col>
-
-                        </DetailsContainer>
-                    </BottomContent>
-                </ProductInfo>
+                    <ProductInfo>
+                        <TopContent>
+                            <Title>{item.name}</Title>
+                            <Desc> RARE COFFEE TO DATE</Desc>
+                            <PriceContainer>
+                                <Price> $24</Price>
+                                <Vr />
+                                <Volume> 500G </Volume>
+                            </PriceContainer>
+                            <Button>ADD TO CART</Button>
+                        </TopContent>
+                        <BottomContent>
+                            <SmallTitle> INGREDIENT DETAILS: </SmallTitle>
+                            <DetailsContainer>
+                                <Col>
+                                    <RowTitle> WASHING STATION:</RowTitle>
+                                    <RowContent> NANO GENJI </RowContent>
+                                    <RowTitle> ORIGIN:</RowTitle>
+                                    <RowContent> ETHIOPIA</RowContent>
+                                    <RowTitle> PROCESS:</RowTitle>
+                                    <RowContent> NANO GENJI </RowContent>
+                                    <RowTitle> VARIETAL: </RowTitle>
+                                    <RowContent> ETHIOPIA HEIRLOOM</RowContent>
+                                </ Col>
+                                < Col>
+                                    <RowTitle> ALTITUDE:</RowTitle>
+                                    <RowContent> 1,900 - 2,200 METERS </RowContent>
+                                    <RowTitle> TASTING NOTES:</RowTitle>
+                                    <RowContent> JUICY PEACH, KEY LIME PIE, BLACK CHERRY TART.</RowContent>
+                                    <RowTitle> ROAST LEVEL:</RowTitle>
+                                    <RowContent> LIGHT </RowContent>
+                                    <RowTitle> ROASTED</RowTitle>
+                                    <RowContent> WEEKDAYS</RowContent>
+                                </ Col>
+                            </DetailsContainer>
+                        </BottomContent>
+                    </ProductInfo></> : <h1>Loading</h1>}
             </ProductContainer>
         </Container>
 

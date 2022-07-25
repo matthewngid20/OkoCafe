@@ -8,11 +8,11 @@ const Container = styled.div`
     background-color: ${ColorTheme.bg1};
 `
 
-const Shop = () => {
+const Shop = (props) => {
     return (
         <Container>
             <Announcement/>
-            <Products/>
+            <Products products = {props.products}/>
         </Container> 
     )
 }

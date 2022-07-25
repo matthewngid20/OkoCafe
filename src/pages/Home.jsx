@@ -13,7 +13,7 @@ const Home = (props) => {
         <Container>
             <VideoBG width="100%" />
             <Slider stories = {props.stories} />
-            <RelatedProducts />
+            <RelatedProducts products = {props.products} />
         </Container>
 
     )

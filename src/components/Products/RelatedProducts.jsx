@@ -3,7 +3,6 @@ import Product from "./Product"
 import ArrowRightAltOutlinedIcon from '@mui/icons-material/ArrowRightAltOutlined';
 import ArrowBackIosOutlinedIcon from '@mui/icons-material/ArrowBackIosOutlined';
 import { useState } from "react";
-import { coffeeProduct } from "../../FakeData";
 import { ColorTheme } from "../../ColorTheme";
 
 const Container = styled.div`
@@ -48,7 +47,7 @@ const Arrow = styled.div`
     opacity: 0.5;
     z-index:2;
 `
-const RelatedProducts = ({ item }) => {
+const RelatedProducts = (props) => {
     const [slideIndex, setSlideIndex] = useState(0)
     const handleClick = (direction) => {
         if (direction === "left") {
@@ -64,9 +63,10 @@ const RelatedProducts = ({ item }) => {
             </Arrow>
             <ProductIntro>Our Product </ProductIntro>
             <ProductsWrapper slideIndex={slideIndex}>
-                {coffeeProduct.map(item => (
-                    <Product key={item.id} item={item} />
-                ))}
+                {props.products ? props.products.map(product => (
+                    <Product key={product.productid} product={product} />
+                )) :
+                    <h1>Loading products</h1>}
             </ProductsWrapper>
             <Arrow direction="right" onClick={() => handleClick("right")}>
                 <ArrowRightAltOutlinedIcon />

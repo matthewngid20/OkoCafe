@@ -3,7 +3,7 @@ import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import SearchIcon from '@mui/icons-material/Search';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import { ColorTheme } from "../../ColorTheme";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Info = styled.div`
     opacity: 0;
@@ -85,36 +85,37 @@ const Circle = styled.div`
     background-color:${ColorTheme.brand2};
     position: absolute;
     top:50px;
-` 
+`
 const Price = styled.div`
 `
 const Volume = styled.div`
 `
 
-const Product = ({item}) => {
+const Product = (props) => {
     return (
+        //<h1>Shop</h1>
         <Container>
-            <Circle />
-            <Image src={item.img} />
-            <Info>
-                <NavLink to = "/productdetail"><Icon  onClick={() => alert("test")}> <ShoppingCartOutlinedIcon />test</Icon></NavLink>
-                <Icon> <SearchIcon /></Icon>
-                <Icon> <FavoriteBorderIcon /> </Icon>
-            </Info>
-            <ProductDetail>
-                <ProductTitle>
-                    {item.name}
-                </ProductTitle>
-                <Desc>{item.desc}</Desc>
-                <PriceContainer>
-                    <Price>
-                        ${item.price}
-                    </Price>
-                    <Volume>
-                        {item.volume}G
-                    </Volume>
-                </PriceContainer>
-            </ProductDetail>
+            {props ? <> <Circle />
+                <Image src={props.product.img} />
+                <Info>
+                    <Link to ={`/productdetails/${props.product.productid}`}> <Icon> <ShoppingCartOutlinedIcon /></Icon></Link>
+                    <Icon> <SearchIcon /></Icon>
+                    <Icon> <FavoriteBorderIcon /> </Icon>
+                </Info>
+                <ProductDetail>
+                    <ProductTitle>
+                    {props.product.name}
+                    </ProductTitle>
+                    <Desc>{props.product.desc}</Desc>
+                    <PriceContainer>
+                        <Price>
+                            ${props.product.price}
+                        </Price>
+                        <Volume>
+                            {props.product.volume}G
+                        </Volume>
+                    </PriceContainer>
+                </ProductDetail></> : <h1>loading</h1>}
         </Container>
     )
 }
