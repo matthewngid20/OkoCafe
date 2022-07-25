@@ -16,13 +16,13 @@ color: ${ColorTheme.brand1};
 `
 const ImgContainer = styled.div` 
 
-width: 150%;
-height: 337.24px;
-
-
+width: 100%;
+height: 50%;
 
 background-image: url(${props => props.src}); 
-    background-size: cover;   
+background-size: cover; 
+
+opacity: 0.5; 
 `
 
 const Name = styled.div` 
