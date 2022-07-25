@@ -3,6 +3,7 @@ import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import SearchIcon from '@mui/icons-material/Search';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import { ColorTheme } from "../../ColorTheme";
+import { NavLink } from "react-router-dom";
 
 const Info = styled.div`
     opacity: 0;
@@ -96,7 +97,7 @@ const Product = ({item}) => {
             <Circle />
             <Image src={item.img} />
             <Info>
-                <Icon> <ShoppingCartOutlinedIcon /></Icon>
+                <NavLink to = "/productdetail"><Icon  onClick={() => alert("test")}> <ShoppingCartOutlinedIcon />test</Icon></NavLink>
                 <Icon> <SearchIcon /></Icon>
                 <Icon> <FavoriteBorderIcon /> </Icon>
             </Info>

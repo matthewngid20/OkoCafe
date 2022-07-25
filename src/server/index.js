@@ -1,5 +1,5 @@
 var express = require('express');
-const connection = require('./config/database');
+const connection = require('./database');
 var cors = require('cors')
 var app = express()
 app.use(cors())
