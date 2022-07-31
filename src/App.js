@@ -10,6 +10,8 @@ import Footer from './components/Main/Footer';
 import Home from './pages/Home';
 import Shop from './pages/Shop';
 import ProductDetail from './pages/ProductDetail';
+import BlogDetail from './pages/BlogDetail';
+import RelatedBlogs from './components/Blog/RelatedBlogs';
 import AboutUs from './pages/AboutUs';
 import Blog from './pages/Blog';
 import TeamMember from './components/TeamMember';
@@ -73,6 +75,8 @@ function App() {
         <Route path="contact" element={<Contact />} />
         <Route path="blog" element={<Blog />} />
         <Route path="shoppingCart" end element={<ShoppingCart />} />
+        <Route path="blogdetail" element={<BlogDetail />} />
+
       </Routes>
       <Footer />
     </Container>
