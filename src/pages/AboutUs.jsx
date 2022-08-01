@@ -18,7 +18,6 @@ const AboutUs = () => {
             <AboutUsTop/>
             <AboutUsMiddle/>
             <AboutUsBottom/>
-            <Footer/>
         </Container>
     )
 }

@@ -1,23 +1,7 @@
 import styled from "styled-components"
 import { ColorTheme } from "../../ColorTheme"
 import { useParams } from "react-router-dom"
-
-const item = {
-    "id": "04",
-    "name": "Super X",
-    "desc": "Super x arabica",
-    "price": "50",
-    "volume": "1000",
-    "station": "NANO GENJI",
-    "altitude": "1,900 - 2,200 METERS",
-    "notes": "ju",
-    "station": "JUICY PEACH, KEY LIME PIE, BLACK CHERRY TART.",
-    "process": "WASHED",
-    "roastlv": "LIGHT",
-    "varietal": "ETHIOPIAN HEIRLOOM",
-    "roasted": "WEEKDAYS",
-    "img": "https://images.squarespace-cdn.com/content/v1/59a44aa2e6f2e1db4cbd5252/1584724680455-VZVCMZBHDS4F4JB808X2/Supernova+Killer+Acid-01.png?format=750w"
-}
+import { useEffect,useState } from "react"
 
 const Container = styled.div` 
     background-color: ${ColorTheme.bg1};
@@ -119,6 +103,7 @@ const SmallTitle = styled.span`
     color: ${ColorTheme.brandC};
 `
 const DetailsContainer = styled.div`
+    margin-top:100px;
     display: flex;
     justify-content: space-between;
 `
@@ -136,8 +121,14 @@ const RowContent = styled.div`
 `
 
 const ProductDetails = (props) => {
-    console.log(props);
-    const {productId} = useParams()
+    const [data, setData] = useState(props.data);
+
+    useEffect(() => {
+        setData(props.products);
+    }, [props]);
+
+    console.log(data);
+    const { productId } = useParams()
     const thisProduct = props.products.find(prod => prod.productid === productId)
     console.log("thisProduct " + thisProduct);
     return (
@@ -157,7 +148,7 @@ const ProductDetails = (props) => {
                 </ImgContainer>
                     <ProductInfo>
                         <TopContent>
-                            <Title>{item.name}</Title>
+                            <Title>{thisProduct.name}</Title>
                             <Desc> RARE COFFEE TO DATE</Desc>
                             <PriceContainer>
                                 <Price> $24</Price>

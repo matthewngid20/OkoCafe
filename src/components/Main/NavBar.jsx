@@ -35,7 +35,7 @@ const Container = styled.div`
     top: 0;
     padding-top: 1em;
     z-index: 10000;
-
+    font-size: 1vw;
     background-color: #333;
     position: fixed;
     top: -50px;
@@ -216,29 +216,15 @@ const NavBar = () => {
                 </Left>
                 <Center>
                     <LeftText> Fuel your imagination</LeftText>
-                    <NavLink to="/"> <Brand>  Smooth Curve  </Brand>  </NavLink> 
+                    <NavLink to="/"> <Brand>  Smooth Curve  </Brand>  </NavLink>
                     <RightText> Feel your different</RightText>
                 </Center>
                 <Right>
-                    {/* <CartContainer>
-                        <Cart>
-                            <ShoppingCartOutlinedIcon htmlColor={CartColor} />
-                            <CartItem >
-                                Cart (3)
-                            </CartItem>
-                        </Cart>
-                    </CartContainer> */}
                     <Cart />
                     <SearchBar />
                 </Right>
             </TopCenter>
             <BottomCenter>
-                {/* <NavLink to="/">Home</NavLink>
-                <NavLink to="/shop">Coffee Shop</NavLink>
-                <NavLink to="/about">About</NavLink>
-                <NavLink to="/blog">Blog</NavLink>
-                <NavLink to="/contact"> Contact</NavLink> */}
-
                 {links.map((link, index) => {
                     return (
                         (<NavLink className="nav-bar-link" to={link.to} key={index}> {link.name} </NavLink>))
