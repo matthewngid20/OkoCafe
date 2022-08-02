@@ -1,7 +1,7 @@
 import { Subject } from "@mui/icons-material"
 import styled from "styled-components"
 import { ColorTheme } from "../ColorTheme"
-
+import { NavLink } from "react-router-dom";
 const Container = styled.div`
     width:  300px;
     height: 500px;
@@ -42,10 +42,14 @@ const Position = styled.div`
 const BlogImage = ({ subject,url, fullName, position }) => {
     return (
         <Container>
-            <ImgContainer src={url}> 
-            </ImgContainer>
-            <Sub> {subject} </Sub>
-            <Name> {fullName} </Name>
+           
+        
+           <NavLink to = "/blogdetail"><ImgContainer src={url}> 
+          
+            </ImgContainer></NavLink>
+          
+             <Sub> {subject} </Sub>
+           <NavLink to = "/blogdetail"> <Name> {fullName} </Name></NavLink>
             <Position> {position} </Position>
         </Container>
     )
