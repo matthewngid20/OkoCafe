@@ -10,7 +10,7 @@ import Footer from './components/Main/Footer';
 import Home from './pages/Home';
 import Shop from './pages/Shop';
 import BlogDetail from './pages/BlogDetail';
-import RelatedBlogs from './components/Blog/RelatedBlogs';
+
 import ProductDetail from './pages/ProductDetail';
 import AboutUs from './pages/AboutUs';
 import Blog from './pages/Blog';
