@@ -4,6 +4,7 @@ import { Pagination } from "@mui/material";
 
 import { Blogs } from "../../FakeData"
 
+
 const Container = styled.div` 
     margin: 3rem 0px;
 `
@@ -25,13 +26,17 @@ const BlogBottom = () => {
         <Container>
          
             <Wrapper>
-                {Blogs.map(item => 
+          
+            {Blogs.map(item => 
                     (<BlogImage 
                     subject={item.subejct}
                     url = {item.img}
                     fullName={item.name}
-                    position={item.position} />))}
+                    position={item.position} />)) }
+                
+                    
             </Wrapper>
+            
             <PaginationContainer>
                 <Pagination color="secondary" count={7} shape="rounded" />
             </PaginationContainer>
