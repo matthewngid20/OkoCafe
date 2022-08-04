@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: row;
 }
+
 .gpt3__header-content {
     flex: 1;
     display: flex;
@@ -13,41 +14,42 @@
     flex: 1;
     display: flex;
     align-items: center;
-    
+
 }
 
 .gpt3__header-content h1 {
     width: 609px;
-height: 76px;
+    height: 76px;
 
-font-family: 'Abril Fatface';
-font-style: normal;
-font-weight: 400;
-font-size: 56px;
-line-height: 76px;
-   
-
-display: flex;
-align-items: center;
-
-/* Brand chuẩn */
-
-color: #C8765A;
+    font-family: 'Abril Fatface';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 56px;
+    line-height: 76px;
 
 
-/* Inside auto layout */
+    display: flex;
+    align-items: center;
 
-flex: none;
-order: 0;
-flex-grow: 0;
-   
+    /* Brand chuẩn */
+
+    color: #C8765A;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+
 }
+
 .gpt3__header-content h2 {
- 
-   
+
+
     width: 423px;
     height: 28px;
-    
+
     font-family: 'SVN-Gilroy';
     font-style: normal;
     font-weight: 400;
@@ -62,13 +64,13 @@ flex-grow: 0;
     font-size: 56px;
     line-height: 76px;
     line-height: 100%;
-    
+
     font-style: regular;
-   
+
     background: rgba(200, 118, 90, 1);
 
-   
-Vertical-align: Center;
+
+    Vertical-align: Center;
 }
 
 
@@ -81,6 +83,7 @@ Vertical-align: Center;
         margin: 0 0 3rem;
     }
 }
+
 @media screen and (max-width: 650px) {
     .gpt3__header-content h1 {
         font-size: 48px;
@@ -91,11 +94,11 @@ Vertical-align: Center;
         font-size: 16px;
         line-height: 24px;
     }
-    
-   
 
-  
-    
+
+
+
+
 }
 
 @media screen and (max-width: 490px) {
@@ -118,7 +121,7 @@ Vertical-align: Center;
 
 .gpt3__blog {
     display: flex;
-    flex-direction: column;    
+    flex-direction: column;
 }
 
 .gpt3__blog-heading {
@@ -148,7 +151,7 @@ Vertical-align: Center;
 .gpt3__blog-container_groupB {
     flex: 1;
 
-    display:grid;
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 2rem;
 }
@@ -163,8 +166,8 @@ Vertical-align: Center;
         margin: 2rem 0;
     }
 
-    .gpt3__blog-container_groupA .gpt3__blog-container_article  {
-       width: 48%;
+    .gpt3__blog-container_groupA .gpt3__blog-container_article {
+        width: 48%;
     }
 
     .gpt3__blog-container_groupA .gpt3__blog-container_article-image {
@@ -177,8 +180,8 @@ Vertical-align: Center;
         grid-template-columns: repeat(1, 1fr);
     }
 
-    .gpt3__blog-container_groupA .gpt3__blog-container_article  {
-       width: 100%;
+    .gpt3__blog-container_groupA .gpt3__blog-container_article {
+        width: 100%;
     }
 
     .gpt3__blog-heading h1 {
@@ -194,6 +197,7 @@ Vertical-align: Center;
     }
 
 }
+
 @media screen and (max-width: 550px) {
     .gpt3__blog-heading h2 {
         font-size: 34px;

@@ -11,6 +11,10 @@ const ProductDetails = () => {
     const products  = JSON.parse(data[0]);
     const thisProduct = products.find(prod => prod.productid === productId)
 
+    const addItemToCart = () => {
+        
+    }
+
     return (
         
         <Container>

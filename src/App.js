@@ -64,6 +64,7 @@ function App() {
       }
     })
   }
+  
   var getProduct = () => {
     axios.get("http://localhost:3307/products").then((res, rej) => {
       if (res) {
@@ -75,9 +76,7 @@ function App() {
       }
     })
   }
-  //console.log(JSON.parse(localStorage.getItem('localProducts')));
   return (
-    //<Context.Provider value={[products, stories]}>
     <Context.Provider value={[products, stories]}>
       <Container>
         <NavBar />

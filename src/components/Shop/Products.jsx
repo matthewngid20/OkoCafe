@@ -9,7 +9,6 @@ import { Context } from "../../App";
 
 const Products = () => {
     const data = useContext(Context)
-    //console.log(data[0]);
     const products  = JSON.parse(data[0]);
     return (
         <Container>
