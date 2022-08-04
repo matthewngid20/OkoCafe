@@ -1,7 +1,5 @@
 import styled from "styled-components"
-
 import { useState, useEffect } from 'react';
-
 import { ColorTheme } from '../ColorTheme';
 import './header.css';
 import { Blogs } from '../FakeData';
@@ -11,8 +9,6 @@ import { Subject } from "@mui/icons-material";
 const Container = styled.div` 
 
 `
-
-
 const InputSearch = styled.input`
 border: 0 solid ${ColorTheme.brandC} ;
 
@@ -21,8 +17,6 @@ height: 30px;
 left: 0px;
 top: 206px;
 background: #D3987A;
-
-
 
 `
 const DropDown = styled.div`
@@ -63,7 +57,6 @@ const Img = styled.img`
 `
 
 const ItemInfo = styled.div`
-    
 
 `
 const ItemName = styled.li`
@@ -78,25 +71,15 @@ const Price = styled.div`
     color: ${ColorTheme.brandC};
 `
 
-
-
-
-
-const BlogSearch = (  ) => {
-
-
+const BlogSearch = () => {
     const [searchQuery, setSearchQuery] = useState("");
     useEffect(() => {
     }, [searchQuery])
     const getValue = (e) => {
-        //console.log(e.target.value);
         setSearchQuery(e.target.value);
     }
     return (
-
-
         <Container>
-
             <div className="gpt3__header section__padding" id="home">
                 <div className="gpt3__header-content">
                     <h1 className="gradient__text"></h1>
@@ -123,12 +106,7 @@ const BlogSearch = (  ) => {
                     </DropDown>
                 </div>
             </div>
-            
-            
         </Container>
-
-      
-
 
     )
 }

@@ -92,7 +92,7 @@ function App() {
             <Route path="blog" element={<Blog />} />
             <Route path="shoppingCart" end element={<ShoppingCart />} />
           </Routes>
-          }
+        }
         <Footer />
       </Container>
     </Context.Provider>

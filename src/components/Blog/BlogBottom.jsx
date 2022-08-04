@@ -24,19 +24,14 @@ const PaginationContainer = styled.div`
 const BlogBottom = () => {
     return (
         <Container>
-         
             <Wrapper>
-          
-            {Blogs.map(item => 
-                    (<BlogImage 
+                {Blogs.map(item =>
+                (<BlogImage
                     subject={item.subejct}
-                    url = {item.img}
+                    url={item.img}
                     fullName={item.name}
-                    position={item.position} />)) }
-                
-                    
+                    position={item.position} />))}
             </Wrapper>
-            
             <PaginationContainer>
                 <Pagination color="secondary" count={7} shape="rounded" />
             </PaginationContainer>

@@ -14,8 +14,6 @@ const Blog = () => {
   return (
     <Container>
       <BlogSearch />
-   
-         
       <BlogBottom />
     </Container>
   )
