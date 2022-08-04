@@ -38,8 +38,10 @@ const Position = styled.div`
 const BlogImage = ({ subject, url, fullName, position }) => {
     return (
         <Container>
-            <NavLink to="/blogdetail"><ImgContainer src={url}>
-            </ImgContainer></NavLink>
+            <NavLink to="/blogdetail">
+                <ImgContainer src={url}>
+                </ImgContainer>
+            </NavLink>
             <Sub> {subject} </Sub>
             <NavLink to="/blogdetail"> <Name> {fullName} </Name></NavLink>
             <Position> {position} </Position>

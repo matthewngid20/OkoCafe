@@ -28,8 +28,8 @@ const AboutUsBottom = () => {
                 <SubTitle description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, quisquam voluptatum cum cumque ea temporibus consequatur nesciunt pariatur harum explicabo non illo autem, neque ratione, earum quia repellat. Maxime, commodi!" />
             </SubContainer>
             <Wrapper>
-                {TeamMembers.map(item => 
-                    (<TeamMember 
+                {TeamMembers.map((item,key) => 
+                    (<TeamMember key = {item.id} 
                     url = {item.img}
                     fullName={item.name}
                     position={item.position} />))}

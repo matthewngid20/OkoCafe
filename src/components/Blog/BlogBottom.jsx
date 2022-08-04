@@ -25,8 +25,8 @@ const BlogBottom = () => {
     return (
         <Container>
             <Wrapper>
-                {Blogs.map(item =>
-                (<BlogImage
+                {Blogs.map((item,key) =>
+                (<BlogImage key = {item.id}
                     subject={item.subejct}
                     url={item.img}
                     fullName={item.name}
