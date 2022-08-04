@@ -9,6 +9,8 @@ import Announcement from './components/Shop/Announcement';
 import Footer from './components/Main/Footer';
 import Home from './pages/Home';
 import Shop from './pages/Shop';
+import BlogDetail from './pages/BlogDetail';
+
 import ProductDetail from './pages/ProductDetail';
 import AboutUs from './pages/AboutUs';
 import Blog from './pages/Blog';
@@ -75,6 +77,7 @@ function App() {
   }
   //console.log(JSON.parse(localStorage.getItem('localProducts')));
   return (
+<<<<<<< HEAD
     //<Context.Provider value={[products, stories]}>
     <Context.Provider value={[products, stories]}>
       <Container>
@@ -94,6 +97,24 @@ function App() {
         <Footer />
       </Container>
     </Context.Provider>
+=======
+
+    <Container>
+      <NavBar />
+      <Routes>
+        <Route path="/" element={<Home stories={stories} products={products} />} />
+        <Route path="shop" element={<Shop products={products} />} />
+        <Route path="productdetail" element={<ProductDetail products={products} />} />
+        <Route path="productdetails/:productId" element={<ProductDetail products={products} />} />
+        <Route path="about" element={<AboutUs />} />
+        <Route path="contact" element={<Contact />} />
+        <Route path="blog" element={<Blog />} />
+        <Route path="shoppingCart" end element={<ShoppingCart />} />
+        <Route path="blogdetail" element={<BlogDetail />} />
+      </Routes>
+      <Footer />
+    </Container>
+>>>>>>> 8b323384639ad1d049aa7261fb4ff6a7bc5d8c92
   );
 }
 

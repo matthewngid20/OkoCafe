@@ -4,7 +4,8 @@ import { useState, useEffect } from 'react';
 
 import { ColorTheme } from '../ColorTheme';
 import './header.css';
-import { coffeeProduct } from '../FakeData';
+import { Blogs } from '../FakeData';
+import { Subject } from "@mui/icons-material";
 
 
 const Container = styled.div` 
@@ -40,7 +41,7 @@ const Decoration = styled.div`
     border-right: 10px solid transparent;
     border-bottom: 10px solid ${ColorTheme.brand1};
 `
-const CoffeeList = styled.div`
+const BlogList = styled.div`
     min-width: 300px;
     padding: 1rem;
     position:relative;
@@ -77,14 +78,7 @@ const Price = styled.div`
     color: ${ColorTheme.brandC};
 `
 
-const ImgContainer1 =styled.div`
 
-
-
-
-  
-
-`
 
 
 
@@ -110,22 +104,22 @@ const BlogSearch = (  ) => {
                     <h2>Learn all about authentic and strong coffee with us</h2>
                     <InputSearch placeholder="Search" onChange={(e) => getValue(e)} />
                     <DropDown display={searchQuery}>
-                        <CoffeeList>
+                        <BlogList>
                             <Decoration></Decoration>
-                            {coffeeProduct.map((product) => (
-                                <ItemContainer key={product.id}>
+                            {Blogs.map((blog) => (
+                                <ItemContainer key={blog.id}>
                                     <ImgContainer>
-                                        <Img src={product.img} />
+                                        <Img src={blog.img} />
                                     </ImgContainer>
                                     <ItemInfo>
-                                        <ItemName> {product.name} </ItemName>
-                                        <Desc> {product.desc} </Desc>
-                                        <Price> $ {product.price} </Price>
+                                        <ItemName> {blog.name} </ItemName>
+                                        <Desc> {blog.position} </Desc>
+                                        <Subject> $ {blog.subejct} </Subject>
                                     </ItemInfo>
                                 </ItemContainer>
 
                             ))}
-                        </CoffeeList>
+                        </BlogList>
                     </DropDown>
                 </div>
             </div>

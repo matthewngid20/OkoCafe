@@ -1,7 +1,20 @@
 
+
 .nav-bar-link {
     color: #C8765A;
     margin: 0 10px;
+   
+}
+@media screen and (max-width: 650px) {
+    .nav-bar-link h1 {
+        font-size: 48px;
+        line-height: 60px;
+    }
+
+    .nav-bar-link p {
+        font-size: 16px;
+        line-height: 24px;
+    }
 }
 
 .active {

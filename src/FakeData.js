@@ -172,3 +172,38 @@ export const Blogs =  [
     "position": "Roseline Coffee is one of my favorite roasters to order from when I’m in the mood for something special. I follow them on Instagram..."},
 
 ]
+
+
+
+export const blogs = {
+
+    "id": "01",
+
+    "name": "The 4 Different Types of Coffee Beans: A Complete Overview ",
+    "date" :" -  Oct, 23   2021",
+    "position": "If you’re an avid coffee drinker, you’ve probably wondered just how many different types of coffee beans there are and what makes...",
+   "img": "https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1200-630,f_auto,q_auto:best/newscms/2019_33/2203981/171026-better-coffee-boost-se-329p.jpg?auto=compress&cs=tinysrgb&dpr=1&w=300,",
+    "title": " 4 Different Types of Coffee Beans:",
+    "title1":" 1.  Arabica Coffee Beans (Coffea arabica)",
+    "text":" Arabica beans are by far the most popular type of coffee beans, making up about 60% of the world’s coffee. These tasty beans originated many centuries ago in the highlands of Ethiopia, and may even be the first coffee beans ever consumed! The name Arabica likely comes from the beans’ popularity in 7th-century Arabia (present-day Yemen). The downside of Arabica beans is that they’re harder to grow. Because of this, Arabica beans are pricier. All coffee beans grow in the so-called Bean Belt, an area between the Tropics of Cancer and Capricorn, in 50 countries around the world. But Arabica beans need extra shade, water, and high altitude to grow properly. These plants are more susceptible to plant diseases and must be grown at an altitude of at least 2,000 feet. They’re also smaller plants, measuring between 8 and 15 feet when fully grown. ",
+    "title2": "     2. Robusta Coffee Beans (Coffea caniphora) */",
+    "text2" : " The second most popular type of coffee bean is Robusta. This bean originated in sub-Saharan Africa and is now grown primarily in Africa and Indonesia. It’s also particularly popular in Vietnam and is often mixed into coffee blends. It’s a less expensive variety, making it a very budget-friendly choice for roasters. Robusta beans are larger and more rounded than the other bean varieties. These plants typically grow much larger than Arabica plants, measuring between 15 and 20 feet. Robusta beans are typically considered to be hardier because they can grow at lower altitudes and resist diseases. But recent research suggests that they don’t handle heat as well as was previously thought. What do they taste like? Many people think that Robusta coffee is harsher and more bitter. It often has a strong smell and a somewhat flat, almost burnt taste. Robusta beans also have significantly more caffeine than Arabica beans. ",
+    "title3" : "3. Liberica Coffee Beans (Coffea liberica)",
+    "text3" :"Native to central and western Africa – specifically Liberia, hence its name – Coffea liberica is prized for its piquant floral aroma and bold, smoky flavor profile. This hardy species is frequently mixed with other varieties to add body and complexity, but rarely receives any credit. Unheard of in Western civilization before the late 1800s, Liberica gained a foothold with Southeast Asian coffee producers after a fungal disease (“coffee rust”) wiped out much of the region’s Arabica crops. Growing from a much larger plant than Arabica or Robusta, most Liberica cherries tend to be irregular in shape and closer to Robusta in size and general appearance. It’s also tolerant of hot, humid climates and does well at low altitude. Now produced mainly in Indonesia, Malaysia, and the Philippines, the bean makes up roughly 2% of the world’s coffee supply. Over 95% percent of the Malaysian coffee yield is Liberica beans. However, it’s not commonly found in North American and European markets.",
+    "img": "https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1200-630,f_auto,q_auto:best/newscms/2019_33/2203981/171026-better-coffee-boost-se-329p.jpg?auto=compress&cs=tinysrgb&dpr=1&w=300,",
+    "title4" : "What Kind of Coffee Bean Should You Choose?",
+    "text4" :  "Now that you’re familiar with the major types of coffee beans, it’s time to start shopping! If you want the best possible flavor and don’t mind paying a little extra, look for coffee that’s 100% Arabica. Prefer extra caffeine, want to save money, and don’t mind a little bitterness? Go for a bag of Robusta or a blend of Arabica and Robusta. If you’d rather have something unusual, look for Liberica or Excelsa beans — but be prepared for a more extensive search! These rare coffee beans can be delicious but hard to find. As always, we recommend buying whole bean coffee and grinding it just before brewing. The extra effort is well worth it, as you’ll get significantly better flavor and freshness, no matter which type of coffee bean you choose. By the way, do you know where coffee beans come from? Also if drinking coffee causes acidity for you, you can opt for low acid coffee that is perfect for sensitive stomachs. Check out this guide from Sip Coffee House for some good options. ",
+    "title5" :"RELATED READS: ",
+    "text5" :"17 Smart Uses for Used Coffee Grounds,",
+    "text6" :"Which is our favorite Keurig brewer for office use?",
+    "text7" :"What are the 22 types of coffee drinks?",
+    "author" :"Author: Admin",
+    
+
+}
+
+export const Staffimags = {
+    "id": "01",
+    "img": "https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1200-630,f_auto,q_auto:best/newscms/2019_33/2203981/171026-better-coffee-boost-se-329p.jpg?auto=compress&cs=tinysrgb&dpr=1&w=300,",
+
+}
