@@ -9,8 +9,9 @@ import RelatedProducts from "../components/Products/RelatedProducts"
 
 
 
+
 const ProductDetail = (props) => {
-    console.log(props);
+
     return (
         <div >
             <ProductDetails products = {props.products}/>

@@ -1,11 +1,79 @@
 import styled from "styled-components"
 import { ColorTheme } from "../../ColorTheme"
 import { useParams } from "react-router-dom"
-import { useEffect,useState } from "react"
+import { useEffect, useState } from "react"
+import { useContext } from "react"
+import { Context } from "../../App"
 
+const ProductDetails = () => {
+    const data = useContext(Context)
+    const { productId } = useParams()
+    const products  = JSON.parse(data[0]);
+    const thisProduct = products.find(prod => prod.productid === productId)
+
+    return (
+        
+        <Container>
+            <Hr />
+            <ProductContainer>
+                {products ? <> <ImgContainer>
+                    <BigImg>
+                        <Img src={thisProduct.img} />
+                    </BigImg>
+                    <SmallImgs>
+                        <SmallImg style={{ width: "200px" }} src={thisProduct.img} />
+                        <SmallImg style={{ width: "200px" }} src={thisProduct.img} />
+                        <SmallImg style={{ width: "200px" }} src={thisProduct.img} />
+                        <SmallImg style={{ width: "200px" }} src={thisProduct.img} />
+                    </SmallImgs>
+                </ImgContainer>
+                    <ProductInfo>
+                        <TopContent>
+                            <Title>{thisProduct.name}</Title>
+                            <Desc> RARE COFFEE TO DATE</Desc>
+                            <PriceContainer>
+                                <Price> $24</Price>
+                                <Vr />
+                                <Volume> 500G </Volume>
+                            </PriceContainer>
+                            <Button>ADD TO CART</Button>
+                        </TopContent>
+                        <BottomContent>
+                            <SmallTitle> INGREDIENT DETAILS: </SmallTitle>
+                            <DetailsContainer>
+                                <Col>
+                                    <RowTitle> WASHING STATION:</RowTitle>
+                                    <RowContent> NANO GENJI </RowContent>
+                                    <RowTitle> ORIGIN:</RowTitle>
+                                    <RowContent> ETHIOPIA</RowContent>
+                                    <RowTitle> PROCESS:</RowTitle>
+                                    <RowContent> NANO GENJI </RowContent>
+                                    <RowTitle> VARIETAL: </RowTitle>
+                                    <RowContent> ETHIOPIA HEIRLOOM</RowContent>
+                                </ Col>
+                                < Col>
+                                    <RowTitle> ALTITUDE:</RowTitle>
+                                    <RowContent> 1,900 - 2,200 METERS </RowContent>
+                                    <RowTitle> TASTING NOTES:</RowTitle>
+                                    <RowContent> JUICY PEACH, KEY LIME PIE, BLACK CHERRY TART.</RowContent>
+                                    <RowTitle> ROAST LEVEL:</RowTitle>
+                                    <RowContent> LIGHT </RowContent>
+                                    <RowTitle> ROASTED</RowTitle>
+                                    <RowContent> WEEKDAYS</RowContent>
+                                </ Col>
+                            </DetailsContainer>
+                        </BottomContent>
+                    </ProductInfo></> : <h1>Loading</h1>}
+            </ProductContainer>
+        </Container>
+
+)
+}
+
+export default ProductDetails
 const Container = styled.div` 
     background-color: ${ColorTheme.bg1};
-    margin: 0 auto ;
+    margin: 100px 0px auto ;
     padding: 100px;
     
 `
@@ -119,74 +187,3 @@ const RowTitle = styled.div`
 const RowContent = styled.div`
     color: ${ColorTheme.brand1};
 `
-
-const ProductDetails = (props) => {
-    const [data, setData] = useState(props.data);
-
-    useEffect(() => {
-        setData(props.products);
-    }, [props]);
-
-    console.log(data);
-    const { productId } = useParams()
-    const thisProduct = props.products.find(prod => prod.productid === productId)
-    console.log("thisProduct " + thisProduct);
-    return (
-        <Container>
-            <Hr />
-            <ProductContainer>
-                {props.products ? <> <ImgContainer>
-                    <BigImg>
-                        <Img src={thisProduct.img} />
-                    </BigImg>
-                    <SmallImgs>
-                        <SmallImg style={{ width: "200px" }} src={thisProduct.img} />
-                        <SmallImg style={{ width: "200px" }} src={thisProduct.img} />
-                        <SmallImg style={{ width: "200px" }} src={thisProduct.img} />
-                        <SmallImg style={{ width: "200px" }} src={thisProduct.img} />
-                    </SmallImgs>
-                </ImgContainer>
-                    <ProductInfo>
-                        <TopContent>
-                            <Title>{thisProduct.name}</Title>
-                            <Desc> RARE COFFEE TO DATE</Desc>
-                            <PriceContainer>
-                                <Price> $24</Price>
-                                <Vr />
-                                <Volume> 500G </Volume>
-                            </PriceContainer>
-                            <Button>ADD TO CART</Button>
-                        </TopContent>
-                        <BottomContent>
-                            <SmallTitle> INGREDIENT DETAILS: </SmallTitle>
-                            <DetailsContainer>
-                                <Col>
-                                    <RowTitle> WASHING STATION:</RowTitle>
-                                    <RowContent> NANO GENJI </RowContent>
-                                    <RowTitle> ORIGIN:</RowTitle>
-                                    <RowContent> ETHIOPIA</RowContent>
-                                    <RowTitle> PROCESS:</RowTitle>
-                                    <RowContent> NANO GENJI </RowContent>
-                                    <RowTitle> VARIETAL: </RowTitle>
-                                    <RowContent> ETHIOPIA HEIRLOOM</RowContent>
-                                </ Col>
-                                < Col>
-                                    <RowTitle> ALTITUDE:</RowTitle>
-                                    <RowContent> 1,900 - 2,200 METERS </RowContent>
-                                    <RowTitle> TASTING NOTES:</RowTitle>
-                                    <RowContent> JUICY PEACH, KEY LIME PIE, BLACK CHERRY TART.</RowContent>
-                                    <RowTitle> ROAST LEVEL:</RowTitle>
-                                    <RowContent> LIGHT </RowContent>
-                                    <RowTitle> ROASTED</RowTitle>
-                                    <RowContent> WEEKDAYS</RowContent>
-                                </ Col>
-                            </DetailsContainer>
-                        </BottomContent>
-                    </ProductInfo></> : <h1>Loading</h1>}
-            </ProductContainer>
-        </Container>
-
-    )
-}
-
-export default ProductDetails

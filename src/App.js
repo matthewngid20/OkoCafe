@@ -19,33 +19,43 @@ import {
 
   Route,
   Routes,
- 
-} from "react-router-dom";
 
-import * as API from "./APIs/getRouter"
+} from "react-router-dom";
 import { useEffect } from 'react';
 import axios from "axios"
-import { useState } from 'react';
+import { useState, } from 'react';
+import { DataProvider, UseData } from './DataContext';
+import { createContext } from 'react';
+import { Button } from '@mui/material';
+
 const Container = styled.div`
  position: relative; 
  background-color: rgba(0,0,0,0.2); 
  background: linear-gradient(180deg, #211D1C 0%, rgba(33, 29, 28, 0) 49.29%); 
 `
-
+export const Context = createContext();
 function App() {
   const [stories, setStories] = useState()
-  const [products, setProducts] = useState()
+  const [products, setProducts] = useState(
+    localStorage.getItem('localProducts')
+  )
+  const [isLoading, setIsLoading] = useState(true)
+
+  //console.log(window.localStorage);
+  // console.log(window.sessionStorage);
+  //localStorage.clear()
+
   useEffect(() => {
     getStory()
     getProduct()
     return () => {
     }
   }, [])
-
   var getStory = () => {
     axios.get("http://localhost:3307/story").then((res, rej) => {
       if (res) {
         setStories(res.data)
+        setIsLoading(false)
       } else {
         console.log(rej);
         return
@@ -55,30 +65,35 @@ function App() {
   var getProduct = () => {
     axios.get("http://localhost:3307/products").then((res, rej) => {
       if (res) {
-        setProducts(res.data)
-        //console.log(res);
+        localStorage.setItem('localProducts', JSON.stringify(res.data))
+        setIsLoading(false)
       } else {
         console.log(rej);
         return
       }
     })
   }
+  //console.log(JSON.parse(localStorage.getItem('localProducts')));
   return (
-
-    <Container>
-      <NavBar />
-      <Routes>
-        <Route path="/" element={<Home stories={stories} products={products} />} />
-        <Route path="shop" element={<Shop products={products} />} />
-        <Route path="productdetail" element={<ProductDetail products={products} />} />
-        <Route path="productdetails/:productId" element={<ProductDetail products={products} />} />
-        <Route path="about" element={<AboutUs />} />
-        <Route path="contact" element={<Contact />} />
-        <Route path="blog" element={<Blog />} />
-        <Route path="shoppingCart" end element={<ShoppingCart />} />
-      </Routes>
-      <Footer />
-    </Container>
+    //<Context.Provider value={[products, stories]}>
+    <Context.Provider value={[products, stories]}>
+      <Container>
+        <NavBar />
+        {isLoading ? <h1> Loading data</h1> :
+          <Routes>
+            <Route path="/" element={<Home stories={stories} products={products} />} />
+            <Route path="shop" element={<Shop products={products} />} />
+            <Route path="productdetail" element={<ProductDetail products={products} />} />
+            <Route path="productdetails/:productId" element={<ProductDetail products={products} />} />
+            <Route path="about" element={<AboutUs />} />
+            <Route path="contact" element={<Contact />} />
+            <Route path="blog" element={<Blog />} />
+            <Route path="shoppingCart" end element={<ShoppingCart />} />
+          </Routes>
+          }
+        <Footer />
+      </Container>
+    </Context.Provider>
   );
 }
 
