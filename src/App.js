@@ -17,7 +17,8 @@ import Blog from './pages/Blog';
 import TeamMember from './components/TeamMember';
 import Contact from './pages/Contact';
 import ShoppingCart from './pages/ShoppingCart';
-import { useState, useEffect } from "react";
+import { useState,
+   useEffect } from "react";
 
 import {
 
