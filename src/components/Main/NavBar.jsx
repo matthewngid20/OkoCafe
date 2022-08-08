@@ -328,7 +328,7 @@ const NavBar = () => {
                             (<NavLink className="nav-bar-link" to={link.to} key={index}> {link.name} </NavLink>))
 
                     })}  </BottomCenter>)}
-            <button onClick={toggleNav} className="btn">DrownMenu</button>
+            <button onClick={toggleNav} className="btn">Menu</button>
   </Container>
 
 
