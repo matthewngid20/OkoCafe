@@ -17,6 +17,8 @@ import Blog from './pages/Blog';
 import TeamMember from './components/TeamMember';
 import Contact from './pages/Contact';
 import ShoppingCart from './pages/ShoppingCart';
+import { useState, useEffect } from "react";
+
 import {
 
   Route,
@@ -25,9 +27,9 @@ import {
 } from "react-router-dom";
 
 import * as API from "./APIs/getRouter"
-import { useEffect } from 'react';
+
 import axios from "axios"
-import { useState } from 'react';
+
 const Container = styled.div`
  position: relative; 
  background-color: rgba(0,0,0,0.2); 
@@ -37,6 +39,7 @@ const Container = styled.div`
 function App() {
   const [stories, setStories] = useState()
   const [products, setProducts] = useState()
+  
   useEffect(() => {
     getStory()
     getProduct()
@@ -66,10 +69,12 @@ function App() {
     })
   }
   return (
-
+   
     <Container>
       <NavBar />
+     
       <Routes>
+        
         <Route path="/" element={<Home stories={stories} products={products} />} />
         <Route path="shop" element={<Shop products={products} />} />
         <Route path="productdetail" element={<ProductDetail products={products} />} />
@@ -80,6 +85,7 @@ function App() {
         <Route path="shoppingCart" end element={<ShoppingCart />} />
         <Route path="blogdetail" element={<BlogDetail />} />
       </Routes>
+      
       <Footer />
     </Container>
   );
