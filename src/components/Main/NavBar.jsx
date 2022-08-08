@@ -42,18 +42,41 @@ const Container = styled.div`
     width: 100%;
     display: block;
     transition: top 0.3s;
+    
+   
+    
 `
 const TopCenter = styled.div`
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+   
+
+    @media screen and (max-width: 500px) {
+        
+        
+       
+        width: 100%;
+        display: flex;
+       justify-content: center;
+       align-items: center;
+       flex-direction: column;
+
+   
+      
+        
+
+       }
+    
 `
 
 const LanguageContainer = styled.div` 
     display: flex;
     justify-content: center;
     align-items: center;
+    
+    
 `
 const Language = styled.div`
     cursor: pointer;
@@ -86,12 +109,25 @@ const Center = styled.div`
     align-items: center;
     justify-content: center;
     //position:relative;
+    @media screen and (max-width: 960px) {
+   
+        
+    }
 `
 const LeftText = styled.div`
     font-weight: 600;
     color: #C8765A;
     margin-right: 20px;
     font-size: 20px;
+    @media screen and (max-width: 960px) {
+        
+        
+    font-weight: 300;
+    color: #C8765A;
+    margin-right: 20px;
+    font-size: 10px;
+    
+	}
 `
 const Brand = styled.div`// h1 For now
     width: 80px;
@@ -104,12 +140,35 @@ const Brand = styled.div`// h1 For now
     justify-content: center;
     align-items: center;
     text-align: center;
+    @media screen and (max-width: 960px) {
+        
+        width: 60px;
+        height: 40px;
+        border-radius:50%;
+        cursor: pointer;
+        border: 1px solid #C8765A;
+        color: #C8765A;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+		
+ }
 `
 const RightText = styled.div`
     font-size: 20px;
     font-weight: 600;
     color: #C8765A;
     margin-left: 20px;
+    @media screen and (max-width: 960px) {
+        
+        
+     font-weight: 400;
+    color: #C8765A;
+    margin-right: 20px;
+    font-size: 10px;
+   
+ }
 `
 const BottomCenter = styled.div`
     display: flex;
@@ -117,6 +176,17 @@ const BottomCenter = styled.div`
     align-items: center;
     justify-content: center;
     margin: 20px 0px;
+    @media screen and (max-width: 960px) {
+        
+        
+        flex-direction: column;
+        height:auto;
+        font-size: 20px;
+        text-transform: uppercase;
+        
+    }
+   
+    
 `
 // const Link = styled.a`
 //     justify-content: center;
@@ -172,6 +242,7 @@ const Right = styled.div`
     display: flex;
     justify-content: center;
     color: #eef;
+   
     
 `
 
@@ -192,12 +263,37 @@ const Right = styled.div`
 // `
 
 const NavBar = () => {
+
+    const [toggleMenu, setToggleMenu] = useState(false)
+
+    const toggleNav = () => {
+        setToggleMenu(!toggleMenu)
+    }
+    const [screenWidth, setScreenWidth] = useState(window.innerWidth)
+    useEffect(() => {
+
+        const changeWidth = () => {
+            setScreenWidth(window.innerWidth);
+        }
+
+        window.addEventListener('resize', changeWidth)
+
+        return () => {
+            window.removeEventListener('resize', changeWidth)
+        }
+
+    }, [])
     const links = [
+
         { name: "Home", to: "/" },
         { name: "Shop", to: "/shop" },
         { name: "About", to: "/about" },
         { name: "Blog", to: "/blog" },
         { name: "Contact", to: "/contact" },
+
+
+
+
 
     ]
     return (
@@ -224,15 +320,16 @@ const NavBar = () => {
                     <SearchBar />
                 </Right>
             </TopCenter>
-            <BottomCenter>
-                {links.map((link, index) => {
-                    return (
-                        (<NavLink className="nav-bar-link" to={link.to} key={index}> {link.name} </NavLink>))
-                })}
+            {(toggleMenu || screenWidth > 500) &&
+                (<BottomCenter>
 
-            </BottomCenter>
+                    {links.map((link, index) => {
+                        return (
+                            (<NavLink className="nav-bar-link" to={link.to} key={index}> {link.name} </NavLink>))
 
-        </Container>
+                    })}  </BottomCenter>)}
+            <button onClick={toggleNav} className="btn">DrownMenu</button>
+  </Container>
 
 
     )
