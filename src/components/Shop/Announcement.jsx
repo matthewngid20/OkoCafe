@@ -7,12 +7,24 @@ const Container = styled.div`
     max-width: 100vw;
     height: 100%;
     background-color: ${ColorTheme.brandC};
+    @media screen and (max-width: 960px) {
+        
+        
+        height: 70%;
+        max-width: 100vw;
+         
+      
+       
+        
+        }
+}
     `
 const Wrapper = styled.div`
     height: 400px;
     display: flex;
     contain:size;
     object-fit: contain;
+    
 `
 const InfoContainer = styled.div` 
     flex: 1;
@@ -21,13 +33,36 @@ const InfoContainer = styled.div`
     text-align: center;
     font-family: 'Allerta Stencil';
     color: ${ColorTheme.brand1}
+    @media screen and (max-width: 960px) {
+        
+        
+        height:20%;
+       
+        
+            
+           
+           
+       }
+    
 `
 const Title = styled.div` 
     font-size: 60px;
     padding: 10px;
+    @media screen and (max-width: 960px) {
+        
+  
+
+   font-size: 55px;
+   
+    }
 `
 const SaleTitle = styled.div`
     font-size: 130px;
+    @media screen and (max-width: 960px) {
+        
+        font-size: 50px;
+       
+     }
     
 `
 const SmallText = styled.span`
@@ -38,23 +73,47 @@ const ButtonWrapper = styled.div`
     justify-content: center;
     align-items: center;
     width: inherit;
+    
 `
 const Button = styled.button`
     padding: 15px 30px;
     margin-right:20px;
     cursor: pointer;
-    background-color: ${props => props.color === "left" ? "#D3987A": "#873920"};
+    background-color: ${props => props.color === "left" ? "#D3987A" : "#873920"};
     border-radius: 5px;
+    @media screen and (max-width: 960px) {
+        
+        padding: 15px 30px;
+        margin-right:20px;
+        cursor: pointer;
+        background-color: ${props => props.color === "left" ? "#D3987A" : "#873920"};
+        border-radius: 5px;
+            
+           
+           
+       }
 `
 const ImgContainer = styled.div` 
     flex: 2;
     display: flex;
-    clip-path: polygon(38% 0%,100% 0%,100% 100%,5% 100%);   
+    clip-path: polygon(38% 0%,100% 0%,100% 100%,5% 100%); 
+    
+    
 `
 const Image = styled.img`
     width:100%;
     height:100%;
     object-fit: fill; 
+    
+    @media screen and (max-width: 960px) {
+        
+        width:100%;
+        height:100%;
+     object-fit: fill; 
+        
+
+           
+       }
 `
 
 const Announcement = () => {
@@ -70,8 +129,8 @@ const Announcement = () => {
                         <SmallText> OFF</SmallText>
                     </SaleTitle>
                     <ButtonWrapper>
-                        <Button color = "left"> VIEW MORE  </Button>
-                        <Button color = "right"> BUY NOW    </Button>
+                        <Button color="left"> VIEW MORE  </Button>
+                        <Button color="right"> BUY NOW    </Button>
                     </ButtonWrapper>
                 </InfoContainer>
                 <ImgContainer>
