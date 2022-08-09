@@ -7,8 +7,9 @@ import { ColorTheme } from "../../ColorTheme";
 import * as React from 'react';
 
 
-import { 
-    NavLink} from "react-router-dom";
+import {
+    NavLink
+} from "react-router-dom";
 const Container = styled.div`
     background-color:${ColorTheme.bg1};
     opacity: 0.95;
@@ -19,19 +20,40 @@ const Container = styled.div`
     padding-top: 1em;
     display: flex;
     flex-direction: column;
+    @media screen and (max-width: 960px) {
+         flex-direction: column;
+
+       width: 100%;
+       
+
+         }
+
 `
 const TopFooter = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
     //padding: 1rem 0;
+    
+    @media screen and (max-width: 960px) {
+    
+      
+        flex-direction: column;
+        
+        padding:-5em;
+        font-size:10px;
+
+        
+       }
+    
+    
 `
 const LogoContainer = styled.div`
     flex: 1;
     display: flex;
     align-items: center;
     justify-content: center;
-    
+   
 `
 const Logo = styled.div`
     width: 120px;
@@ -44,12 +66,27 @@ const Logo = styled.div`
     justify-content: center;
     align-items: center;
     text-align: center;
-`
+    @media screen and (max-width: 960px) {
+    
+        height: 20px;
+       
+        
+      
+
+       }
+    `
 const Links = styled.div`
     flex: 2;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    @media screen and (max-width: 960px) {
+    
+      
+        flex-direction: column;
+        
+    }
+    
 `
 const Link = styled.a`
     color: ${ColorTheme.brand2};
@@ -64,6 +101,10 @@ const SearchBox = styled.div`
     margin-right:50px;
     align-items: center;
     //border: 1px black solid;
+
+    
+   
+   
 `
 const Input = styled.input`
     border: 1px solid #D3987A;
@@ -75,6 +116,7 @@ const Button = styled.button`
     background-color: ${ColorTheme.brand2};
     color: white;
     cursor: pointer;
+   
 `
 const Hr = styled.hr` 
     border: 3px solid ${ColorTheme.brand2}; 
@@ -88,6 +130,17 @@ const BottomFooter = styled.div`
     align-items: center;
     background-color:${ColorTheme.bg1};
     padding: 1rem 0;
+   
+    @media screen and (max-width: 960px) {
+        
+        
+        flex-direction: column;
+		width: 100%;
+        font-size: 15px;
+      
+        
+    }
+
 `
 
 const LanguageContainer = styled.div` 
@@ -101,7 +154,7 @@ const Language = styled.div`
     cursor: pointer;
     margin: 0px 20px;
     color: ${ColorTheme.brand1};  
-    opacity: ${props => props.langague === "en"? "1": "0.7"};
+    opacity: ${props => props.langague === "en" ? "1" : "0.7"};
 `
 const SocialContainer = styled.div` 
     flex: 2;
@@ -143,7 +196,7 @@ const Footer = () => {
                     <NavLink to="/shop"> Coffee Shop </NavLink>
                     <NavLink to="/about"> About Us</NavLink>
                     <NavLink to="/contact"> Contact</NavLink>
-                    
+
                 </Links>
                 <SearchBox>
                     <Input placeholder="Your email" />
@@ -153,8 +206,8 @@ const Footer = () => {
             <Hr />
             <BottomFooter>
                 <LanguageContainer>
-                    <Language langague = "en"> EN  </Language>
-                    <Language langague = "vn"> VN  </Language>
+                    <Language langague="en"> EN  </Language>
+                    <Language langague="vn"> VN  </Language>
                 </LanguageContainer>
                 <SocialContainer>
                     <Icon color="3B5998"><FacebookIcon style={{ fontSize: 22, color: "white" }} /> </Icon>

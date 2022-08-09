@@ -14,6 +14,13 @@ const Video = styled.video`
     opacity: 0.5;
     display: block;
     margin: 0 auto;
+    @media screen and (max-width: 960px) {
+        
+        
+        height: 100%; 
+	 
+       
+    }
 `
 const VideoContainer = styled.div` 
     position:absolute;
@@ -22,6 +29,7 @@ const VideoContainer = styled.div`
     margin: auto;
     z-index:100;
     overflow: hidden;
+   
 `
 const VideoBG = ({width, height}) => {
     return (

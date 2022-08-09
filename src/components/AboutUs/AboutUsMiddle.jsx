@@ -6,15 +6,25 @@ const Container = styled.div`
     display: flex; 
     justify-content: center;
     align-items: center; 
+    
+    
 `
 const Wrapper = styled.div` 
     display: flex;   
     flex-direction: column;
-    padding: 2rem 7rem;    
+    padding: 2rem 7rem;  
+   
+    
 `
 const Row = styled.div` 
    display: flex;
    flex-direction: ${props => props.type === "firstRow" && "row-reverse"};
+   @media screen and (max-width: 500px) {
+        
+        
+    flex-direction: column;
+    
+}
 `
 const Col = styled.div`
     display: flex;   
@@ -30,6 +40,8 @@ const Col = styled.div`
 
 const ImageContainer = styled.div` 
     width: 100%;
+    
+    
 `
 const Img = styled.img`
     object-fit: contain;
@@ -40,12 +52,14 @@ const Title = styled.div`
     font-size: 40px;
     color: ${ColorTheme.brandC};
     padding :2rem;
+   
+
 `
 const AboutUsMiddle = () => {
     return (
         <Container>
             <Wrapper>
-                <Row type = "firstRow">
+                <Row type="firstRow">
                     <Col type="text">
                         <Title> Our Mission</Title>
                         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum pariatur dignissimos, quod perspiciatis, illo minus rem sequi optio consequuntur culpa ipsa ex repellendus quasi explicabo dolorum, ipsam dicta! Quo, ex? Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil quibusdam et, est dolorum atque suscipit in similique eos repudiandae necessitatibus quisquam magni! Veritatis officia porro fuga, ipsam voluptates soluta. Minus?

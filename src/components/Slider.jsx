@@ -47,12 +47,29 @@ const Wrapper = styled.div`
     transform: translateX(${props => props.slideIndex * -100}vw);
     /* overflow-y: auto;
     flex-direction: column; */
+    @media screen and (max-width: 1050px) {
+        
+   
+      
+        padding:5em;
+            
+        }
 `
 const Slide = styled.div` 
     display:flex;
     align-items: center;
     width: 100vw;
     height: 100vh;
+    @media screen and (max-width: 1050px) {
+        
+   
+    font-size:20px;
+    display:flex;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+        
+    }
     
 `
 const LeftColumn = styled.div` 
