@@ -1,7 +1,7 @@
 .nav-bar-link {
     color: #C8765A;
     margin: 0 10px;
-
+    
 
 }
 
@@ -33,14 +33,14 @@ a {
         text-align: center;
         margin-right: 0px;
         padding: 20px 0;
-        
+        color:aqua;
         
     }
 
     .nav-bar-link:nth-child(1) {
 
         
-
+        border-top: 1px solid rgba(255, 255, 255, 0.555);
         margin-top: 50px;
 
     }
@@ -55,7 +55,8 @@ a {
         display: block;
         left: 10px;
         margin: 10px 0px;
-
+       color: #C8765A;
+        
 
     }
 }
