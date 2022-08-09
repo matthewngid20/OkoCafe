@@ -9,13 +9,14 @@ import SearchIcon from '@mui/icons-material/Search';
 import { ColorTheme } from "../../ColorTheme"
 import SearchBar from "../SearchBar";
 import Cart from "../CartComponents/Cart";
+import { FiMenu } from "react-icons/fi";
 
 import {
     NavLink
 } from "react-router-dom";
 
 
-const Left = styled.div`
+const Left = styled.div`s
     flex: 1;
     display: flex;
     align-items: center;
@@ -176,13 +177,11 @@ const BottomCenter = styled.div`
     align-items: center;
     justify-content: center;
     margin: 20px 0px;
-    @media screen and (max-width: 960px) {
-        
+    @media screen and (max-width: 500px) {
         
         flex-direction: column;
-        height:auto;
         font-size: 20px;
-        text-transform: uppercase;
+       
         
     }
    
@@ -263,8 +262,11 @@ const Right = styled.div`
 // `
 
 const NavBar = () => {
+    
 
-    const [toggleMenu, setToggleMenu] = useState(false)
+    const [sideNav, toogleSideNav] = useState(false);
+    
+   const [toggleMenu, setToggleMenu] = useState(false)
 
     const toggleNav = () => {
         setToggleMenu(!toggleMenu)
@@ -329,6 +331,8 @@ const NavBar = () => {
 
                     })}  </BottomCenter>)}
             <button onClick={toggleNav} className="btn">Menu</button>
+            
+           
   </Container>
 
 
