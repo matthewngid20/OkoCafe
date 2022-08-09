@@ -10,6 +10,12 @@ const Container = styled.div`
     background-position: center center;
     background-size: cover;
     background-attachment: fixed;
+    @media screen and (max-width: 960px) {
+    padding: 6rem;
+    
+        
+        
+   }
 `
 
 const AboutUsTop = () => {
