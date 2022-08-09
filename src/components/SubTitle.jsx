@@ -9,6 +9,15 @@ const Container = styled.div`
     justify-content: ${props => props.position};
     font-size:17px;
     word-spacing: 3px;
+    @media screen and (max-width: 960px) {
+        
+    
+    
+         
+        font-size:15px;
+      
+        
+    }
 `
 const Content = styled.div`
     max-width: ${props => props.width};

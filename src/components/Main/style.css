@@ -1,20 +1,8 @@
-
-
 .nav-bar-link {
     color: #C8765A;
     margin: 0 10px;
-   
-}
-@media screen and (max-width: 650px) {
-    .nav-bar-link h1 {
-        font-size: 48px;
-        line-height: 60px;
-    }
 
-    .nav-bar-link p {
-        font-size: 16px;
-        line-height: 24px;
-    }
+
 }
 
 .active {
@@ -25,4 +13,49 @@
 a {
     /* color: green; */
     text-decoration: none;
+}
+
+
+.btn {
+    /*display: none; */
+    position: absolute;
+    left: 1px;
+    top: 7px;
+    padding: 5px;
+    color: #000;
+    font-size: 18px;
+}
+
+@media screen and (max-width: 500px) {
+    .nav-bar-link {
+        width: 100%;
+        border-top: 1px red rgba(255, 255, 255, 0.555);
+        text-align: center;
+        margin-right: 0px;
+        padding: 20px 0;
+        
+        
+    }
+
+    .nav-bar-link:nth-child(1) {
+
+        
+
+        margin-top: 50px;
+
+    }
+
+    .active {
+        background: #DEB887;
+        text-decoration: none;
+        transition: all 0.5s ease;
+    }
+    .btn {
+
+        display: block;
+        left: 10px;
+        margin: 10px 0px;
+
+
+    }
 }
