@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom"
 import { useEffect, useState } from "react"
 import { useContext } from "react"
 import { Context } from "../../App"
+import { ThirtyFpsSelect, WindowRounded } from "@mui/icons-material"
 
 const ProductDetails = () => {
     const data = useContext(Context)
@@ -11,10 +12,34 @@ const ProductDetails = () => {
     const products  = JSON.parse(data[0]);
     const thisProduct = products.find(prod => prod.productid === productId)
 
+    //Add item to cart 
     const addItemToCart = () => {
-        
+        let addedProducts = []
+        if(localStorage.getItem('cartItems')){
+            addedProducts = JSON.parse(localStorage.getItem('cartItems'))
+        }
+        addedProducts.push(thisProduct)
+        window.localStorage.setItem('cartItems', JSON.stringify(addedProducts))
+        //console.log(JSON.parse(localStorage.getItem('cartItems')));
+        window.dispatchEvent(new Event("productsEvent"));
+        window.addEventListener('productsEvent',console.log(JSON.parse(localStorage.getItem('cartItems'))))
+        alert("added item to cart")
+        // window.localStorage.clear()
+        // console.log(JSON.parse(localStorage.getItem('cartItems')))
     }
-
+    //Remove item from carts
+    const removeCartItems = () => {
+        
+        let addedItems = JSON.parse(localStorage.getItem('cartItems'))
+        if(addedItems){
+            let itemsAfterRemoved = addedItems.filter(item => item.productid !== item.productid)
+            localStorage.setItem('cartItems', itemsAfterRemoved)
+        }
+        else{
+            alert("No more item to clear")
+        }
+    }
+    
     return (
         
         <Container>
@@ -34,20 +59,20 @@ const ProductDetails = () => {
                     <ProductInfo>
                         <TopContent>
                             <Title>{thisProduct.name}</Title>
-                            <Desc> RARE COFFEE TO DATE</Desc>
+                            <Desc> {thisProduct.desc}</Desc>
                             <PriceContainer>
-                                <Price> $24</Price>
+                                <Price> ${thisProduct.price}</Price>
                                 <Vr />
-                                <Volume> 500G </Volume>
+                                <Volume> {thisProduct.volume}G </Volume>
                             </PriceContainer>
-                            <Button>ADD TO CART</Button>
+                            <Button onClick={ () => addItemToCart()}>ADD TO CART</Button>
                         </TopContent>
                         <BottomContent>
                             <SmallTitle> INGREDIENT DETAILS: </SmallTitle>
                             <DetailsContainer>
                                 <Col>
-                                    <RowTitle> WASHING STATION:</RowTitle>
-                                    <RowContent> NANO GENJI </RowContent>
+                                    <RowTitle> WASHING STATION: </RowTitle>
+                                    <RowContent> {thisProduct.station} </RowContent>
                                     <RowTitle> ORIGIN:</RowTitle>
                                     <RowContent> ETHIOPIA</RowContent>
                                     <RowTitle> PROCESS:</RowTitle>
