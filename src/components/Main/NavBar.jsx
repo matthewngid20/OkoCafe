@@ -9,14 +9,13 @@ import SearchIcon from '@mui/icons-material/Search';
 import { ColorTheme } from "../../ColorTheme"
 import SearchBar from "../SearchBar";
 import Cart from "../CartComponents/Cart";
-import { FiMenu } from "react-icons/fi";
+
 
 import {
     NavLink
 } from "react-router-dom";
 
-
-const Left = styled.div`s
+const Left = styled.div`
     flex: 1;
     display: flex;
     align-items: center;
@@ -36,25 +35,20 @@ const Container = styled.div`
     top: 0;
     padding-top: 1em;
     z-index: 10000;
-    font-size: 1vw;
+
     background-color: #333;
     position: fixed;
     top: -50px;
     width: 100%;
     display: block;
     transition: top 0.3s;
-    
-   
-    
 `
 const TopCenter = styled.div`
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-   
-
-    @media screen and (max-width: 500px) {
+    @media screen and (max-width: 960px) {
         
         
        
@@ -69,15 +63,12 @@ const TopCenter = styled.div`
         
 
        }
-    
 `
 
 const LanguageContainer = styled.div` 
     display: flex;
     justify-content: center;
     align-items: center;
-    
-    
 `
 const Language = styled.div`
     cursor: pointer;
@@ -110,10 +101,6 @@ const Center = styled.div`
     align-items: center;
     justify-content: center;
     //position:relative;
-    @media screen and (max-width: 960px) {
-   
-        
-    }
 `
 const LeftText = styled.div`
     font-weight: 600;
@@ -123,12 +110,12 @@ const LeftText = styled.div`
     @media screen and (max-width: 960px) {
         
         
-    font-weight: 300;
-    color: #C8765A;
-    margin-right: 20px;
-    font-size: 10px;
-    
-	}
+        font-weight: 300;
+        color: #C8765A;
+        margin-right: 20px;
+        font-size: 10px;
+        
+        }
 `
 const Brand = styled.div`// h1 For now
     width: 80px;
@@ -161,15 +148,6 @@ const RightText = styled.div`
     font-weight: 600;
     color: #C8765A;
     margin-left: 20px;
-    @media screen and (max-width: 960px) {
-        
-        
-     font-weight: 400;
-    color: #C8765A;
-    margin-right: 20px;
-    font-size: 10px;
-   
- }
 `
 const BottomCenter = styled.div`
     display: flex;
@@ -184,67 +162,67 @@ const BottomCenter = styled.div`
        
         
     }
-   
+    
+
     
 `
-// const Link = styled.a`
-//     justify-content: center;
-//     font-weight: 200;
-//     font-size: 16px;
-//     cursor: pointer;
-//     color: #C8765A;
-//     padding: 0px 20px;
-//     /* &:hover {
-//         transform: scaleY(1.4);
-//         transform: scaleX(1.4);
-//         color: white;
-//         transition: all 1s cubic-bezier(1, 2, 3, 4);
-//         border: 0.5px solid ${ColorTheme.brand2};
-//         padding: 5px;
-//         border-radius: 3px;
-//     } */
-//     /* &:before {
-//         content: '';
-//         position: absolute;
-//         top: 0;
-//         left: 0;
-//         width: 100%;
-//         height: 100%;
-//         z-index: 1;
-//         transition: all 0.5s;
-//         border: 1px solid rgba(255,255,255,0.2);
-//         background-color: rgba(255,255,255,0.1);
-//     }
-//     &:after {
-//         content: '';
-//         position: absolute;
-//         top: 0;
-//         left: 0;
-//         width: 100%;
-//         height: 100%;
-//         z-index: 1;
-//         transition: all 0.5s;
-//         border: 1px solid rgba(255,255,255,0.2);
-//         background-color: rgba(255,255,255,0.1);
-//     }
-//     &:hover::before{
-//         transform: rotate(-45deg);
-//         background-color: rgba(255,255,255,0);
-//     }
-//     &:hover::after{
-//         transform: rotate(45deg);
-//         background-color: rgba(255,255,255,0);
-//     } */
-// `
+//const Link = styled.a`
+
+//justify-content: center;
+  //  font-weight: 200;
+  //  font-size: 16px;
+  //  cursor: pointer;
+   // color: #C8765A;
+   // padding: 0px 20px;
+    /* &:hover {
+  //      transform: scaleY(1.4);
+  //     transform: scaleX(1.4);
+    //    color: white;
+       // transition: all 1s cubic-bezier(1, 2, 3, 4);
+      //  border: 0.5px solid ${ColorTheme.brand2};
+      //  padding: 5px;
+      //  border-radius: 3px;
+    } */
+    /* &:before {
+      //  content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        transition: all 0.5s;
+        border: 1px solid rgba(255,255,255,0.2);
+        background-color: rgba(255,255,255,0.1);
+    }
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        transition: all 0.5s;
+        border: 1px solid rgba(255,255,255,0.2);
+        background-color: rgba(255,255,255,0.1);
+    }
+    &:hover::before{
+        transform: rotate(-45deg);
+        background-color: rgba(255,255,255,0);
+    }
+    &:hover::after{
+        transform: rotate(45deg);
+        background-color: rgba(255,255,255,0);
+  //  } */
+//`
 const Right = styled.div`
     flex: 1;
     display: flex;
     justify-content: center;
     color: #eef;
-   
     
 `
-
 // const CartContainer = styled.div`
 //     display: flex;
 //     align-items: center;
@@ -264,7 +242,7 @@ const Right = styled.div`
 const NavBar = () => {
     
 
-    const [sideNav, toogleSideNav] = useState(false);
+    
     
    const [toggleMenu, setToggleMenu] = useState(false)
 
@@ -285,19 +263,17 @@ const NavBar = () => {
         }
 
     }, [])
-    const links = [
+
+     const links = [
 
         { name: "Home", to: "/" },
         { name: "Shop", to: "/shop" },
         { name: "About", to: "/about" },
         { name: "Blog", to: "/blog" },
         { name: "Contact", to: "/contact" },
+       
 
-
-
-
-
-    ]
+ ]
     return (
         <Container>
             <TopCenter>
@@ -329,7 +305,9 @@ const NavBar = () => {
                         return (
                             (<NavLink className="nav-bar-link" to={link.to} key={index}> {link.name} </NavLink>))
 
-                    })}  </BottomCenter>)}
+                    })}  
+                    </BottomCenter>
+            )}
             <button onClick={toggleNav} className="btn">Menu</button>
             
            
