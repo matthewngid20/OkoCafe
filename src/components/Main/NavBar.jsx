@@ -9,7 +9,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import { ColorTheme } from "../../ColorTheme"
 import SearchBar from "../SearchBar";
 import Cart from "../CartComponents/Cart";
-
+import MenuIcon from '@mui/icons-material/Menu';
 
 import {
     NavLink
@@ -268,7 +268,7 @@ const NavBar = () => {
 
         { name: "Home", to: "/" },
         { name: "Shop", to: "/shop" },
-        { name: "About", to: "/about" },
+        { name: "About", to: "/aboutUs" },
         { name: "Blog", to: "/blog" },
         { name: "Contact", to: "/contact" },
        
@@ -308,7 +308,8 @@ const NavBar = () => {
                     })}  
                     </BottomCenter>
             )}
-            <button onClick={toggleNav} className="btn">Menu</button>
+            <button onClick={toggleNav} className="btn"> <Icon color="white" > <MenuIcon style={{ fontSize: 30 }} /></Icon></button>
+           
             
            
   </Container>
