@@ -26,9 +26,7 @@ a {
     font-size: 18px;
 }
 
-.mobile-menu-icon{
-display: none;
-}
+
 
 @media screen and (max-width: 500px) {
     .nav-bar-link {
@@ -60,10 +58,11 @@ display: none;
     .btn {
 
         display: block;
-        left: 10px;
-        margin: 10px 0px;
-       color: #C8765A;
         
+        margin: 10px 0px;
+        margin-left: 10px;
+        
+        background-color:#F8E6DB;
 
     }
    
