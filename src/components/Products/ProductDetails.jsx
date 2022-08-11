@@ -4,44 +4,32 @@ import { useParams } from "react-router-dom"
 import { useEffect, useState } from "react"
 import { useContext } from "react"
 import { Context } from "../../App"
-import { ThirtyFpsSelect, WindowRounded } from "@mui/icons-material"
 
 const ProductDetails = () => {
     const data = useContext(Context)
     const { productId } = useParams()
-    const products  = JSON.parse(data[0]);
+    const products = JSON.parse(data[0]);
     const thisProduct = products.find(prod => prod.productid === productId)
 
-    //Add item to cart 
-    const addItemToCart = () => {
+    useEffect(() => {
+
+    }, [JSON.parse(localStorage.getItem('cart'))])
+    const addToCart = () => {
         let addedProducts = []
-        if(localStorage.getItem('cartItems')){
-            addedProducts = JSON.parse(localStorage.getItem('cartItems'))
+        if (localStorage.getItem('cart')) {
+            addedProducts = JSON.parse(localStorage.getItem('cart'))
         }
         addedProducts.push(thisProduct)
-        window.localStorage.setItem('cartItems', JSON.stringify(addedProducts))
-        //console.log(JSON.parse(localStorage.getItem('cartItems')));
-        window.dispatchEvent(new Event("productsEvent"));
-        window.addEventListener('productsEvent',console.log(JSON.parse(localStorage.getItem('cartItems'))))
+        window.localStorage.setItem('cart', JSON.stringify(addedProducts))
+
+        console.log(JSON.parse(localStorage.getItem('cart')));
         alert("added item to cart")
-        // window.localStorage.clear()
+        window.location.reload()
         // console.log(JSON.parse(localStorage.getItem('cartItems')))
     }
-    //Remove item from carts
-    const removeCartItems = () => {
-        
-        let addedItems = JSON.parse(localStorage.getItem('cartItems'))
-        if(addedItems){
-            let itemsAfterRemoved = addedItems.filter(item => item.productid !== item.productid)
-            localStorage.setItem('cartItems', itemsAfterRemoved)
-        }
-        else{
-            alert("No more item to clear")
-        }
-    }
-    
+
     return (
-        
+
         <Container>
             <Hr />
             <ProductContainer>
@@ -65,7 +53,7 @@ const ProductDetails = () => {
                                 <Vr />
                                 <Volume> {thisProduct.volume}G </Volume>
                             </PriceContainer>
-                            <Button onClick={ () => addItemToCart()}>ADD TO CART</Button>
+                            <Button onClick={() => addToCart()} >ADD TO CART</Button>
                         </TopContent>
                         <BottomContent>
                             <SmallTitle> INGREDIENT DETAILS: </SmallTitle>
@@ -96,7 +84,7 @@ const ProductDetails = () => {
             </ProductContainer>
         </Container>
 
-)
+    )
 }
 
 export default ProductDetails

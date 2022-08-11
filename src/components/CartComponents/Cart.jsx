@@ -3,54 +3,47 @@ import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import { ColorTheme } from "../../ColorTheme";
 import CartProduct from "./CartProduct";
 import { useEffect, useState } from "react";
+import { Route, Routes } from "react-router-dom";
+import { Link } from "react-router-dom";
+
 
 
 
 const Cart = () => {
-    const [cartItems, setCartItems] = useState({});
-
+    const [cartItems, setCartItems] = useState();
     useEffect(() => {
-        if (typeof {cartItems} == 'undefined') {
-            localStorage.getItem('cartItems')
-            setCartItems(JSON.parse(localStorage.getItem('cartItems')))
-
-            // console.log(cartItems.length);
-            console.log({cartItems})
-            
-
-        }else{
-            console.log();
-            console.log({cartItems})
-        }
-
-        return () => {
-
-        }
-    }, [])
+        setCartItems(localStorage.getItem('cart'))
+        console.log(JSON.parse(localStorage.getItem('cart')));
+    }, [localStorage.getItem('cart')])
 
     return (
         <Container >
             <CartDetails>
                 <ShoppingCartOutlinedIcon htmlColor={CartColor} />
-                {(typeof { cartItems  }!== 'undefined' )? (<CartItem >
-                    defined
-                </CartItem>) : <h1> undefined</h1>}
+                {cartItems ? JSON.parse(cartItems).length : 0}
             </CartDetails>
             <DropDown>
                 <ItemContainer>
                     <Decoration></Decoration>
                     <Items>
                         <ProductContainer>
-                            <CartProduct
-                                imgSize="70px"
-                                url="https://images.squarespace-cdn.com/content/v1/59a44aa2e6f2e1db4cbd5252/1627495205537-3NJGJY0UORTORXE1RVD3/mj-01.png?format=750w"
-                                coffeeName="Super X"
-                                description="Super x arabica"
-                                price="50"
-                            />
+
+                            {cartItems ? JSON.parse(cartItems).map((item, index) => {
+                                return (<CartProduct key={index}
+                                    imgSize="70px"
+                                    url={item.img}
+                                    coffeeName={item.name}
+                                    description={item.desc}
+                                    price={item.price}
+                                />)
+                            }) : null}
                         </ProductContainer>
                         <ButtonContainer>
-                            <Button> VIEW DETAIL</Button>
+                            <Link to="/ShoppingCart">
+                                <Button >
+                                    VIEW DETAIL
+                                </Button>
+                            </Link>
                         </ButtonContainer>
                     </Items>
                 </ItemContainer>

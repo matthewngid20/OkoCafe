@@ -5,6 +5,38 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import { ColorTheme } from "../../ColorTheme";
 import { Link } from "react-router-dom";
 
+
+const Product = (props) => {
+    return (
+        //<h1>Shop</h1>
+        <Container>
+            {props ? <> <Circle />
+                <Image src={props.product.img} />
+                <Info>
+                    <Link to={`/productdetails/${props.product.productid}`}> <Icon>
+                        <ShoppingCartOutlinedIcon /></Icon>
+                    </Link>
+                    <Icon> <SearchIcon /></Icon>
+                    <Icon> <FavoriteBorderIcon /> </Icon>
+                </Info>
+                <ProductDetail>
+                    <ProductTitle>
+                        {props.product.name}
+                    </ProductTitle>
+                    <Desc>{props.product.desc}</Desc>
+                    <PriceContainer>
+                        <Price>
+                            ${props.product.price}
+                        </Price>
+                        <Volume>
+                            {props.product.volume}G
+                        </Volume>
+                    </PriceContainer>
+                </ProductDetail></> : <h1>loading</h1>}
+        </Container>
+    )
+}
+
 const Info = styled.div`
     opacity: 0;
     width: 100%;
@@ -90,35 +122,5 @@ const Price = styled.div`
 `
 const Volume = styled.div`
 `
-
-const Product = (props) => {
-    return (
-        //<h1>Shop</h1>
-        <Container>
-            {props ? <> <Circle />
-                <Image src={props.product.img} />
-                <Info>
-                    <Link to ={`/productdetails/${props.product.productid}`}> <Icon> <ShoppingCartOutlinedIcon /></Icon></Link>
-                    <Icon> <SearchIcon /></Icon>
-                    <Icon> <FavoriteBorderIcon /> </Icon>
-                </Info>
-                <ProductDetail>
-                    <ProductTitle>
-                    {props.product.name}
-                    </ProductTitle>
-                    <Desc>{props.product.desc}</Desc>
-                    <PriceContainer>
-                        <Price>
-                            ${props.product.price}
-                        </Price>
-                        <Volume>
-                            {props.product.volume}G
-                        </Volume>
-                    </PriceContainer>
-                </ProductDetail></> : <h1>loading</h1>}
-        </Container>
-    )
-}
-
 
 export default Product

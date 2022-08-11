@@ -5,8 +5,56 @@ import ArrowBackIosOutlinedIcon from '@mui/icons-material/ArrowBackIosOutlined';
 import { useEffect, useState } from "react";
 import Stories from "./Stories";
 import { ColorTheme } from "../ColorTheme";
+import { useContext } from "react";
+import { Context } from "../App";
 
 
+
+
+const Slider = () => {
+    const contextData = useContext(Context)
+    const stories = JSON.parse(contextData[1])
+    useEffect(() => {
+
+
+        return () => {
+
+        }
+    }, [])
+
+    const [slideIndex, setSlideIndex] = useState(0);
+    const handleClick = (direction) => {
+        if (direction === "left") {
+            setSlideIndex(slideIndex > 0 ? slideIndex - 1 : 3);
+        } else {
+            setSlideIndex(slideIndex < 3 ? slideIndex + 1 : 0);
+        };
+    };
+    return (
+        <Container>
+            <Arrow direction="left" onClick={() => handleClick("left")}><ArrowBackIosOutlinedIcon /></Arrow>
+            <Intro>
+                <Stories />
+            </Intro>
+            <Wrapper slideIndex={slideIndex}>
+                {stories ? stories.map((item, index) => (
+                    <Slide key={index}>
+                        <LeftColumn >
+                            <StoryNumber>{item.storyid}</StoryNumber>
+                            <Title>{item.title}</Title>
+                            <Desc> {item.desc}</Desc>
+                            <Button onClick={() => handleClick()}> View more </Button>
+                        </LeftColumn>
+                        <ImgContainer>
+                            <Image src={item.imageurl} />
+                        </ImgContainer>
+                    </Slide>)) : <h1>Loading</h1>}
+
+            </Wrapper>
+            <Arrow direction="right" onClick={() => handleClick("right")}><ArrowForwardIosOutlinedIcon style={{ backgroundColor: "white" }} /></Arrow>
+        </Container>
+    )
+}
 const Container = styled.div` 
     width: 100%;
     height: 100vh;
@@ -116,49 +164,5 @@ const Image = styled.img`
     object-fit: cover;
     border-radius: 50% 50% 0 0;
 `
-
-const Slider = (props) => {
-    useEffect(() => {
-        
-    
-      return () => {
-        
-      }
-    }, [props.data])
-    
-    const [slideIndex, setSlideIndex] = useState(0);
-    const handleClick = (direction) => {
-        if (direction === "left") {
-            setSlideIndex(slideIndex > 0 ? slideIndex - 1 : 3);
-        } else {
-            setSlideIndex(slideIndex < 3 ? slideIndex + 1 : 0);
-        };
-    };
-    return (
-        <Container>
-            <Arrow direction="left" onClick={() => handleClick("left")}><ArrowBackIosOutlinedIcon /></Arrow>
-            <Intro>
-                <Stories/>
-            </Intro>
-            <Wrapper slideIndex={slideIndex}>
-               {props.stories ? props.stories.map((item,index) => (
-                    <Slide key = {index}>
-                        <LeftColumn >
-                            <StoryNumber>{item.storyid}</StoryNumber>
-                            <Title>{item.title}</Title>
-                            <Desc> {item.desc}</Desc>
-                            <Button onClick={() => handleClick()}> View more </Button>
-                        </LeftColumn>
-                        <ImgContainer>
-                            <Image src={item.imageurl} />
-                        </ImgContainer>
-                    </Slide>)): <h1>Loading</h1>}
-               
-            </Wrapper>
-            <Arrow direction="right" onClick={() => handleClick("right")}><ArrowForwardIosOutlinedIcon style={{ backgroundColor: "white" }} /></Arrow>
-        </Container>
-    )
-}
-
 
 export default Slider

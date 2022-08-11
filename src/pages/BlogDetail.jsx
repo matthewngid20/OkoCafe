@@ -15,10 +15,8 @@ const BlogDetail = ({ }) => {
 
     return (
         <Container>
-            
-           
-            <BlogDetails/>
-          </Container>
+            <BlogDetails />
+        </Container>
 
 
 

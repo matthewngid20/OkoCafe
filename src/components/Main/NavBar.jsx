@@ -169,52 +169,52 @@ const BottomCenter = styled.div`
 //const Link = styled.a`
 
 //justify-content: center;
-  //  font-weight: 200;
-  //  font-size: 16px;
-  //  cursor: pointer;
-   // color: #C8765A;
-   // padding: 0px 20px;
-    /* &:hover {
-  //      transform: scaleY(1.4);
-  //     transform: scaleX(1.4);
-    //    color: white;
-       // transition: all 1s cubic-bezier(1, 2, 3, 4);
-      //  border: 0.5px solid ${ColorTheme.brand2};
-      //  padding: 5px;
-      //  border-radius: 3px;
-    } */
-    /* &:before {
-      //  content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 1;
-        transition: all 0.5s;
-        border: 1px solid rgba(255,255,255,0.2);
-        background-color: rgba(255,255,255,0.1);
-    }
-    &:after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 1;
-        transition: all 0.5s;
-        border: 1px solid rgba(255,255,255,0.2);
-        background-color: rgba(255,255,255,0.1);
-    }
-    &:hover::before{
-        transform: rotate(-45deg);
-        background-color: rgba(255,255,255,0);
-    }
-    &:hover::after{
-        transform: rotate(45deg);
-        background-color: rgba(255,255,255,0);
-  //  } */
+//  font-weight: 200;
+//  font-size: 16px;
+//  cursor: pointer;
+// color: #C8765A;
+// padding: 0px 20px;
+/* &:hover {
+//      transform: scaleY(1.4);
+//     transform: scaleX(1.4);
+//    color: white;
+   // transition: all 1s cubic-bezier(1, 2, 3, 4);
+  //  border: 0.5px solid ${ColorTheme.brand2};
+  //  padding: 5px;
+  //  border-radius: 3px;
+} */
+/* &:before {
+  //  content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    transition: all 0.5s;
+    border: 1px solid rgba(255,255,255,0.2);
+    background-color: rgba(255,255,255,0.1);
+}
+&:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    transition: all 0.5s;
+    border: 1px solid rgba(255,255,255,0.2);
+    background-color: rgba(255,255,255,0.1);
+}
+&:hover::before{
+    transform: rotate(-45deg);
+    background-color: rgba(255,255,255,0);
+}
+&:hover::after{
+    transform: rotate(45deg);
+    background-color: rgba(255,255,255,0);
+//  } */
 //`
 const Right = styled.div`
     flex: 1;
@@ -240,12 +240,7 @@ const Right = styled.div`
 // `
 
 const NavBar = () => {
-    
-
-    
-    
-   const [toggleMenu, setToggleMenu] = useState(false)
-
+    const [toggleMenu, setToggleMenu] = useState(false)
     const toggleNav = () => {
         setToggleMenu(!toggleMenu)
     }
@@ -264,16 +259,16 @@ const NavBar = () => {
 
     }, [])
 
-     const links = [
+    const links = [
 
         { name: "Home", to: "/" },
         { name: "Shop", to: "/shop" },
         { name: "About", to: "/aboutUs" },
         { name: "Blog", to: "/blog" },
         { name: "Contact", to: "/contact" },
-       
 
- ]
+
+    ]
     return (
         <Container>
             <TopCenter>
@@ -305,14 +300,14 @@ const NavBar = () => {
                         return (
                             (<NavLink className="nav-bar-link" to={link.to} key={index}> {link.name} </NavLink>))
 
-                    })}  
-                    </BottomCenter>
-            )}
+                    })}
+                </BottomCenter>
+                )}
             <button onClick={toggleNav} className="btn"> <Icon color="white" > <MenuIcon style={{ fontSize: 30 }} /></Icon></button>
-           
-            
-           
-  </Container>
+
+
+
+        </Container>
 
 
     )
