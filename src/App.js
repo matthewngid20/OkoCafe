@@ -29,6 +29,7 @@ import { useState, } from 'react';
 import { DataProvider, UseData } from './DataContext';
 import { createContext } from 'react';
 import { Button } from '@mui/material';
+import BlogDetails from './components/Blog/BlogDetails';
 
 const Container = styled.div`
  position: relative; 
@@ -42,21 +43,27 @@ function App() {
     localStorage.getItem('localProducts')
   )
   const [isLoading, setIsLoading] = useState(true)
+  const [cart, setCart] = useState(
+    localStorage.getItem('cart')
+  )
 
-  //console.log(window.localStorage);
-  // console.log(window.sessionStorage);
-  //localStorage.clear()
 
   useEffect(() => {
     getStory()
     getProduct()
+    getCartItems();
     return () => {
     }
   }, [])
+
+
+  var getCartItems = () => {
+    setCart ((localStorage.getItem('cart')))
+  }
   var getStory = () => {
     axios.get("http://localhost:3307/story").then((res, rej) => {
       if (res) {
-        setStories(res.data)
+        setStories(JSON.stringify(res.data))
         setIsLoading(false)
       } else {
         console.log(rej);
@@ -76,8 +83,10 @@ function App() {
       }
     })
   }
+
+  console.log(JSON.parse(cart));
   return (
-    <Context.Provider value={[products, stories]}>
+    <Context.Provider value={[products, stories,cart]}>
       <Container>
         <NavBar />
         {isLoading ? <h1> Loading data</h1> :
@@ -86,10 +95,11 @@ function App() {
             <Route path="shop" element={<Shop products={products} />} />
             <Route path="productdetail" element={<ProductDetail products={products} />} />
             <Route path="productdetails/:productId" element={<ProductDetail products={products} />} />
-            <Route path="about" element={<AboutUs />} />
+            <Route path="aboutus" element={<AboutUs />} />
             <Route path="contact" element={<Contact />} />
             <Route path="blog" element={<Blog />} />
-            <Route path="shoppingCart" end element={<ShoppingCart />} />
+            <Route path="blogdetail" element={<BlogDetails />} />
+            <Route path="shoppingCart" element={<ShoppingCart />} />
           </Routes>
         }
         <Footer />
