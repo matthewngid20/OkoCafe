@@ -110,7 +110,7 @@ const LeftText = styled.div`
     @media screen and (max-width: 960px) {
         
         
-        font-weight: 300;
+        font-weight: 600;
         color: #C8765A;
         margin-right: 20px;
         font-size: 10px;
