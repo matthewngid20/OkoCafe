@@ -1,7 +1,7 @@
 .nav-bar-link {
     color: #C8765A;
     margin: 0 10px;
-    
+
 
 }
 
@@ -17,13 +17,11 @@ a {
 
 
 .btn {
-    display: none; 
+    display: none;
     position: absolute;
     left: 1px;
     top: 7px;
-    padding: 5px;
-    color: #000;
-    font-size: 18px;
+    padding: 1px;
 }
 
 
@@ -35,16 +33,14 @@ a {
         text-align: center;
         margin-right: 0px;
         padding: 20px 0;
-        color:aqua;
-        
-        height:auto;
-       
+        color: aqua;
+        height: auto;
         text-transform: uppercase;
     }
 
     .nav-bar-link:nth-child(1) {
 
-        
+
         border-top: 1px solid rgba(255, 255, 255, 0.555);
         margin-top: 50px;
 
@@ -55,15 +51,17 @@ a {
         text-decoration: none;
         transition: all 0.5s ease;
     }
+
     .btn {
 
-        display: block;
-        
+        display: flex;
         margin: 10px 0px;
-        margin-left: 1px;
+        margin-left: -15px;
+      
         
-        background-color:#F8E6DB;
+
     }
-   
-        
+
+
+
 }
