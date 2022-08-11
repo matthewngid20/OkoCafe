@@ -303,8 +303,8 @@ const NavBar = () => {
                     })}
                 </BottomCenter>
                 )}
-            <button onClick={toggleNav} className="btn"> <Icon color="white" > <MenuIcon style={{ fontSize: 30 }} /></Icon></button>
-
+       
+               <div className='btn' onClick={toggleNav} > <Icon color="red" > <MenuIcon style={{ fontSize: 30 }} /></Icon>
 
 
         </Container>
