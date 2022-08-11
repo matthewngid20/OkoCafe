@@ -148,6 +148,15 @@ const RightText = styled.div`
     font-weight: 600;
     color: #C8765A;
     margin-left: 20px;
+     @media screen and (max-width: 960px) {
+        
+        
+        font-weight: 600;
+        color: #C8765A;
+        margin-right: 20px;
+        font-size: 10px;
+        
+        }
 `
 const BottomCenter = styled.div`
     display: flex;
