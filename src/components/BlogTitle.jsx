@@ -31,13 +31,16 @@ color: #C8765A;
 flex: none;
 order: 0;
 flex-grow: 0;
-@media screen and (max-width: 500px) {
-   
-   
-  
-   
+@media screen and (max-width: 960px) {
 
-    }
+    display: flex;
+    width: 80%;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+
+
+}
 `
 const Postion = styled.p`
 
@@ -91,10 +94,13 @@ flex: none;
 order: 1;
 flex-grow: 0;
 @media screen and (max-width: 960px) {
-flex: none;
-order: 1;
-flex-grow: 0;
-font-size:15px;
+
+    display: flex;
+    width: 80%;
+    align-items: center;
+    justify-content: right;
+    
+
 
 }
 `
@@ -104,6 +110,16 @@ width: 50%;
 height: 50%;
 left: 336.01px;
 top: 834px;
+@media screen and (max-width: 960px) {
+
+    display: flex;
+    width: 80%;
+    align-items: center;
+    justify-content: center;
+    
+
+
+}
 `
 const SecondTitle = styled.p`
 width: 784px;
@@ -127,7 +143,14 @@ flex: none;
 order: 0;
 flex-grow: 0;
 @media screen and (max-width: 960px) {
-font-size:15px;
+
+    display: flex;
+    width: 80%;
+    align-items: center;
+    justify-content: center;
+   
+
+
 }
 `
 
@@ -153,7 +176,14 @@ flex: none;
 order: 0;
 
 @media screen and (max-width: 960px) {
-font-size:15px;
+
+    display: flex;
+    width: 80%;
+    align-items: center;
+    justify-content: center;
+    
+
+
 }
 `
 const SecondDesc = styled.p`
@@ -181,7 +211,14 @@ flex: none;
 order: 1;
 flex-grow: 0;
 @media screen and (max-width: 960px) {
-font-size:15px;
+
+    display: flex;
+    width: 90%;
+    align-items: center;
+    justify-content: center;
+    
+
+
 }
 `
 const ThirdTitle = styled.p`
@@ -206,7 +243,14 @@ flex: none;
 order: 0;
 flex-grow: 0;
 @media screen and (max-width: 960px) {
-font-size:15px;
+
+    display: flex;
+    width: 90%;
+    align-items: center;
+    justify-content: center;
+    
+
+
 }
 `
 const ThirdDesc = styled.p`
@@ -234,7 +278,14 @@ flex: none;
 order: 1;
 flex-grow: 0;
 @media screen and (max-width: 960px) {
-font-size:15px;
+
+    display: flex;
+    width: 90%;
+    align-items: center;
+    justify-content: center;
+    
+
+
 }
 `
 const FourthTitle = styled.p`
@@ -260,7 +311,14 @@ flex: none;
 order: 0;
 flex-grow: 0;
 @media screen and (max-width: 960px) {
-font-size:15px;
+
+    display: flex;
+    width: 80%;
+    align-items: center;
+    justify-content: center;
+    
+
+
 }
 `
 const FourthDesc = styled.p`
@@ -288,7 +346,14 @@ flex: none;
 order: 1;
 flex-grow: 0;
 @media screen and (max-width: 960px) {
-font-size:15px;
+
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    
+
+
 }
 `
 const QuestionTitle = styled.p`
@@ -313,7 +378,14 @@ flex: none;
 order: 0;
 flex-grow: 0;
 @media screen and (max-width: 960px) {
-font-size:15px;
+
+    display: flex;
+    width: 80%;
+    align-items: center;
+    justify-content: center;
+    font-size:15px;
+
+
 }
 `
 const LastDesc = styled.p`
@@ -340,6 +412,16 @@ color: #F8E6DB;
 flex: none;
 order: 0;
 flex-grow: 0;
+@media screen and (max-width: 960px) {
+
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    
+
+
+}
 `
 const   LastTitle = styled.p`
 
@@ -351,7 +433,7 @@ font-weight: 400;
 font-size: 20px;
 line-height: 27px;
 /* identical to box height */
-display: flex;
+display: block;
 align-items: center;
 /* Brand 1 */
 color: #F8E6DB;
@@ -360,7 +442,14 @@ flex: none;
 order: 0;
 flex-grow: 0;
 @media screen and (max-width: 960px) {
-font-size:15px;
+
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    
+
+
 }
 `
 
@@ -388,7 +477,11 @@ flex: none;
 order: 1;
 flex-grow: 0;
 @media screen and (max-width: 960px) {
-font-size:15px;
+
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
 }
 `
 const SecondReads = styled.p`
@@ -415,7 +508,11 @@ flex: none;
 order: 1;
 flex-grow: 0;
 @media screen and (max-width: 960px) {
-font-size:15px;
+
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
 }
 `
 const ThirdReads = styled.p`
@@ -431,7 +528,7 @@ line-height: 140%;
 /* or 25px */
 
 display: flex;
-align-items: center;
+//align-items: right;
 
 /* Brand chuẩn */
 
@@ -443,12 +540,16 @@ flex: none;
 order: 1;
 flex-grow: 0;
 @media screen and (max-width: 960px) {
-font-size:15px;
+
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
 }
 `
 const Admin = styled.p`
 
-width: 195.45px;
+width: 200px;
 height: 12px;
 
 font-family: 'SVN-Gilroy';
@@ -458,7 +559,7 @@ font-size: 16px;
 line-height: 160%;
 /* or 26px */
 
-display: flex;
+display: block;
 align-items: center;
 text-align: right;
 
@@ -472,7 +573,11 @@ flex: none;
 order: 1;
 flex-grow: 0;
 @media screen and (max-width: 960px) {
-font-size:15px;
+
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
 }
 `
 
