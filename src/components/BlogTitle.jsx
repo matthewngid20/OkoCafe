@@ -34,13 +34,16 @@ flex-grow: 0;
 @media screen and (max-width: 960px) {
 
     display: flex;
-    width: 80%;
+    width: 100%;
+    
     align-items: center;
     justify-content: center;
     font-size: 20px;
 
 
 }
+
+
 `
 const Postion = styled.p`
 
@@ -96,9 +99,12 @@ flex-grow: 0;
 @media screen and (max-width: 960px) {
 
     display: flex;
-    width: 80%;
+    width:100%;
     align-items: center;
     justify-content: right;
+    
+
+
     
 
 
@@ -112,8 +118,8 @@ left: 336.01px;
 top: 834px;
 @media screen and (max-width: 960px) {
 
-    display: flex;
-    width: 80%;
+   
+    width: 70%;
     align-items: center;
     justify-content: center;
     
@@ -145,7 +151,7 @@ flex-grow: 0;
 @media screen and (max-width: 960px) {
 
     display: flex;
-    width: 80%;
+    width: 100%;
     align-items: center;
     justify-content: center;
    
@@ -576,7 +582,7 @@ flex-grow: 0;
 
     display: flex;
     width: 100%;
-    align-items: center;
+    
     justify-content: center;
 }
 `
