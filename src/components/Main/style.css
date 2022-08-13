@@ -36,6 +36,7 @@ a {
         color: aqua;
         height: auto;
         text-transform: uppercase;
+       
     }
 
     .nav-bar-link:nth-child(1) {
@@ -43,25 +44,21 @@ a {
 
         border-top: 1px solid rgba(255, 255, 255, 0.555);
         margin-top: 50px;
+       
 
     }
 
-    .active {
-        background: #DEB887;
-        text-decoration: none;
-        transition: all 0.5s ease;
-    }
+   .btn {
 
-    .btn {
-
-        display: flex;
+        display: block;
         margin: 10px 0px;
         margin-left: -15px;
+        
       
         
 
     }
-
+   
 
 
 }
