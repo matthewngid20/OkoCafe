@@ -12,9 +12,9 @@ import { Link } from "react-router-dom";
 const Cart = () => {
     const [cartItems, setCartItems] = useState();
     useEffect(() => {
-        setCartItems(localStorage.getItem('cart'))
-        console.log(JSON.parse(localStorage.getItem('cart')));
-    }, [localStorage.getItem('cart')])
+        setCartItems(sessionStorage.getItem('cart'))
+        console.log(JSON.parse(sessionStorage.getItem('cart')));
+    }, [sessionStorage.getItem('cart')])
 
     return (
         <Container >

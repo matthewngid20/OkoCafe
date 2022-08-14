@@ -40,11 +40,11 @@ export const Context = createContext();
 function App() {
   const [stories, setStories] = useState()
   const [products, setProducts] = useState(
-    localStorage.getItem('localProducts')
+    sessionStorage.getItem('localProducts')
   )
   const [isLoading, setIsLoading] = useState(true)
   const [cart, setCart] = useState(
-    localStorage.getItem('cart')
+    sessionStorage.getItem('cart')
   )
 
 
@@ -58,7 +58,7 @@ function App() {
 
 
   var getCartItems = () => {
-    setCart ((localStorage.getItem('cart')))
+    setCart((sessionStorage.getItem('cart')))
   }
   var getStory = () => {
     axios.get("http://localhost:3307/story").then((res, rej) => {
@@ -71,11 +71,11 @@ function App() {
       }
     })
   }
-  
+
   var getProduct = () => {
     axios.get("http://localhost:3307/products").then((res, rej) => {
       if (res) {
-        localStorage.setItem('localProducts', JSON.stringify(res.data))
+        sessionStorage.setItem('localProducts', JSON.stringify(res.data))
         setIsLoading(false)
       } else {
         console.log(rej);
@@ -83,10 +83,16 @@ function App() {
       }
     })
   }
+  window.onbeforeunload  = () => {
+    if(sessionStorage.length == 0){
+      window.sessionStorage.clear()
+    }
+
+  }
 
   console.log(JSON.parse(cart));
   return (
-    <Context.Provider value={[products, stories,cart]}>
+    <Context.Provider value={[products, stories, cart]}>
       <Container>
         <NavBar />
         {isLoading ? <h1> Loading data</h1> :

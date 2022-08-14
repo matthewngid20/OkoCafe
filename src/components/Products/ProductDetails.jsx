@@ -13,19 +13,19 @@ const ProductDetails = () => {
 
     useEffect(() => {
 
-    }, [JSON.parse(localStorage.getItem('cart'))])
+    }, [JSON.parse(sessionStorage.getItem('cart'))])
     const addToCart = () => {
         let addedProducts = []
-        if (localStorage.getItem('cart')) {
-            addedProducts = JSON.parse(localStorage.getItem('cart'))
+        if (sessionStorage.getItem('cart')) {
+            addedProducts = JSON.parse(sessionStorage.getItem('cart'))
         }
         addedProducts.push(thisProduct)
-        window.localStorage.setItem('cart', JSON.stringify(addedProducts))
+        window.sessionStorage.setItem('cart', JSON.stringify(addedProducts))
 
-        console.log(JSON.parse(localStorage.getItem('cart')));
+        console.log(JSON.parse(sessionStorage.getItem('cart')));
         alert("added item to cart")
         window.location.reload()
-        // console.log(JSON.parse(localStorage.getItem('cartItems')))
+        // console.log(JSON.parse(sessionStorage.getItem('cartItems')))
     }
 
     return (
