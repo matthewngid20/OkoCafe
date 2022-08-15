@@ -130,7 +130,7 @@ const StoryNumber = styled.span`
     color: #eee;
     @media screen and (max-width: 1050px) {
         position:relative;
-        top:260px;
+        top:180px;
    }
 `
 const Title = styled.h1` 
@@ -144,7 +144,7 @@ const Title = styled.h1`
        
         font-size: 20px;
         position:relative;
-        top:260px;
+        top:180px;
            
        }
 
@@ -160,7 +160,7 @@ const Desc = styled.p`
        
         font-size: 10px;
         position:relative;
-        top:250px;
+        top:180px;
    
            
        }
@@ -175,7 +175,8 @@ const Button = styled.button`
      @media screen and (max-width: 1050px) {
         
       position:relative;
-        left:70px;
+        left:80px;
+        top:60px;
         font-size: 15px;
         
            
