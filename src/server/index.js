@@ -9,7 +9,7 @@ var app = express()
 app.use(cors())
 
 //Back end
-app.listen("https://main.d19f95q0donsj2.amplifyapp.com", ()=>{
+app.listen(3307, ()=>{
     console.log("app listening to 3307");
     connection.connect((error) => {
         if(error){

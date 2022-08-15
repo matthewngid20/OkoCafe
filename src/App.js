@@ -61,7 +61,9 @@ function App() {
     setCart((sessionStorage.getItem('cart')))
   }
   var getStory = () => {
-    axios.get("https://main.d19f95q0donsj2.amplifyapp.com/story").then((res, rej) => {
+    debugger;
+    axios.get("https://chatty-lions-pay-125-63-30-112.loca.lt/story").then((res, rej) => {
+      debugger;
       if (res) {
         setStories(JSON.stringify(res.data))
         setIsLoading(false)
@@ -73,7 +75,7 @@ function App() {
   }
 
   var getProduct = () => {
-    axios.get("https://main.d19f95q0donsj2.amplifyapp.com/products").then((res, rej) => {
+    axios.get("https://chatty-lions-pay-125-63-30-112.loca.lt/products").then((res, rej) => {
       if (res) {
         debugger;
         sessionStorage.setItem('localProducts', JSON.stringify(res.data))
@@ -91,7 +93,8 @@ function App() {
 
   }
 
-  console.log(JSON.parse(cart));
+  console.log(stories);
+
   return (
     <Context.Provider value={[products, stories, cart]}>
       <Container>
