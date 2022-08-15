@@ -61,7 +61,7 @@ function App() {
     setCart((sessionStorage.getItem('cart')))
   }
   var getStory = () => {
-    axios.get("main.d19f95q0donsj2.amplifyapp.com/story").then((res, rej) => {
+    axios.get("https://main.d19f95q0donsj2.amplifyapp.com/story").then((res, rej) => {
       if (res) {
         setStories(JSON.stringify(res.data))
         setIsLoading(false)
@@ -73,8 +73,9 @@ function App() {
   }
 
   var getProduct = () => {
-    axios.get("main.d19f95q0donsj2.amplifyapp.com/products").then((res, rej) => {
+    axios.get("https://main.d19f95q0donsj2.amplifyapp.com/products").then((res, rej) => {
       if (res) {
+        debugger;
         sessionStorage.setItem('localProducts', JSON.stringify(res.data))
         setIsLoading(false)
       } else {
