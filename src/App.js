@@ -62,7 +62,7 @@ function App() {
   }
   var getStory = () => {
     debugger;
-    axios.get("https://chatty-lions-pay-125-63-30-112.loca.lt/story").then((res, rej) => {
+    axios.get("hhtp://localhost:3307/story").then((res, rej) => {
       debugger;
       if (res) {
         setStories(JSON.stringify(res.data))
