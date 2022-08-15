@@ -14,6 +14,11 @@ const CartDetails = () => {
     console.log(cartItems);
     var price = 0;
 
+    const handleToken = (token,address) => {
+        console.log(token);
+        console.log(address);
+    }
+
     return (
         <Container>
             <WrapperTop>
@@ -72,7 +77,19 @@ const CartDetails = () => {
                                 price += parseInt(item.price)
                             })} ${price} </Data>
                             <Data colSpan={3}>
-                                <CheckOutButton onClick={() => alert("Payment")}  >CHECKOUT</CheckOutButton>
+                               <CheckOutButton>
+                                    <StripCheckOut
+                                        stripeKey="pk_test_51LVmB3AZRUCvkma79RIYXzz1ZxkbFMcZa5jvgxa1bBnLGXdjs3da5dszhorzKOGW5vghUdWQt5ixjMHKwWQbPnWU000pzjseBA"
+                                        token={handleToken}
+                                        billingAddress 
+                                        shippingAddress
+                                        amount = {price *100}
+                                        name = {cartItems.map((item,index) => item.name ).toString()}
+
+                                    >
+                                        PAY NOW
+                                    </StripCheckOut>
+                                </CheckOutButton>
                             </Data>
                         </RowCheckOut>
                     </TableBody>
@@ -156,19 +173,18 @@ const Button = styled.button`
     cursor: pointer;
    
 `
-const CheckOutButton = styled.button`
+const CheckOutButton = styled.div`
     cursor: pointer;
-    padding: 10px;
-    width: 100%;
+    padding: 5px;
+    color: black;  
+    font-size: 20px;
+    max-width: 100%;
     background-color: ${ColorTheme.brand3};
     @media screen and (max-width: 1050px) {
-        
         position:relative;
         right:200px;
-        font-size: 15px;
-        top:30px;
-             
-         }
+        top:30px;     
+        }
 `
 const Amount = styled.div`
     margin: 0 10px;
