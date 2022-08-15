@@ -61,7 +61,7 @@ function App() {
     setCart((sessionStorage.getItem('cart')))
   }
   var getStory = () => {
-    axios.get("http://localhost:3307/story").then((res, rej) => {
+    axios.get("main.d19f95q0donsj2.amplifyapp.com/story").then((res, rej) => {
       if (res) {
         setStories(JSON.stringify(res.data))
         setIsLoading(false)
@@ -73,7 +73,7 @@ function App() {
   }
 
   var getProduct = () => {
-    axios.get("http://localhost:3307/products").then((res, rej) => {
+    axios.get("main.d19f95q0donsj2.amplifyapp.com/products").then((res, rej) => {
       if (res) {
         sessionStorage.setItem('localProducts', JSON.stringify(res.data))
         setIsLoading(false)
