@@ -86,6 +86,7 @@ const Container = styled.div`
     font-weight: 300;
     padding: 3em;
     color: ${ColorTheme.brandC};
+   
 `
 const WrapperTop = styled.div`
     width: 100%;
@@ -96,7 +97,14 @@ const TableTop = styled.table`
     border-collapse: collapse;
 `
 const TableBody = styled.tbody`
-
+@media screen and (max-width: 1050px) {
+        
+    position:relative;
+    right:75px;
+    font-size: 15px;
+    top:50px;
+         
+     }
 `
 const Row = styled.tr.attrs({
 
@@ -110,6 +118,7 @@ const RowCheckOut = styled.tr`
 
 `
 const RowProd = styled(Row)`
+
 `
 const VoucherRow = styled.tr`
     border-top: 2mm ridge ${ColorTheme.brandC};
@@ -126,6 +135,7 @@ const Data = styled.td.attrs({
     text-align: center;
     text-align: ${props => props.align === "right" && "right"};
     text-align: ${props => props.align === "left" && "left"};
+    
 `
 const Img = styled.img`
     max-width: 100px;
@@ -134,6 +144,7 @@ const ButtonData = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+   
 `
 const Button = styled.button`
     padding:6px 10px;
@@ -141,12 +152,21 @@ const Button = styled.button`
     border: 1px solid #C8765A;
     color: white;
     cursor: pointer;
+   
 `
 const CheckOutButton = styled.button`
     cursor: pointer;
     padding: 10px;
     width: 100%;
     background-color: ${ColorTheme.brand3};
+    @media screen and (max-width: 1050px) {
+        
+        position:relative;
+        right:200px;
+        font-size: 15px;
+        top:30px;
+             
+         }
 `
 const Amount = styled.div`
     margin: 0 10px;
