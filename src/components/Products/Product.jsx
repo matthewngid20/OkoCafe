@@ -36,7 +36,7 @@ const Product = (props) => {
         </Container>
     )
 }
-
+//Info CSS
 const Info = styled.div`
     opacity: 0;
     width: 100%;
