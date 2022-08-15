@@ -62,7 +62,7 @@ function App() {
   }
   var getStory = () => {
     debugger;
-    axios.get("http://localhost:3307/story").then((res, rej) => {
+    axios.get("https://cors-anywhere.herokuapp.com/http://localhost:3307/story").then((res, rej) => {
       debugger;
       if (res) {
         setStories(JSON.stringify(res.data))
@@ -75,7 +75,7 @@ function App() {
   }
 
   var getProduct = () => {
-    axios.get("http://localhost:3307/products").then((res, rej) => {
+    axios.get("https://cors-anywhere.herokuapp.com/http://localhost:3307/products").then((res, rej) => {
       if (res) {
         debugger;
         sessionStorage.setItem('localProducts', JSON.stringify(res.data))

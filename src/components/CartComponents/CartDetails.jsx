@@ -7,11 +7,13 @@ import Checkbox from '@mui/material/Checkbox';
 import { ColorTheme } from '../../ColorTheme';
 import { Context } from '../../App';
 import { useContext } from 'react'
+import StripCheckOut from 'react-stripe-checkout'
 const CartDetails = () => {
     const dataContext = useContext(Context)
     const cartItems = JSON.parse(dataContext[2]);
     console.log(cartItems);
     var price = 0;
+
     return (
         <Container>
             <WrapperTop>
@@ -70,7 +72,7 @@ const CartDetails = () => {
                                 price += parseInt(item.price)
                             })} ${price} </Data>
                             <Data colSpan={3}>
-                                <CheckOutButton type="checkout" >CHECKOUT</CheckOutButton>
+                                <CheckOutButton onClick={() => alert("Payment")}  >CHECKOUT</CheckOutButton>
                             </Data>
                         </RowCheckOut>
                     </TableBody>
