@@ -8,6 +8,7 @@ const Container = styled.div`
     display: inline-block;
     margin-left: 1em;
     position: relative;
+    
 `
 const InputSearch = styled.input`
     border: 0 solid ${ColorTheme.brandC} ;
@@ -21,12 +22,26 @@ const InputSearch = styled.input`
         border:0.5px solid ${ColorTheme.brandC} ;
         box-shadow: 0 0 30px ${ColorTheme.brandC};
     }
+    
 `
 const DropDown = styled.div`
     position: absolute;
     margin-top: 10px;
     right: 100px;
     display: ${props => (props.display) ? true : "none"};
+    @media screen and (max-width: 960px) {
+        
+        position:center;
+        margin-top: 10px;
+        right:200px;
+        display: ${props => (props.display) ? true : "none"};
+        width:20%;
+       font-size:20px;
+        
+		
+      
+        
+    }
 `
 const Decoration = styled.div`
     position: absolute;

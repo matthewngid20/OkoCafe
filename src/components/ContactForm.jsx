@@ -11,6 +11,23 @@ const Container = styled.div`
     display: flex;
     justify-content: space-between; 
     align-items: center;
+    @media screen and (max-width: 960px) {
+        
+        
+       
+    
+        flex: 1;
+        border: 1px solid rgba(211, 152, 122, 0.5);
+        align-self: center;
+        padding:3em;
+        background: ${ColorTheme.bg1};
+        flex-direction: column;
+        font-size: 25px;
+      
+        
+       
+      }
+    
 `
 const Left = styled.div`
     flex: 1;
@@ -21,14 +38,65 @@ const Headliner = styled.h1`
     font-size: 42px;
     font-weight: 400;
     font-family: Abril Fatface;
+    @media screen and (max-width: 960px) {
+        
+        
+       
+    
+      
+       
+        align-self: center;
+        padding:5em;
+      
+        
+        font-size: 30px;
+      
+        
+       
+      }
+   
 `
 const White = styled.span`
     color: ${ColorTheme.brand1};
     display: inline;
-    margin: 0;   
+    margin: 0;  
+    @media screen and (max-width: 960px) {
+        
+        
+       
+    
+      
+       
+        align-self: center;
+        padding:5em;
+      
+        
+        font-size: 15px;
+      
+        
+       
+      }
+    
 `
+
 const LocationContainer = styled.div`
     margin-top: 2em;
+    @media screen and (max-width: 960px) {
+        
+        
+       
+    
+      
+       
+        align-self: center;
+        padding:5em;
+      
+        
+        font-size: 15px;
+      
+        
+       
+      }
 `
 const Row = styled.address`
     padding:1em;
@@ -53,6 +121,14 @@ const Right = styled.div`
     align-self: center;
     padding:3em;
     background: ${ColorTheme.bg1};
+    @media screen and (max-width: 960px) {
+        
+         align-self: center;
+        padding:5em;
+        font-size: 24px;
+      
+ }
+    
 `
 const FormInfo = styled.form`
     display: flex;
@@ -90,6 +166,7 @@ const Button = styled.button`
     padding: 1em;
     color: ${ColorTheme.brand1};
     cursor: pointer;
+   
 `
 const ContactForm = () => {
     return (
@@ -98,7 +175,7 @@ const ContactForm = () => {
                 <Headliner>"Be Inspired by What you see? "
                     <White> Let’s talk about your Project.</White>
                 </Headliner>
-                <SubTitle size="0px" width="100%" description="Contact us immediately for consulting solutions for your products:" />
+                <SubTitle size="0px" width="100%"  description="Contact us immediately for consulting solutions for your products:" />
                 <LocationContainer>
                     <Row>
                         <AddLocationOutlinedIcon style={{ color: "white" }} />

@@ -46,6 +46,14 @@ const CartItem = styled.div`
 const DropDown = styled.div`
     position: absolute;
     margin-top: 43px;
+    @media screen and (max-width: 960px) {
+        
+       
+        font-size:20px;
+   
+       
+
+       }
     `
 
 const Decoration = styled.div`

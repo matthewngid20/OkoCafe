@@ -9,6 +9,9 @@ const Container = styled.div`
     padding-bottom: 40px;
     font-family: "Abiral Fatface";
     background-color: ${ColorTheme.bg1};
+   
+     
+
     
 `
 

@@ -200,4 +200,15 @@ Vertical-align: Center;
         line-height: 42px;
     }
 
+   
+   
+    
+}
+
+@media screen and (max-width: 550px) {
+    .footer h2 {
+        font-size: 34px;
+        line-height: 42px;
+    }
+
 }

@@ -18,6 +18,7 @@ const Info = styled.div`
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    
 `
 const Container = styled.div`
     margin: 20px;

@@ -13,6 +13,7 @@ const Container = styled.div`
     position: relative;
     object-fit: contain;
     background-color: ${ColorTheme.bg1};
+   
 `
 
 const ProductsWrapper = styled.div`
@@ -22,12 +23,32 @@ const ProductsWrapper = styled.div`
     transform: translateX(${props => props.slideIndex * -25}vw);
     transition: all 1s ease;
     /* flex-wrap:wrap; */
+    @media screen and (max-width: 1050px) {
+        
+        flex-direction: column;
+        margin: 0 0 3rem;
+        font-size: 10px;
+        padding:10em;
+   
+           
+       }
+    
 `
 const ProductIntro = styled.div`
     align-self: center;
     font-size: 60px;
     color: ${ColorTheme.brandC};
     margin:20px 0px;
+    @media screen and (max-width: 1050px) {
+        
+    
+       
+        
+        font-size: 20px;
+        padding:10em;
+   
+           
+       }
 `
 const Arrow = styled.div`
     position: absolute;

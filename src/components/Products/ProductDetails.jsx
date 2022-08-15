@@ -1,7 +1,22 @@
 import styled from "styled-components"
 import { ColorTheme } from "../../ColorTheme"
 import { useParams } from "react-router-dom"
-import { useEffect,useState } from "react"
+const item = {
+    "id": "04",
+    "name": "Super X",
+    "desc": "Super x arabica",
+    "price": "50",
+    "volume": "1000",
+    "station": "NANO GENJI",
+    "altitude": "1,900 - 2,200 METERS",
+    "notes": "ju",
+    "station": "JUICY PEACH, KEY LIME PIE, BLACK CHERRY TART.",
+    "process": "WASHED",
+    "roastlv": "LIGHT",
+    "varietal": "ETHIOPIAN HEIRLOOM",
+    "roasted": "WEEKDAYS",
+    "img": "https://images.squarespace-cdn.com/content/v1/59a44aa2e6f2e1db4cbd5252/1584724680455-VZVCMZBHDS4F4JB808X2/Supernova+Killer+Acid-01.png?format=750w"
+}
 
 const Container = styled.div` 
     background-color: ${ColorTheme.bg1};
@@ -103,7 +118,6 @@ const SmallTitle = styled.span`
     color: ${ColorTheme.brandC};
 `
 const DetailsContainer = styled.div`
-    margin-top:100px;
     display: flex;
     justify-content: space-between;
 `
@@ -120,69 +134,60 @@ const RowContent = styled.div`
     color: ${ColorTheme.brand1};
 `
 
-const ProductDetails = (props) => {
-    const [data, setData] = useState(props.data);
-
-    useEffect(() => {
-        setData(props.products);
-    }, [props]);
-
-    console.log(data);
-    const { productId } = useParams()
-    const thisProduct = props.products.find(prod => prod.productid === productId)
-    console.log("thisProduct " + thisProduct);
+const ProductDetails = ({prod}) => {
     return (
         <Container>
             <Hr />
             <ProductContainer>
-                {props.products ? <> <ImgContainer>
+                <ImgContainer>
                     <BigImg>
-                        <Img src={thisProduct.img} />
+                        <Img src={item.img} />
                     </BigImg>
                     <SmallImgs>
-                        <SmallImg style={{ width: "200px" }} src={thisProduct.img} />
-                        <SmallImg style={{ width: "200px" }} src={thisProduct.img} />
-                        <SmallImg style={{ width: "200px" }} src={thisProduct.img} />
-                        <SmallImg style={{ width: "200px" }} src={thisProduct.img} />
+                        <SmallImg style={{ width: "200px" }} src={item.img} />
+                        <SmallImg style={{ width: "200px" }} src={item.img}/>
+                        <SmallImg style={{ width: "200px" }} src={item.img}/>
+                        <SmallImg style={{ width: "200px" }} src={item.img}/>
                     </SmallImgs>
                 </ImgContainer>
-                    <ProductInfo>
-                        <TopContent>
-                            <Title>{thisProduct.name}</Title>
-                            <Desc> RARE COFFEE TO DATE</Desc>
-                            <PriceContainer>
-                                <Price> $24</Price>
-                                <Vr />
-                                <Volume> 500G </Volume>
-                            </PriceContainer>
-                            <Button>ADD TO CART</Button>
-                        </TopContent>
-                        <BottomContent>
-                            <SmallTitle> INGREDIENT DETAILS: </SmallTitle>
-                            <DetailsContainer>
-                                <Col>
-                                    <RowTitle> WASHING STATION:</RowTitle>
-                                    <RowContent> NANO GENJI </RowContent>
-                                    <RowTitle> ORIGIN:</RowTitle>
-                                    <RowContent> ETHIOPIA</RowContent>
-                                    <RowTitle> PROCESS:</RowTitle>
-                                    <RowContent> NANO GENJI </RowContent>
-                                    <RowTitle> VARIETAL: </RowTitle>
-                                    <RowContent> ETHIOPIA HEIRLOOM</RowContent>
-                                </ Col>
-                                < Col>
-                                    <RowTitle> ALTITUDE:</RowTitle>
-                                    <RowContent> 1,900 - 2,200 METERS </RowContent>
-                                    <RowTitle> TASTING NOTES:</RowTitle>
-                                    <RowContent> JUICY PEACH, KEY LIME PIE, BLACK CHERRY TART.</RowContent>
-                                    <RowTitle> ROAST LEVEL:</RowTitle>
-                                    <RowContent> LIGHT </RowContent>
-                                    <RowTitle> ROASTED</RowTitle>
-                                    <RowContent> WEEKDAYS</RowContent>
-                                </ Col>
-                            </DetailsContainer>
-                        </BottomContent>
-                    </ProductInfo></> : <h1>Loading</h1>}
+                <ProductInfo>
+                    <TopContent>
+                        <Title>{item.name}</Title>
+                        <Desc> RARE COFFEE TO DATE</Desc>
+                        <PriceContainer>
+                            <Price> $24</Price>
+                            <Vr />
+                            <Volume> 500G </Volume>
+                        </PriceContainer>
+                        <Button>ADD TO CART</Button>
+                    </TopContent>
+                    <BottomContent>
+                        <SmallTitle> INGREDIENT DETAILS: </SmallTitle>
+                        <DetailsContainer>
+                            <Col>
+                                <RowTitle> WASHING STATION:</RowTitle>
+                                <RowContent> NANO GENJI </RowContent>
+                                <RowTitle> ORIGIN:</RowTitle>
+                                <RowContent> ETHIOPIA</RowContent>
+                                <RowTitle> PROCESS:</RowTitle>
+                                <RowContent> NANO GENJI </RowContent>
+                                <RowTitle> VARIETAL: </RowTitle>
+                                <RowContent> ETHIOPIA HEIRLOOM</RowContent>
+                            </ Col>
+                            < Col>
+                                <RowTitle> ALTITUDE:</RowTitle>
+                                <RowContent> 1,900 - 2,200 METERS </RowContent>
+                                <RowTitle> TASTING NOTES:</RowTitle>
+                                <RowContent> JUICY PEACH, KEY LIME PIE, BLACK CHERRY TART.</RowContent>
+                                <RowTitle> ROAST LEVEL:</RowTitle>
+                                <RowContent> LIGHT </RowContent>
+                                <RowTitle> ROASTED</RowTitle>
+                                <RowContent> WEEKDAYS</RowContent>
+                            </ Col>
+
+                        </DetailsContainer>
+                    </BottomContent>
+                </ProductInfo>
             </ProductContainer>
         </Container>
 

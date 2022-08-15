@@ -5,6 +5,7 @@ const Container = styled.div`
     width: max(10vw, 200px);
     height: max(10vw, 200px);
     margin: 3rem;
+    
 `
 
 const ImgContainer = styled.div` 
@@ -12,7 +13,8 @@ const ImgContainer = styled.div`
     height:100%;
     border-radius: 50%;
     background-image: url(${props => props.src}); 
-    background-size: cover;   
+    background-size: cover; 
+   
 `
 
 const Name = styled.div` 
@@ -20,6 +22,7 @@ const Name = styled.div`
     font-weight: 500;
     text-align: center;
     color: ${ColorTheme.brandC};
+   
 `
 const Position = styled.div` 
     font-size: 17px;

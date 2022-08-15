@@ -14,6 +14,7 @@ const Container = styled.div`
     background-color:${ColorTheme.bg1};
     position: relative;
     overflow: hidden;
+    
 
 `
 const Intro = styled.div`
@@ -29,7 +30,7 @@ const Arrow = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    position: absolute;
+   
     top: 0; 
     bottom: 0;
     margin: auto;
@@ -37,6 +38,22 @@ const Arrow = styled.div`
     right: ${props => props.direction === 'right' && "10px"};
     opacity: 0.5;
     z-index:2;
+    @media screen and (max-width: 1050px) {
+        
+        
+      
+       // position:relative;
+        top:260px;
+   
+   
+        
+        
+      }
+   
+       
+        
+       
+ 
 `
 const Wrapper = styled.div` 
     display: flex;
@@ -47,26 +64,46 @@ const Wrapper = styled.div`
     transform: translateX(${props => props.slideIndex * -100}vw);
     /* overflow-y: auto;
     flex-direction: column; */
+    
+    
 `
 const Slide = styled.div` 
     display:flex;
     align-items: center;
     width: 100vw;
     height: 100vh;
+   
+    
     
 `
 const LeftColumn = styled.div` 
     flex:1;
+    
+    
 `
 const StoryNumber = styled.span` 
     font-size: 60px;
     color: #eee;
+    @media screen and (max-width: 1050px) {
+        position:relative;
+        top:260px;
+   }
+    
 `
 const Title = styled.h1` 
     color: #C8765A;
     font-weight: 500;
     font-size: 60px;
     font-family: "Abril Fatface";
+    @media screen and (max-width: 1050px) {
+        
+        
+       
+        font-size: 20px;
+        position:relative;
+        top:260px;
+           
+       }
 
 `
 const Desc = styled.p` 
@@ -74,6 +111,17 @@ const Desc = styled.p`
     color: white;
     font-size: 24px;
     font-weight: 300;
+    @media screen and (max-width: 1050px) {
+        
+        
+       
+        font-size: 10px;
+        position:relative;
+        top:250px;
+   
+           
+       }
+    
 `
 const Button = styled.button` 
     border: 1px solid white;
@@ -82,6 +130,14 @@ const Button = styled.button`
     font-size: 24px;
     padding: 10px;
     cursor: pointer;
+    @media screen and (max-width: 1050px) {
+        
+        position:relative;
+        left:70px;
+        font-size: 15px;
+        
+           
+       }
 `
 
 const ImgContainer = styled.div` 
@@ -90,6 +146,19 @@ const ImgContainer = styled.div`
     display: flex;
     align-items: center;
     padding: 50px;
+    @media screen and (max-width: 1050px) {
+        
+        
+       
+       
+        position:relative;
+        top:250px;
+        
+        
+           
+       }
+       
+}
 
 
 `
@@ -98,6 +167,7 @@ const Image = styled.img`
     width: 70%;
     object-fit: cover;
     border-radius: 50% 50% 0 0;
+   
 `
 
 const Slider = (props) => {

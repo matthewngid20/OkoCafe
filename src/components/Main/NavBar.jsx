@@ -9,11 +9,11 @@ import SearchIcon from '@mui/icons-material/Search';
 import { ColorTheme } from "../../ColorTheme"
 import SearchBar from "../SearchBar";
 import Cart from "../CartComponents/Cart";
-
+import MenuIcon from '@mui/icons-material/Menu';
+import CloseIcon from '@mui/icons-material/Close';
 import {
     NavLink
 } from "react-router-dom";
-
 
 const Left = styled.div`
     flex: 1;
@@ -35,7 +35,7 @@ const Container = styled.div`
     top: 0;
     padding-top: 1em;
     z-index: 10000;
-    font-size: 1vw;
+
     background-color: #333;
     position: fixed;
     top: -50px;
@@ -48,6 +48,21 @@ const TopCenter = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    @media screen and (max-width: 960px) {
+        
+        
+       
+        width: 100%;
+        display: flex;
+       justify-content: center;
+       align-items: center;
+       flex-direction: column;
+
+   
+      
+        
+
+       }
 `
 
 const LanguageContainer = styled.div` 
@@ -92,6 +107,15 @@ const LeftText = styled.div`
     color: #C8765A;
     margin-right: 20px;
     font-size: 20px;
+    @media screen and (max-width: 960px) {
+        
+        
+        font-weight: 600;
+        color: #C8765A;
+        margin-right: 20px;
+        font-size: 10px;
+        
+        }
 `
 const Brand = styled.div`// h1 For now
     width: 80px;
@@ -104,12 +128,35 @@ const Brand = styled.div`// h1 For now
     justify-content: center;
     align-items: center;
     text-align: center;
+    @media screen and (max-width: 960px) {
+        
+        width: 60px;
+        height: 40px;
+        border-radius:50%;
+        cursor: pointer;
+        border: 1px solid #C8765A;
+        color: #C8765A;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+		
+ }
 `
 const RightText = styled.div`
     font-size: 20px;
     font-weight: 600;
     color: #C8765A;
     margin-left: 20px;
+     @media screen and (max-width: 960px) {
+        
+        
+        font-weight: 600;
+        color: #C8765A;
+        margin-right: 20px;
+        font-size: 10px;
+        
+        }
 `
 const BottomCenter = styled.div`
     display: flex;
@@ -117,56 +164,67 @@ const BottomCenter = styled.div`
     align-items: center;
     justify-content: center;
     margin: 20px 0px;
+    @media screen and (max-width: 500px) {
+        
+        flex-direction: column;
+        font-size: 20px;
+       
+        
+    }
+    
+
+    
 `
-// const Link = styled.a`
-//     justify-content: center;
-//     font-weight: 200;
-//     font-size: 16px;
-//     cursor: pointer;
-//     color: #C8765A;
-//     padding: 0px 20px;
-//     /* &:hover {
-//         transform: scaleY(1.4);
-//         transform: scaleX(1.4);
-//         color: white;
-//         transition: all 1s cubic-bezier(1, 2, 3, 4);
-//         border: 0.5px solid ${ColorTheme.brand2};
-//         padding: 5px;
-//         border-radius: 3px;
-//     } */
-//     /* &:before {
-//         content: '';
-//         position: absolute;
-//         top: 0;
-//         left: 0;
-//         width: 100%;
-//         height: 100%;
-//         z-index: 1;
-//         transition: all 0.5s;
-//         border: 1px solid rgba(255,255,255,0.2);
-//         background-color: rgba(255,255,255,0.1);
-//     }
-//     &:after {
-//         content: '';
-//         position: absolute;
-//         top: 0;
-//         left: 0;
-//         width: 100%;
-//         height: 100%;
-//         z-index: 1;
-//         transition: all 0.5s;
-//         border: 1px solid rgba(255,255,255,0.2);
-//         background-color: rgba(255,255,255,0.1);
-//     }
-//     &:hover::before{
-//         transform: rotate(-45deg);
-//         background-color: rgba(255,255,255,0);
-//     }
-//     &:hover::after{
-//         transform: rotate(45deg);
-//         background-color: rgba(255,255,255,0);
-//     } */
-// `
+//const Link = styled.a`
+
+//justify-content: center;
+//  font-weight: 200;
+//  font-size: 16px;
+//  cursor: pointer;
+// color: #C8765A;
+// padding: 0px 20px;
+/* &:hover {
+//      transform: scaleY(1.4);
+//     transform: scaleX(1.4);
+//    color: white;
+   // transition: all 1s cubic-bezier(1, 2, 3, 4);
+  //  border: 0.5px solid ${ColorTheme.brand2};
+  //  padding: 5px;
+  //  border-radius: 3px;
+} */
+/* &:before {
+  //  content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    transition: all 0.5s;
+    border: 1px solid rgba(255,255,255,0.2);
+    background-color: rgba(255,255,255,0.1);
+}
+&:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    transition: all 0.5s;
+    border: 1px solid rgba(255,255,255,0.2);
+    background-color: rgba(255,255,255,0.1);
+}
+&:hover::before{
+    transform: rotate(-45deg);
+    background-color: rgba(255,255,255,0);
+}
+&:hover::after{
+    transform: rotate(45deg);
+    background-color: rgba(255,255,255,0);
+//  } */
+//`
 const Right = styled.div`
     flex: 1;
     display: flex;
@@ -174,7 +232,6 @@ const Right = styled.div`
     color: #eef;
     
 `
-
 // const CartContainer = styled.div`
 //     display: flex;
 //     align-items: center;
@@ -192,12 +249,33 @@ const Right = styled.div`
 // `
 
 const NavBar = () => {
+    const [toggleMenu, setToggleMenu] = useState(false)
+    const toggleNav = () => {
+        setToggleMenu(!toggleMenu)
+    }
+    const [screenWidth, setScreenWidth] = useState(window.innerWidth)
+    useEffect(() => {
+
+        const changeWidth = () => {
+            setScreenWidth(window.innerWidth);
+        }
+
+        window.addEventListener('resize', changeWidth)
+
+        return () => {
+            window.removeEventListener('resize', changeWidth)
+        }
+
+    }, [])
+
     const links = [
+
         { name: "Home", to: "/" },
         { name: "Shop", to: "/shop" },
-        { name: "About", to: "/about" },
+        { name: "About", to: "/aboutUs" },
         { name: "Blog", to: "/blog" },
         { name: "Contact", to: "/contact" },
+
 
     ]
     return (
@@ -224,13 +302,21 @@ const NavBar = () => {
                     <SearchBar />
                 </Right>
             </TopCenter>
-            <BottomCenter>
-                {links.map((link, index) => {
-                    return (
-                        (<NavLink className="nav-bar-link" to={link.to} key={index}> {link.name} </NavLink>))
-                })}
+            {(toggleMenu || screenWidth > 500) &&
+                (<BottomCenter>
 
-            </BottomCenter>
+                    {links.map((link, index) => {
+                        return (
+                            (<NavLink className="nav-bar-link" to={link.to} key={index}> {link.name} </NavLink>))
+
+                    })}
+                </BottomCenter>
+                )}
+
+            <div className='btn' onClick={()=>{toggleNav(false)}} >
+                <Icon color="red" > <MenuIcon style={{ fontSize: 30 }} /></Icon>
+            </div>
+           
 
         </Container>
 

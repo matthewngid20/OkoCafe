@@ -6,18 +6,26 @@ import { TeamMembers } from "../../FakeData"
 
 const Container = styled.div` 
     margin: 3rem 0px;
+    @media screen and (max-width: 960px) {
+        
+      
+        padding:3em;
+    }
+    
 `
 const Wrapper = styled.div` 
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    
 `
 const SubContainer = styled.div`
     
     display:flex;
     justify-content: center;
     align-items: center;
+   
 `
 
 const AboutUsBottom = () => {

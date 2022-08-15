@@ -1,20 +1,8 @@
-
-
 .nav-bar-link {
     color: #C8765A;
     margin: 0 10px;
-   
-}
-@media screen and (max-width: 650px) {
-    .nav-bar-link h1 {
-        font-size: 48px;
-        line-height: 60px;
-    }
 
-    .nav-bar-link p {
-        font-size: 16px;
-        line-height: 24px;
-    }
+
 }
 
 .active {
@@ -25,4 +13,52 @@
 a {
     /* color: green; */
     text-decoration: none;
+}
+
+
+.btn {
+    display: none;
+    position: absolute;
+    left: 1px;
+    top: 7px;
+    padding: 1px;
+}
+
+
+
+@media screen and (max-width: 500px) {
+    .nav-bar-link {
+        width: 100%;
+        border-top: 1px red rgba(255, 255, 255, 0.555);
+        text-align: center;
+        margin-right: 0px;
+        padding: 20px 0;
+        color: aqua;
+        height: auto;
+        text-transform: uppercase;
+       
+    }
+
+    .nav-bar-link:nth-child(1) {
+
+
+        border-top: 1px solid rgba(255, 255, 255, 0.555);
+        margin-top: 50px;
+       
+
+    }
+
+   .btn {
+
+        display: block;
+        margin: 10px 0px;
+        margin-left: -15px;
+        
+      
+        
+
+    }
+   
+
+
 }

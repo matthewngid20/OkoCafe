@@ -1,6 +1,7 @@
 import styled from "styled-components"
 import BlogSearch from "../components/BlogSearch"
 import BlogBottom from "../components/Blog/BlogBottom"
+import BlogDetails from "../components/Blog/BlogDetails"
 
 
 
@@ -14,9 +15,7 @@ const Blog = () => {
   return (
     <Container>
       <BlogSearch />
-   
-         
-      <BlogBottom />
+     <BlogBottom />
     </Container>
   )
 }

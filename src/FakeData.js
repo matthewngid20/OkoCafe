@@ -176,11 +176,11 @@ export const Blogs =  [
 
 
 export const BlogTitles = [
-
-    {"id": "01",
-
+{   
+    
+    "id": "01",
     "name": "The 4 Different Types of Coffee Beans: A Complete Overview ",
-    "postion" :" Author Oct, 23   2021",
+    "date" :" Bởi Tuyết Băng -  Oct, 23   2021",
     "desc": "If you’re an avid coffee drinker, you’ve probably wondered just how many different types of coffee beans there are and what makes them unique. We’ve got the answers!There are four different types of coffee beans: Arabica, Robusta, Liberica, and Excelsa. The most common (and popular) are Arabica and Robusta, but you might get lucky and run into the other two. Keep reading to learn all about these delicious beans, plus handy buying tips.",
    "img": "https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1200-630,f_auto,q_auto:best/newscms/2019_33/2203981/171026-better-coffee-boost-se-329p.jpg?auto=compress&cs=tinysrgb&dpr=1&w=300,",
    "secondTitle": " 4 Different Types of Coffee Beans:",

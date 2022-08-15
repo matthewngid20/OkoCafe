@@ -12,7 +12,7 @@ const Shop = (props) => {
     return (
         <Container>
             <Announcement/>
-            <Products products = {props.products}/>
+            <Products />
         </Container> 
     )
 }

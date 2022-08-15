@@ -8,6 +8,7 @@ import Footer from "../components/Main/Footer"
 
 const Container = styled.div`
      background-image: linear-gradient(#211D1C, #211D1C);
+     
 `
 
 
