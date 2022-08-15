@@ -15,6 +15,75 @@ import {
     NavLink
 } from "react-router-dom";
 
+
+const NavBar = () => {
+    const [toggleMenu, setToggleMenu] = useState(false)
+    const toggleNav = () => {
+        setToggleMenu(!toggleMenu)
+    }
+    const [screenWidth, setScreenWidth] = useState(window.innerWidth)
+    useEffect(() => {
+
+        const changeWidth = () => {
+            setScreenWidth(window.innerWidth);
+        }
+
+        window.addEventListener('resize', changeWidth)
+
+        return () => {
+            window.removeEventListener('resize', changeWidth)
+        }
+
+    }, [])
+
+    const links = [
+        { name: "Home", to: "/" },
+        { name: "Shop", to: "/shop" },
+        { name: "About", to: "/aboutUs" },
+        { name: "Blog", to: "/blog" },
+        { name: "Contact", to: "/contact" },
+
+    ]
+    return (
+        <Container>
+            <TopCenter>
+                <Left>
+                    <LanguageContainer>
+                        <Language langague="en"> EN  </Language>
+                        <Language langague="vn"> VN  </Language>
+                    </LanguageContainer>
+                    <IconContainer>
+                        <Icon color="4267B2" ><FacebookIcon style={{ fontSize: 17 }} /> </Icon>
+                        <Icon color="E1306C" ><InstagramIcon style={{ fontSize: 17 }} /></Icon>
+                        <Icon color="FF0000" > <YouTubeIcon style={{ fontSize: 17 }} /></Icon>
+                    </IconContainer>
+                </Left>
+                <Center>
+                    <LeftText> Fuel your imagination</LeftText>
+                    <NavLink to="/"> <Brand>  Smooth Curve  </Brand>  </NavLink>
+                    <RightText> Feel your different</RightText>
+                </Center>
+                <Right>
+                    <Cart />
+                    <SearchBar />
+                </Right>
+            </TopCenter>
+            {(toggleMenu || screenWidth > 500) &&
+                (<BottomCenter>
+
+                            {links.map((link, index) => {
+                                return (
+                                    (<NavLink className="nav-bar-link" to={link.to} key={index}> {link.name} </NavLink>))
+                            })}
+
+                </BottomCenter>
+                )}
+            <div className='btn' onClick={toggleNav} >
+                <Icon color="red" > <MenuIcon style={{ fontSize: 30 }} /></Icon>
+            </div>
+        </Container>
+    )
+}
 const Left = styled.div`
     flex: 1;
     display: flex;
@@ -247,82 +316,6 @@ const Right = styled.div`
 //     justify-content: space-between;
 //     margin-left:10px;
 // `
-
-const NavBar = () => {
-    const [toggleMenu, setToggleMenu] = useState(false)
-    const toggleNav = () => {
-        setToggleMenu(!toggleMenu)
-    }
-    const [screenWidth, setScreenWidth] = useState(window.innerWidth)
-    useEffect(() => {
-
-        const changeWidth = () => {
-            setScreenWidth(window.innerWidth);
-        }
-
-        window.addEventListener('resize', changeWidth)
-
-        return () => {
-            window.removeEventListener('resize', changeWidth)
-        }
-
-    }, [])
-
-    const links = [
-
-        { name: "Home", to: "/" },
-        { name: "Shop", to: "/shop" },
-        { name: "About", to: "/aboutUs" },
-        { name: "Blog", to: "/blog" },
-        { name: "Contact", to: "/contact" },
-
-
-    ]
-    return (
-        <Container>
-            <TopCenter>
-                <Left>
-                    <LanguageContainer>
-                        <Language langague="en"> EN  </Language>
-                        <Language langague="vn"> VN  </Language>
-                    </LanguageContainer>
-                    <IconContainer>
-                        <Icon color="4267B2" ><FacebookIcon style={{ fontSize: 17 }} /> </Icon>
-                        <Icon color="E1306C" ><InstagramIcon style={{ fontSize: 17 }} /></Icon>
-                        <Icon color="FF0000" > <YouTubeIcon style={{ fontSize: 17 }} /></Icon>
-                    </IconContainer>
-                </Left>
-                <Center>
-                    <LeftText> Fuel your imagination</LeftText>
-                    <NavLink to="/"> <Brand>  Smooth Curve  </Brand>  </NavLink>
-                    <RightText> Feel your different</RightText>
-                </Center>
-                <Right>
-                    <Cart />
-                    <SearchBar />
-                </Right>
-            </TopCenter>
-            {(toggleMenu || screenWidth > 500) &&
-                (<BottomCenter>
-
-                    {links.map((link, index) => {
-                        return (
-                            (<NavLink className="nav-bar-link" to={link.to} key={index}> {link.name} </NavLink>))
-
-                    })}
-                </BottomCenter>
-                )}
-       
-               <div className='btn' onClick={toggleNav} >
-		<Icon color="red" > <MenuIcon style={{ fontSize: 30 }} /></Icon>
-	      </div>
-
-
-        </Container>
-
-
-    )
-}
 
 
 export default NavBar

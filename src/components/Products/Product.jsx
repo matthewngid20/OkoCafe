@@ -3,7 +3,7 @@ import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import SearchIcon from '@mui/icons-material/Search';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import { ColorTheme } from "../../ColorTheme";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 
 const Product = (props) => {
@@ -13,11 +13,11 @@ const Product = (props) => {
             {props ? <> <Circle />
                 <Image src={props.product.img} />
                 <Info>
-                    <Link to={`/productdetails/${props.product.productid}`}> <Icon>
+                    <NavLink to={`/productdetails/${props.product.productid}`}> <Icon>
                         <ShoppingCartOutlinedIcon /></Icon>
-                    </Link>
-                    <Icon> <SearchIcon /></Icon>
-                    <Icon> <FavoriteBorderIcon /> </Icon>
+                    </NavLink>
+                    {/* <Icon> <SearchIcon /></Icon>
+                    <Icon> <FavoriteBorderIcon /> </Icon> */}
                 </Info>
                 <ProductDetail>
                     <ProductTitle>
@@ -50,7 +50,6 @@ const Info = styled.div`
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    
 `
 const Container = styled.div`
     margin: 20px;
@@ -74,6 +73,10 @@ const Image = styled.img`
     width: 70%;
     object-fit: cover;
     z-index: 0;
+    @media screen and (max-width: 500px) {
+        width: 100%;
+        height: 50%;
+       }
 `
 
 const Icon = styled.div`
@@ -118,10 +121,16 @@ const Circle = styled.div`
     background-color:${ColorTheme.brand2};
     position: absolute;
     top:50px;
+    @media screen and (max-width: 500px) {
+        width: 150px;
+        height: 150px;
+       }
 `
 const Price = styled.div`
 `
 const Volume = styled.div`
 `
+
+
 
 export default Product

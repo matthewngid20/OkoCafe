@@ -10,6 +10,51 @@ import * as React from 'react';
 import {
     NavLink
 } from "react-router-dom";
+
+const Footer = () => {
+    const links = [
+        { name: "Home", to: "/" },
+        { name: "Shop", to: "/shop" },
+        { name: "About", to: "/aboutUs" },
+        { name: "Blog", to: "/blog" },
+        { name: "Contact", to: "/contact" },
+
+    ]
+    return (
+        <Container>
+            <TopFooter>
+                <LogoContainer>
+                    <Logo>Smooth Curve</Logo>
+                </LogoContainer>
+                {links.map((link, index) => {
+                        return (
+                            (<NavLink className="nav-bar-link" to={link.to} key={index}> {link.name} </NavLink>))
+                    })}
+                <SearchBox>
+                    <Input placeholder="Your email" />
+                    <Button>SUBSCRIBE</Button>
+                </SearchBox>
+            </TopFooter>
+            <Hr />
+            <BottomFooter>
+                <LanguageContainer>
+                    <Language langague="en"> EN  </Language>
+                    <Language langague="vn"> VN  </Language>
+                </LanguageContainer>
+                <SocialContainer>
+                    <Icon color="3B5998"><FacebookIcon style={{ fontSize: 22, color: "white" }} /> </Icon>
+                    <Icon color="E4405F"><InstagramIcon style={{ fontSize: 22, color: "white" }} /></Icon>
+                    <Icon color="FF0000"> <YouTubeIcon style={{ fontSize: 22, color: "white" }} /></Icon>
+                </SocialContainer>
+                <AuthContainer>
+                    <AuthButton> SIGNUP </AuthButton>
+                    <Vr />
+                    <AuthButton> LOGIN  </AuthButton>
+                </AuthContainer>
+            </BottomFooter>
+        </Container>
+    )
+}
 const Container = styled.div`
     background-color:${ColorTheme.bg1};
     opacity: 0.95;
@@ -21,11 +66,8 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
     @media screen and (max-width: 960px) {
-         flex-direction: column;
-
-       width: 100%;
-       
-
+        flex-direction: column;
+        width: 100%;
          }
 
 `
@@ -33,17 +75,10 @@ const TopFooter = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    //padding: 1rem 0;
-    
     @media screen and (max-width: 960px) {
-    
-      
         flex-direction: column;
-        
         padding:-5em;
         font-size:10px;
-
-        
        }
     
     
@@ -67,12 +102,7 @@ const Logo = styled.div`
     align-items: center;
     text-align: center;
     @media screen and (max-width: 960px) {
-    
-        height: 20px;
-       
-        
-      
-
+        height: 20px;    
        }
     `
 const Links = styled.div`
@@ -80,11 +110,8 @@ const Links = styled.div`
     display: flex;
     justify-content: space-around;
     align-items: center;
-    @media screen and (max-width: 960px) {
-    
-      
+    @media screen and (max-width: 960px) {      
         flex-direction: column;
-        
     }
     
 `
@@ -101,9 +128,6 @@ const SearchBox = styled.div`
     margin-right:50px;
     align-items: center;
     //border: 1px black solid;
-
-    
-   
    
 `
 const Input = styled.input`
@@ -131,14 +155,10 @@ const BottomFooter = styled.div`
     background-color:${ColorTheme.bg1};
     padding: 1rem 0;
    
-    @media screen and (max-width: 960px) {
-        
-        
+    @media screen and (max-width: 960px) {      
         flex-direction: column;
 		width: 100%;
         font-size: 15px;
-      
-        
     }
 
 `
@@ -184,45 +204,5 @@ const AuthButton = styled(Button)`
     cursor: pointer;
     color: ${ColorTheme.brand1}; 
 `
-const Footer = () => {
-    return (
-        <Container>
-            <TopFooter>
-                <LogoContainer>
-                    <Logo>Smooth Curve</Logo>
-                </LogoContainer>
-                <Links>
-                    <NavLink to="/"> Home </NavLink>
-                    <NavLink to="/shop"> Coffee Shop </NavLink>
-                    <NavLink to="/aboutUs"> About Us</NavLink>
-                    <NavLink to="/contact"> Contact</NavLink>
-
-                </Links>
-                <SearchBox>
-                    <Input placeholder="Your email" />
-                    <Button>SUBSCRIBE</Button>
-                </SearchBox>
-            </TopFooter>
-            <Hr />
-            <BottomFooter>
-                <LanguageContainer>
-                    <Language langague="en"> EN  </Language>
-                    <Language langague="vn"> VN  </Language>
-                </LanguageContainer>
-                <SocialContainer>
-                    <Icon color="3B5998"><FacebookIcon style={{ fontSize: 22, color: "white" }} /> </Icon>
-                    <Icon color="E4405F"><InstagramIcon style={{ fontSize: 22, color: "white" }} /></Icon>
-                    <Icon color="FF0000"> <YouTubeIcon style={{ fontSize: 22, color: "white" }} /></Icon>
-                </SocialContainer>
-                <AuthContainer>
-                    <AuthButton> SIGNUP </AuthButton>
-                    <Vr />
-                    <AuthButton> LOGIN  </AuthButton>
-                </AuthContainer>
-            </BottomFooter>
-        </Container>
-    )
-}
-
 export default Footer
 //Comment to commit
