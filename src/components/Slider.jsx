@@ -132,21 +132,13 @@ const StoryNumber = styled.span`
         position:relative;
         top:260px;
    }
-<<<<<<< HEAD
-    
-=======
->>>>>>> 18039bc68006ce3feebe65ff031d483b348efb04
 `
 const Title = styled.h1` 
     color: #C8765A;
     font-weight: 500;
     font-size: 60px;
     font-family: "Abril Fatface";
-<<<<<<< HEAD
-    @media screen and (max-width: 1050px) {
-=======
      @media screen and (max-width: 1050px) {
->>>>>>> 18039bc68006ce3feebe65ff031d483b348efb04
         
         
        
@@ -172,10 +164,6 @@ const Desc = styled.p`
    
            
        }
-<<<<<<< HEAD
-    
-=======
->>>>>>> 18039bc68006ce3feebe65ff031d483b348efb04
 `
 const Button = styled.button` 
     border: 1px solid white;
@@ -184,15 +172,9 @@ const Button = styled.button`
     font-size: 24px;
     padding: 10px;
     cursor: pointer;
-<<<<<<< HEAD
-    @media screen and (max-width: 1050px) {
-        
-        position:relative;
-=======
      @media screen and (max-width: 1050px) {
         
       position:relative;
->>>>>>> 18039bc68006ce3feebe65ff031d483b348efb04
         left:70px;
         font-size: 15px;
         
@@ -213,18 +195,9 @@ const ImgContainer = styled.div`
        
         position:relative;
         top:250px;
-<<<<<<< HEAD
-        
-        
-           
-       }
-       
-}
-=======
    
            
        }
->>>>>>> 18039bc68006ce3feebe65ff031d483b348efb04
 
 
 `
