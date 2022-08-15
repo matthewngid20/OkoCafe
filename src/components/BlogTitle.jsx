@@ -622,7 +622,7 @@ const BlogTitle = ({ name, postion, desc, url, secondTitle, smallTitle,
         <Container>
 
             <Name>{name}</Name>
-            <Postion>{postion}</Postion>
+            {/* <Postion>{postion}</Position> */}
             <Desc>{desc}</Desc>
             <StaffImage><img src={blog1} height={300} width={558} left={336.01} top={834} />  </StaffImage>
             <SecondTitle>{secondTitle}</SecondTitle>
