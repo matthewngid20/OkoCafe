@@ -8,6 +8,7 @@ var cors = require('cors')
 var app = express()
 app.use(cors())
 
+//Back end
 app.listen(3307, ()=>{
     console.log("app listening to 3307");
     connection.connect((error) => {
