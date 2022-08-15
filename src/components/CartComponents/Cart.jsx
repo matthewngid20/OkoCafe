@@ -40,9 +40,9 @@ const Cart = () => {
                         </ProductContainer>
                         <ButtonContainer>
                             <Link to="/ShoppingCart">
-                                <Button >
+                                {cartItems && JSON.parse(cartItems).length > 0 ? <Button >
                                     VIEW DETAIL
-                                </Button>
+                                </Button> :  null}
                             </Link>
                         </ButtonContainer>
                     </Items>

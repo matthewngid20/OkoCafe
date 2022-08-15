@@ -19,6 +19,9 @@ const RelatedProducts = () => {
     const data = useContext(Context)
     const products = JSON.parse(data[0])
 
+    console.log(products);
+    console.log(data);
+    console.log(JSON.parse(data[0]));
     return (
         <Container>
             <Arrow direction="left" onClick={() => handleClick("left")}>

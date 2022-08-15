@@ -1,33 +1,19 @@
 import './App.css';
 import styled from "styled-components"
 import NavBar from './components/Main/NavBar';
-import VideoBG from "./components/VideoBG";
-import Slider from './components/Slider';
-import RelatedProducts from './components/Products/RelatedProducts';
-import Product from './components/Products/Product';
-import Announcement from './components/Shop/Announcement';
 import Footer from './components/Main/Footer';
 import Home from './pages/Home';
 import Shop from './pages/Shop';
-import BlogDetail from './pages/BlogDetail';
-
 import ProductDetail from './pages/ProductDetail';
 import AboutUs     from './pages/AboutUs';
 import Blog from './pages/Blog';
-import TeamMember from './components/TeamMember';
 import Contact from './pages/Contact';
 import ShoppingCart from './pages/ShoppingCart';
-
 import {Route,Routes,} from "react-router-dom";
-
-import * as API from "./APIs/getRouter"
-
 import { useEffect } from 'react';
 import axios from "axios"
 import { useState, } from 'react';
-import { DataProvider, UseData } from './DataContext';
 import { createContext } from 'react';
-import { Button } from '@mui/material';
 import BlogDetails from './components/Blog/BlogDetails';
 
 
@@ -38,6 +24,7 @@ background: linear-gradient(180deg, #211D1C 0%, rgba(33, 29, 28, 0) 49.29%);
 `
 export const Context = createContext();
 function App() {
+  
   const [stories, setStories] = useState()
   const [products, setProducts] = useState(
     sessionStorage.getItem('localProducts')
@@ -54,16 +41,14 @@ function App() {
     getCartItems();
     return () => {
     }
-  }, [])
+  }, [isLoading,products])
 
 
   var getCartItems = () => {
     setCart((sessionStorage.getItem('cart')))
   }
-  var getStory = () => {
-    debugger;
-    axios.get("http://localhost:3307/story").then((res, rej) => {
-      debugger;
+  var getStory = async () => {
+    await axios.get("http://localhost:3307/story").then((res, rej) => {
       if (res) {
         setStories(JSON.stringify(res.data))
         setIsLoading(false)
@@ -74,10 +59,10 @@ function App() {
     })
   }
 
-  var getProduct = () => {
-    axios.get("http://localhost:3307/products").then((res, rej) => {
+  var getProduct = async () => {
+    await axios.get("http://localhost:3307/products").then((res, rej) => {
       if (res) {
-        debugger;
+        setProducts(JSON.stringify(res.data))
         sessionStorage.setItem('localProducts', JSON.stringify(res.data))
         setIsLoading(false)
       } else {
@@ -86,12 +71,12 @@ function App() {
       }
     })
   }
-  window.onbeforeunload  = () => {
-    if(sessionStorage.length == 0){
-      window.sessionStorage.clear()
-    }
+  // window.onbeforeunload  = () => {
+  //   if(sessionStorage.length == 0){
+  //     window.sessionStorage.clear()
+  //   }
 
-  }
+  // }
 
   console.log(stories);
 
