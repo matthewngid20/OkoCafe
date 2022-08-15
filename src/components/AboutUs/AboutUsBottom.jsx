@@ -8,11 +8,7 @@ const Container = styled.div`
     margin: 3rem 0px;
     @media screen and (max-width: 960px) {
         
-<<<<<<< HEAD
-      
-=======
         
->>>>>>> 18039bc68006ce3feebe65ff031d483b348efb04
         padding:3em;
     }
     

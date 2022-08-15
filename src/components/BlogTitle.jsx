@@ -156,13 +156,8 @@ flex-grow: 0;
     align-items: center;
     justify-content: center;
    
-<<<<<<< HEAD
 
 
-=======
-
-
->>>>>>> 18039bc68006ce3feebe65ff031d483b348efb04
 }
 `
 
@@ -188,7 +183,6 @@ flex: none;
 order: 0;
 
 @media screen and (max-width: 960px) {
-<<<<<<< HEAD
 
     display: flex;
     width: 80%;
@@ -196,15 +190,6 @@ order: 0;
     justify-content: center;
     
 
-=======
-
-    display: flex;
-    width: 80%;
-    align-items: center;
-    justify-content: center;
-    
-
->>>>>>> 18039bc68006ce3feebe65ff031d483b348efb04
 
 }
 `
@@ -233,7 +218,6 @@ flex: none;
 order: 1;
 flex-grow: 0;
 @media screen and (max-width: 960px) {
-<<<<<<< HEAD
 
     display: flex;
     width: 90%;
@@ -242,16 +226,6 @@ flex-grow: 0;
     
 
 
-=======
-
-    display: flex;
-    width: 90%;
-    align-items: center;
-    justify-content: center;
-    
-
-
->>>>>>> 18039bc68006ce3feebe65ff031d483b348efb04
 }
 `
 const ThirdTitle = styled.p`
