@@ -18,7 +18,7 @@ export const DataProvider = ({children}) => {
     }, [])
 
     var getStory = () => {
-        axios.get("http://localhost:3307/story").then((res, rej) => {
+        axios.get("https://main.d19f95q0donsj2.amplifyapp.com/story").then((res, rej) => {
             if (res) {
                 setStories(res.data)
                 
@@ -29,7 +29,7 @@ export const DataProvider = ({children}) => {
         })
     }
     var getProduct = () => {
-        axios.get("http://localhost:3307/products").then((res, rej) => {
+        axios.get("https://main.d19f95q0donsj2.amplifyapp.com/products").then((res, rej) => {
             if (res) {
                 setProducts(res.data)
                 //console.log(res);
