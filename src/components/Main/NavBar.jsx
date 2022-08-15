@@ -23,17 +23,6 @@ const NavBar = () => {
     }
     const [screenWidth, setScreenWidth] = useState(window.innerWidth)
     useEffect(() => {
-
-        const changeWidth = () => {
-            setScreenWidth(window.innerWidth);
-        }
-
-        window.addEventListener('resize', changeWidth)
-
-        return () => {
-            window.removeEventListener('resize', changeWidth)
-        }
-
     }, [])
 
     const links = [
@@ -229,7 +218,7 @@ const BottomCenter = styled.div`
         margin: 0px;
         font-size: 30px;
         height: 100vh;
-        background-color: ${props => props.status === true ? 'black' : "blue"};
+        background-color: ${props => props.status === true ? 'black' : "black"};
         justify-content: flex-start;
 
     }

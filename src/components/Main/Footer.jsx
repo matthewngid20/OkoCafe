@@ -4,21 +4,21 @@ import YouTubeIcon from '@mui/icons-material/YouTube';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import { ColorTheme } from "../../ColorTheme";
 
-import * as React from 'react';
-
+import { react, useState } from 'react';
 
 import {
     NavLink
 } from "react-router-dom";
 
 const Footer = () => {
+    const [screenWidth, setScreenWidth] = useState(window.innerWidth)
+    console.log(screenWidth);
     const links = [
         { name: "Home", to: "/" },
         { name: "Shop", to: "/shop" },
         { name: "About", to: "/aboutUs" },
         { name: "Blog", to: "/blog" },
         { name: "Contact", to: "/contact" },
-
     ]
     return (
         <Container>
@@ -26,10 +26,14 @@ const Footer = () => {
                 <LogoContainer>
                     <Logo>Smooth Curve</Logo>
                 </LogoContainer>
-                {links.map((link, index) => {
+                {screenWidth > 500 ?
+                    ( links.map((link, index) => {
                         return (
                             (<NavLink className="nav-bar-link" to={link.to} key={index}> {link.name} </NavLink>))
-                    })}
+                    }) )
+                    : null
+                }
+
                 <SearchBox>
                     <Input placeholder="Your email" />
                     <Button>SUBSCRIBE</Button>
@@ -68,7 +72,7 @@ const Container = styled.div`
     @media screen and (max-width: 960px) {
         flex-direction: column;
         width: 100%;
-         }
+        }
 
 `
 const TopFooter = styled.div`
@@ -105,21 +109,6 @@ const Logo = styled.div`
         height: 20px;    
        }
     `
-const Links = styled.div`
-    flex: 2;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    @media screen and (max-width: 960px) {      
-        flex-direction: column;
-    }
-    
-`
-const Link = styled.a`
-    color: ${ColorTheme.brand2};
-    font-weight: 200;
-    cursor: pointer;
-`
 const SearchBox = styled.div`
     flex: 2;
     width: 30%;
@@ -162,7 +151,6 @@ const BottomFooter = styled.div`
     }
 
 `
-
 const LanguageContainer = styled.div` 
     flex: 1;
     display: flex;
