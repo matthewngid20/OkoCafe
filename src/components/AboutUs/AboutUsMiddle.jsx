@@ -6,7 +6,8 @@ const Container = styled.div`
     display: flex; 
     justify-content: center;
     align-items: center; 
-   
+    
+    
 `
 const Wrapper = styled.div` 
     display: flex;   
@@ -18,10 +19,9 @@ const Wrapper = styled.div`
 const Row = styled.div` 
    display: flex;
    flex-direction: ${props => props.type === "firstRow" && "row-reverse"};
-   @media screen and (max-width: 960px) {
+   @media screen and (max-width: 500px) {
         
-    
-    
+        
     flex-direction: column;
     
 }

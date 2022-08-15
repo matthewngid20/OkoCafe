@@ -10,11 +10,8 @@ const Container = styled.div`
     font-size:17px;
     word-spacing: 3px;
     @media screen and (max-width: 960px) {
-        
-    
-   
-         
-        font-size:15px;
+              
+         font-size:15px;
       
         
     }

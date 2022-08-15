@@ -45,7 +45,8 @@ flex-grow: 0;
 
 
 `
-const Date = styled.p`
+
+const Date = styled.p`=======
 
 width: 386.82px;
 height: 12px;
@@ -155,8 +156,13 @@ flex-grow: 0;
     align-items: center;
     justify-content: center;
    
+<<<<<<< HEAD
 
 
+=======
+
+
+>>>>>>> 18039bc68006ce3feebe65ff031d483b348efb04
 }
 `
 
@@ -182,6 +188,7 @@ flex: none;
 order: 0;
 
 @media screen and (max-width: 960px) {
+<<<<<<< HEAD
 
     display: flex;
     width: 80%;
@@ -189,6 +196,15 @@ order: 0;
     justify-content: center;
     
 
+=======
+
+    display: flex;
+    width: 80%;
+    align-items: center;
+    justify-content: center;
+    
+
+>>>>>>> 18039bc68006ce3feebe65ff031d483b348efb04
 
 }
 `
@@ -217,6 +233,7 @@ flex: none;
 order: 1;
 flex-grow: 0;
 @media screen and (max-width: 960px) {
+<<<<<<< HEAD
 
     display: flex;
     width: 90%;
@@ -225,6 +242,16 @@ flex-grow: 0;
     
 
 
+=======
+
+    display: flex;
+    width: 90%;
+    align-items: center;
+    justify-content: center;
+    
+
+
+>>>>>>> 18039bc68006ce3feebe65ff031d483b348efb04
 }
 `
 const ThirdTitle = styled.p`
@@ -429,7 +456,7 @@ flex-grow: 0;
 
 }
 `
-const LastTitle = styled.p`
+const   LastTitle = styled.p`
 
 width: 784px;
 height: 27px;
@@ -588,14 +615,14 @@ flex-grow: 0;
 `
 
 
-const BlogTitle = ({ name, date, desc, url, secondTitle, smallTitle,
+const BlogTitle = ({ name, postion, desc, url, secondTitle, smallTitle,
     secondDesc, thirdTitle, thirdDesc, fourthTitle, fourthDesc, questionTitle,
     lastDesc, lastTitle, firstReads, secondReads, thirdReads, admin }) => {
     return (
         <Container>
 
             <Name>{name}</Name>
-            <Date>{date}</Date>
+            <Postion>{postion}</Postion>
             <Desc>{desc}</Desc>
             <StaffImage><img src={blog1} height={300} width={558} left={336.01} top={834} />  </StaffImage>
             <SecondTitle>{secondTitle}</SecondTitle>

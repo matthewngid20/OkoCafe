@@ -136,51 +136,63 @@ export const TeamMembers =  [
 
 ]
 
-export const Blogs =  [
-    {"id": "01",
-    "subejct": "/  Coffee  /  Lifestyle  /",
-    "name": "The 4 Different Types of Coffee Beans: A Complete Overview ",
-    "img": "https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1200-630,f_auto,q_auto:best/newscms/2019_33/2203981/171026-better-coffee-boost-se-329p.jpg?auto=compress&cs=tinysrgb&dpr=1&w=300,", 
-    "position": "If you’re an avid coffee drinker, you’ve probably wondered just how many different types of coffee beans there are and what makes..."},
-    {"id": "02",
-    "subejct": "/  Brand  /  Lifestyle  /",
-    "name": "10 Best Starbucks Coffee Beans 2021 – Reviews & Top Picks ",
-    "img": "https://mybites.io/wp-content/uploads/2021/08/Waitress-at-a-restaurant-taking-an-order-with-a-smile.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940", 
-    "position": "Starbucks is – of course – a perennial giant in the coffee world. It’s able to churn out an incredible amount of reliably wonderful coff..."},
-    {"id": "03",
-    "subejct": "/  Coffee  /  Lifestyle  /",
-    "name": "Review: Roseline Coffee First Flowers Spring Blend (Portland, Oregon)",
-    "img": "https://previews.123rf.com/images/stockbroker/stockbroker1408/stockbroker140801366/31020676-male-and-female-staff-in-coffee-shop.jpg?auto=compress&cs=tinysrgb&dpr=1&w=500", 
-    "position": "Roseline Coffee is one of my favorite roasters to order from when I’m in the mood for something special. I follow them on Instagram..."},
-    
-    {"id": "04",
-    "subejct": "/  Coffee  /  Lifestyle  /",
-    "name": "The 4 Different Types of Coffee Beans: A Complete Overview ",
-    "img": "http://cdn.shopify.com/s/files/1/0508/4407/4143/articles/robert-bye-F2eHfMwIOxA-unsplash_1_1200x1200.jpg?v=1630474458?auto=compress&cs=tinysrgb&dpr=1&w=500", 
-    "position": "If you’re an avid coffee drinker, you’ve probably wondered just how many different types of coffee beans there are and what makes..."},
+export const Blogs = [
+    {
+        "id": "01",
+        "subject": "/     /  Lifestyle  /",
+        "name": "The 4 Different Types of Coffee Beans: A Complete Overview ",
+        "img": "https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1200-630,f_auto,q_auto:best/newscms/2019_33/2203981/171026-better-coffee-boost-se-329p.jpg?auto=compress&cs=tinysrgb&dpr=1&w=300,",
+        "position": "If you’re an avid coffee drinker, you’ve probably wondered just how many different types of coffee beans there are and what makes..."
+    },
+    {
+        "id": "02",
+        "subject": "/  Brand  /  Lifestyle  /",
+        "name": "10 Best Starbucks Coffee Beans 2021 – Reviews & Top Picks ",
+        "img": "https://mybites.io/wp-content/uploads/2021/08/Waitress-at-a-restaurant-taking-an-order-with-a-smile.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "position": "Starbucks is – of course – a perennial giant in the coffee world. It’s able to churn out an incredible amount of reliably wonderful coff..."
+    },
+    {
+        "id": "03",
+        "subject": "/  Coffee  /  Lifestyle  /",
+        "name": "Review: Roseline Coffee First Flowers Spring Blend (Portland, Oregon)",
+        "img": "https://previews.123rf.com/images/stockbroker/stockbroker1408/stockbroker140801366/31020676-male-and-female-staff-in-coffee-shop.jpg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+        "position": "Roseline Coffee is one of my favorite roasters to order from when I’m in the mood for something special. I follow them on Instagram..."
+    },
 
-    {"id": "05",
-    "subejct": "/  Coffee  /  Lifestyle  /",
-    "name": "10 Best Starbucks Coffee Beans 2021 – Reviews & Top Picks ",
-    "img": "https://res.cloudinary.com/gagan/image/upload/v1594040000/bijyl26bjkw7z4lyaazf.jpg?v=1630474458?auto=compress&cs=tinysrgb&dpr=1&w=500", 
-    "position": "Starbucks is – of course – a perennial giant in the coffee world. It’s able to churn out an incredible amount of reliably wonderful coff..."},
+    {
+        "id": "04",
+        "subject": "/  Coffee  /  Lifestyle  /",
+        "name": "The 4 Different Types of Coffee Beans: A Complete Overview ",
+        "img": "http://cdn.shopify.com/s/files/1/0508/4407/4143/articles/robert-bye-F2eHfMwIOxA-unsplash_1_1200x1200.jpg?v=1630474458?auto=compress&cs=tinysrgb&dpr=1&w=500",
+        "position": "If you’re an avid coffee drinker, you’ve probably wondered just how many different types of coffee beans there are and what makes..."
+    },
 
-    {"id": "06",
-    "subejct": "/  Coffee  /  Lifestyle  /",
-    "name": "Review: Roseline Coffee First Flowers Spring Blend (Portland, Oregon)",
-    "img": "https://post.healthline.com/wp-content/uploads/2020/08/coffee-worlds-biggest-source-of-antioxidants-1200x628-facebook-1200x628.jpg?v=1630474458?auto=compress&cs=tinysrgb&dpr=1&w=500", 
-    "position": "Roseline Coffee is one of my favorite roasters to order from when I’m in the mood for something special. I follow them on Instagram..."},
+    {
+        "id": "05",
+        "subject": "/  Coffee  /  Lifestyle  /",
+        "name": "10 Best Starbucks Coffee Beans 2021 – Reviews & Top Picks ",
+        "img": "https://res.cloudinary.com/gagan/image/upload/v1594040000/bijyl26bjkw7z4lyaazf.jpg?v=1630474458?auto=compress&cs=tinysrgb&dpr=1&w=500",
+        "position": "Starbucks is – of course – a perennial giant in the coffee world. It’s able to churn out an incredible amount of reliably wonderful coff..."
+    },
+
+    {
+        "id": "06",
+        "subject": "/  Coffee  /  Lifestyle  /",
+        "name": "Review: Roseline Coffee First Flowers Spring Blend (Portland, Oregon)",
+        "img": "https://post.healthline.com/wp-content/uploads/2020/08/coffee-worlds-biggest-source-of-antioxidants-1200x628-facebook-1200x628.jpg?v=1630474458?auto=compress&cs=tinysrgb&dpr=1&w=500",
+        "position": "Roseline Coffee is one of my favorite roasters to order from when I’m in the mood for something special. I follow them on Instagram..."
+    },
 
 ]
 
 
 
 export const BlogTitles = [
-{   
-    
-    "id": "01",
+
+    {"id": "01",
+
     "name": "The 4 Different Types of Coffee Beans: A Complete Overview ",
-    "date" :" Bởi Tuyết Băng -  Oct, 23   2021",
+    "postion" :" Author Oct, 23   2021",
     "desc": "If you’re an avid coffee drinker, you’ve probably wondered just how many different types of coffee beans there are and what makes them unique. We’ve got the answers!There are four different types of coffee beans: Arabica, Robusta, Liberica, and Excelsa. The most common (and popular) are Arabica and Robusta, but you might get lucky and run into the other two. Keep reading to learn all about these delicious beans, plus handy buying tips.",
    "img": "https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1200-630,f_auto,q_auto:best/newscms/2019_33/2203981/171026-better-coffee-boost-se-329p.jpg?auto=compress&cs=tinysrgb&dpr=1&w=300,",
    "secondTitle": " 4 Different Types of Coffee Beans:",

@@ -10,7 +10,11 @@ import { ColorTheme } from "../../ColorTheme"
 import SearchBar from "../SearchBar";
 import Cart from "../CartComponents/Cart";
 import MenuIcon from '@mui/icons-material/Menu';
+<<<<<<< HEAD
 import CloseIcon from '@mui/icons-material/Close';
+=======
+
+>>>>>>> 18039bc68006ce3feebe65ff031d483b348efb04
 import {
     NavLink
 } from "react-router-dom";
@@ -312,11 +316,11 @@ const NavBar = () => {
                     })}
                 </BottomCenter>
                 )}
+       
+               <div className='btn' onClick={toggleNav} >
+		<Icon color="red" > <MenuIcon style={{ fontSize: 30 }} /></Icon>
+	      </div>
 
-            <div className='btn' onClick={()=>{toggleNav(false)}} >
-                <Icon color="red" > <MenuIcon style={{ fontSize: 30 }} /></Icon>
-            </div>
-           
 
         </Container>
 

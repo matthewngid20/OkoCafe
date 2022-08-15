@@ -2,9 +2,41 @@ import styled from "styled-components"
 import Product from "./Product"
 import ArrowRightAltOutlinedIcon from '@mui/icons-material/ArrowRightAltOutlined';
 import ArrowBackIosOutlinedIcon from '@mui/icons-material/ArrowBackIosOutlined';
-import { useState } from "react";
+import { useState,useContext } from "react";
 import { ColorTheme } from "../../ColorTheme";
+import { Context } from "../../App";
 
+
+const RelatedProducts = () => {
+    const [slideIndex, setSlideIndex] = useState(0)
+    const handleClick = (direction) => {
+        if (direction === "left") {
+            setSlideIndex(slideIndex > 0 ? slideIndex - 1 : 4);
+        } else {
+            setSlideIndex(slideIndex < 4 ? slideIndex + 1 : 0)
+        }
+    }
+    const data = useContext(Context)
+    const products = JSON.parse(data[0])
+
+    return (
+        <Container>
+            <Arrow direction="left" onClick={() => handleClick("left")}>
+                <ArrowBackIosOutlinedIcon />
+            </Arrow>
+            <ProductIntro>Our Product </ProductIntro>
+            <ProductsWrapper slideIndex={slideIndex}>
+                {products ? products.map(product => (
+                    <Product key={product.productid} product={product} />
+                )) :
+                    <h1>Loading products</h1>}
+            </ProductsWrapper>
+            <Arrow direction="right" onClick={() => handleClick("right")}>
+                <ArrowRightAltOutlinedIcon />
+            </Arrow>
+        </Container>
+    )
+}
 const Container = styled.div`
     display: flex; 
     position: relative;
@@ -68,32 +100,4 @@ const Arrow = styled.div`
     opacity: 0.5;
     z-index:2;
 `
-const RelatedProducts = (props) => {
-    const [slideIndex, setSlideIndex] = useState(0)
-    const handleClick = (direction) => {
-        if (direction === "left") {
-            setSlideIndex(slideIndex > 0 ? slideIndex - 1 : 4);
-        } else {
-            setSlideIndex(slideIndex < 4 ? slideIndex + 1 : 0)
-        }
-    }
-    return (
-        <Container>
-            <Arrow direction="left" onClick={() => handleClick("left")}>
-                <ArrowBackIosOutlinedIcon />
-            </Arrow>
-            <ProductIntro>Our Product </ProductIntro>
-            <ProductsWrapper slideIndex={slideIndex}>
-                {props.products ? props.products.map(product => (
-                    <Product key={product.productid} product={product} />
-                )) :
-                    <h1>Loading products</h1>}
-            </ProductsWrapper>
-            <Arrow direction="right" onClick={() => handleClick("right")}>
-                <ArrowRightAltOutlinedIcon />
-            </Arrow>
-        </Container>
-    )
-}
-
 export default RelatedProducts

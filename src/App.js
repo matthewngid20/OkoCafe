@@ -22,6 +22,7 @@ useEffect } from "react";
 
 import {
 
+<<<<<<< HEAD
 Route,
 Routes,
 } from "react-router-dom";
@@ -29,61 +30,101 @@ Routes,
 import * as API from "./APIs/getRouter"
 
 import axios from "axios"
+=======
+  Route,
+  Routes,
+
+} from "react-router-dom";
+import { useEffect } from 'react';
+import axios from "axios"
+import { useState, } from 'react';
+import { DataProvider, UseData } from './DataContext';
+import { createContext } from 'react';
+import { Button } from '@mui/material';
+import BlogDetails from './components/Blog/BlogDetails';
+>>>>>>> 18039bc68006ce3feebe65ff031d483b348efb04
 
 const Container = styled.div`
 position: relative; 
 background-color: rgba(0,0,0,0.2); 
 background: linear-gradient(180deg, #211D1C 0%, rgba(33, 29, 28, 0) 49.29%); 
 `
-
+export const Context = createContext();
 function App() {
-const [stories, setStories] = useState()
-const [products, setProducts] = useState()
-useEffect(() => {
-getStory()
-getProduct()
-return () => {
-}
-}, [])
+  const [stories, setStories] = useState()
+  const [products, setProducts] = useState(
+    sessionStorage.getItem('localProducts')
+  )
+  const [isLoading, setIsLoading] = useState(true)
+  const [cart, setCart] = useState(
+    sessionStorage.getItem('cart')
+  )
 
-var getStory = () => {
-axios.get("http://localhost:3307/story").then((res, rej) => {
-if (res) {
-setStories(res.data)
-} else {
-console.log(rej);
-return
-}
-})
-}
-var getProduct = () => {
-axios.get("http://localhost:3307/products").then((res, rej) => {
-if (res) {
-setProducts(res.data)
-//console.log(res);
-} else {
-console.log(rej);
-return
-}
-})
-}
-return (
-<Container>
-<NavBar />
-<Routes>
-<Route path="/" element={<Home stories={stories} products={products} />} />
-<Route path="shop" element={<Shop products={products} />} />
-<Route path="productdetail" element={<ProductDetail products={products} />} />
-<Route path="productdetails/:productId" element={<ProductDetail products={products} />} />
-<Route path="aboutus" element={<AboutUs />} />
-<Route path="contact" element={<Contact />} />
-<Route path="blog" element={<Blog />} />
-<Route path="shoppingCart" end element={<ShoppingCart />} />
-<Route path="blogdetail" element={<BlogDetail />} />
-</Routes>
-<Footer />
-</Container>
-);
+
+  useEffect(() => {
+    getStory()
+    getProduct()
+    getCartItems();
+    return () => {
+    }
+  }, [])
+
+
+  var getCartItems = () => {
+    setCart((sessionStorage.getItem('cart')))
+  }
+  var getStory = () => {
+    axios.get("http://localhost:3307/story").then((res, rej) => {
+      if (res) {
+        setStories(JSON.stringify(res.data))
+        setIsLoading(false)
+      } else {
+        console.log(rej);
+        return
+      }
+    })
+  }
+
+  var getProduct = () => {
+    axios.get("http://localhost:3307/products").then((res, rej) => {
+      if (res) {
+        sessionStorage.setItem('localProducts', JSON.stringify(res.data))
+        setIsLoading(false)
+      } else {
+        console.log(rej);
+        return
+      }
+    })
+  }
+  window.onbeforeunload  = () => {
+    if(sessionStorage.length == 0){
+      window.sessionStorage.clear()
+    }
+
+  }
+
+  console.log(JSON.parse(cart));
+  return (
+    <Context.Provider value={[products, stories, cart]}>
+      <Container>
+        <NavBar />
+        {isLoading ? <h1> Loading data</h1> :
+          <Routes>
+            <Route path="/" element={<Home stories={stories} products={products} />} />
+            <Route path="shop" element={<Shop products={products} />} />
+            <Route path="productdetail" element={<ProductDetail products={products} />} />
+            <Route path="productdetails/:productId" element={<ProductDetail products={products} />} />
+            <Route path="aboutus" element={<AboutUs />} />
+            <Route path="contact" element={<Contact />} />
+            <Route path="blog" element={<Blog />} />
+            <Route path="blogdetail" element={<BlogDetails />} />
+            <Route path="shoppingCart" element={<ShoppingCart />} />
+          </Routes>
+        }
+        <Footer />
+      </Container>
+    </Context.Provider>
+  );
 }
 
 export default App;

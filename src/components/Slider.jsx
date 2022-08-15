@@ -5,8 +5,56 @@ import ArrowBackIosOutlinedIcon from '@mui/icons-material/ArrowBackIosOutlined';
 import { useEffect, useState } from "react";
 import Stories from "./Stories";
 import { ColorTheme } from "../ColorTheme";
+import { useContext } from "react";
+import { Context } from "../App";
 
 
+
+
+const Slider = () => {
+    const contextData = useContext(Context)
+    const stories = JSON.parse(contextData[1])
+    useEffect(() => {
+
+
+        return () => {
+
+        }
+    }, [])
+
+    const [slideIndex, setSlideIndex] = useState(0);
+    const handleClick = (direction) => {
+        if (direction === "left") {
+            setSlideIndex(slideIndex > 0 ? slideIndex - 1 : 3);
+        } else {
+            setSlideIndex(slideIndex < 3 ? slideIndex + 1 : 0);
+        };
+    };
+    return (
+        <Container>
+            <Arrow direction="left" onClick={() => handleClick("left")}><ArrowBackIosOutlinedIcon /></Arrow>
+            <Intro>
+                <Stories />
+            </Intro>
+            <Wrapper slideIndex={slideIndex}>
+                {stories ? stories.map((item, index) => (
+                    <Slide key={index}>
+                        <LeftColumn >
+                            <StoryNumber>{item.storyid}</StoryNumber>
+                            <Title>{item.title}</Title>
+                            <Desc> {item.desc}</Desc>
+                            <Button onClick={() => handleClick()}> View more </Button>
+                        </LeftColumn>
+                        <ImgContainer>
+                            <Image src={item.imageurl} />
+                        </ImgContainer>
+                    </Slide>)) : <h1>Loading</h1>}
+
+            </Wrapper>
+            <Arrow direction="right" onClick={() => handleClick("right")}><ArrowForwardIosOutlinedIcon style={{ backgroundColor: "white" }} /></Arrow>
+        </Container>
+    )
+}
 const Container = styled.div` 
     width: 100%;
     height: 100vh;
@@ -38,22 +86,11 @@ const Arrow = styled.div`
     right: ${props => props.direction === 'right' && "10px"};
     opacity: 0.5;
     z-index:2;
-    @media screen and (max-width: 1050px) {
+     @media screen and (max-width: 1050px) {
         
-        
-      
-       // position:relative;
+     // position:relative;
         top:260px;
-   
-   
-        
-        
-      }
-   
-       
-        
-       
- 
+    }
 `
 const Wrapper = styled.div` 
     display: flex;
@@ -65,15 +102,22 @@ const Wrapper = styled.div`
     /* overflow-y: auto;
     flex-direction: column; */
     
-    
 `
 const Slide = styled.div` 
     display:flex;
     align-items: center;
     width: 100vw;
     height: 100vh;
+    @media screen and (max-width: 1050px) {
+        
    
-    
+    font-size:20px;
+    display:flex;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+        
+    }
     
 `
 const LeftColumn = styled.div` 
@@ -88,14 +132,21 @@ const StoryNumber = styled.span`
         position:relative;
         top:260px;
    }
+<<<<<<< HEAD
     
+=======
+>>>>>>> 18039bc68006ce3feebe65ff031d483b348efb04
 `
 const Title = styled.h1` 
     color: #C8765A;
     font-weight: 500;
     font-size: 60px;
     font-family: "Abril Fatface";
+<<<<<<< HEAD
     @media screen and (max-width: 1050px) {
+=======
+     @media screen and (max-width: 1050px) {
+>>>>>>> 18039bc68006ce3feebe65ff031d483b348efb04
         
         
        
@@ -121,7 +172,10 @@ const Desc = styled.p`
    
            
        }
+<<<<<<< HEAD
     
+=======
+>>>>>>> 18039bc68006ce3feebe65ff031d483b348efb04
 `
 const Button = styled.button` 
     border: 1px solid white;
@@ -130,9 +184,15 @@ const Button = styled.button`
     font-size: 24px;
     padding: 10px;
     cursor: pointer;
+<<<<<<< HEAD
     @media screen and (max-width: 1050px) {
         
         position:relative;
+=======
+     @media screen and (max-width: 1050px) {
+        
+      position:relative;
+>>>>>>> 18039bc68006ce3feebe65ff031d483b348efb04
         left:70px;
         font-size: 15px;
         
@@ -153,12 +213,18 @@ const ImgContainer = styled.div`
        
         position:relative;
         top:250px;
+<<<<<<< HEAD
         
         
            
        }
        
 }
+=======
+   
+           
+       }
+>>>>>>> 18039bc68006ce3feebe65ff031d483b348efb04
 
 
 `
@@ -169,49 +235,5 @@ const Image = styled.img`
     border-radius: 50% 50% 0 0;
    
 `
-
-const Slider = (props) => {
-    useEffect(() => {
-        
-    
-      return () => {
-        
-      }
-    }, [props.data])
-    
-    const [slideIndex, setSlideIndex] = useState(0);
-    const handleClick = (direction) => {
-        if (direction === "left") {
-            setSlideIndex(slideIndex > 0 ? slideIndex - 1 : 3);
-        } else {
-            setSlideIndex(slideIndex < 3 ? slideIndex + 1 : 0);
-        };
-    };
-    return (
-        <Container>
-            <Arrow direction="left" onClick={() => handleClick("left")}><ArrowBackIosOutlinedIcon /></Arrow>
-            <Intro>
-                <Stories/>
-            </Intro>
-            <Wrapper slideIndex={slideIndex}>
-               {props.stories ? props.stories.map((item,index) => (
-                    <Slide key = {index}>
-                        <LeftColumn >
-                            <StoryNumber>{item.storyid}</StoryNumber>
-                            <Title>{item.title}</Title>
-                            <Desc> {item.desc}</Desc>
-                            <Button onClick={() => handleClick()}> View more </Button>
-                        </LeftColumn>
-                        <ImgContainer>
-                            <Image src={item.imageurl} />
-                        </ImgContainer>
-                    </Slide>)): <h1>Loading</h1>}
-               
-            </Wrapper>
-            <Arrow direction="right" onClick={() => handleClick("right")}><ArrowForwardIosOutlinedIcon style={{ backgroundColor: "white" }} /></Arrow>
-        </Container>
-    )
-}
-
 
 export default Slider

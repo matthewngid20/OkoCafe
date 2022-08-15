@@ -1,26 +1,96 @@
 import styled from "styled-components"
 import { ColorTheme } from "../../ColorTheme"
 import { useParams } from "react-router-dom"
-const item = {
-    "id": "04",
-    "name": "Super X",
-    "desc": "Super x arabica",
-    "price": "50",
-    "volume": "1000",
-    "station": "NANO GENJI",
-    "altitude": "1,900 - 2,200 METERS",
-    "notes": "ju",
-    "station": "JUICY PEACH, KEY LIME PIE, BLACK CHERRY TART.",
-    "process": "WASHED",
-    "roastlv": "LIGHT",
-    "varietal": "ETHIOPIAN HEIRLOOM",
-    "roasted": "WEEKDAYS",
-    "img": "https://images.squarespace-cdn.com/content/v1/59a44aa2e6f2e1db4cbd5252/1584724680455-VZVCMZBHDS4F4JB808X2/Supernova+Killer+Acid-01.png?format=750w"
+import { useEffect, useState } from "react"
+import { useContext } from "react"
+import { Context } from "../../App"
+
+const ProductDetails = () => {
+    const data = useContext(Context)
+    const { productId } = useParams()
+    const products = JSON.parse(data[0]);
+    const thisProduct = products.find(prod => prod.productid === productId)
+
+    useEffect(() => {
+
+    }, [JSON.parse(sessionStorage.getItem('cart'))])
+    const addToCart = () => {
+        let addedProducts = []
+        if (sessionStorage.getItem('cart')) {
+            addedProducts = JSON.parse(sessionStorage.getItem('cart'))
+        }
+        addedProducts.push(thisProduct)
+        window.sessionStorage.setItem('cart', JSON.stringify(addedProducts))
+
+        console.log(JSON.parse(sessionStorage.getItem('cart')));
+        alert("added item to cart")
+        window.location.reload()
+        // console.log(JSON.parse(sessionStorage.getItem('cartItems')))
+    }
+
+    return (
+
+        <Container>
+            <Hr />
+            <ProductContainer>
+                {products ? <> <ImgContainer>
+                    <BigImg>
+                        <Img src={thisProduct.img} />
+                    </BigImg>
+                    <SmallImgs>
+                        <SmallImg style={{ width: "200px" }} src={thisProduct.img} />
+                        <SmallImg style={{ width: "200px" }} src={thisProduct.img} />
+                        <SmallImg style={{ width: "200px" }} src={thisProduct.img} />
+                        <SmallImg style={{ width: "200px" }} src={thisProduct.img} />
+                    </SmallImgs>
+                </ImgContainer>
+                    <ProductInfo>
+                        <TopContent>
+                            <Title>{thisProduct.name}</Title>
+                            <Desc> {thisProduct.desc}</Desc>
+                            <PriceContainer>
+                                <Price> ${thisProduct.price}</Price>
+                                <Vr />
+                                <Volume> {thisProduct.volume}G </Volume>
+                            </PriceContainer>
+                            <Button onClick={() => addToCart()} >ADD TO CART</Button>
+                        </TopContent>
+                        <BottomContent>
+                            <SmallTitle> INGREDIENT DETAILS: </SmallTitle>
+                            <DetailsContainer>
+                                <Col>
+                                    <RowTitle> WASHING STATION: </RowTitle>
+                                    <RowContent> {thisProduct.station} </RowContent>
+                                    <RowTitle> ORIGIN:</RowTitle>
+                                    <RowContent> ETHIOPIA</RowContent>
+                                    <RowTitle> PROCESS:</RowTitle>
+                                    <RowContent> NANO GENJI </RowContent>
+                                    <RowTitle> VARIETAL: </RowTitle>
+                                    <RowContent> ETHIOPIA HEIRLOOM</RowContent>
+                                </ Col>
+                                < Col>
+                                    <RowTitle> ALTITUDE:</RowTitle>
+                                    <RowContent> 1,900 - 2,200 METERS </RowContent>
+                                    <RowTitle> TASTING NOTES:</RowTitle>
+                                    <RowContent> JUICY PEACH, KEY LIME PIE, BLACK CHERRY TART.</RowContent>
+                                    <RowTitle> ROAST LEVEL:</RowTitle>
+                                    <RowContent> LIGHT </RowContent>
+                                    <RowTitle> ROASTED</RowTitle>
+                                    <RowContent> WEEKDAYS</RowContent>
+                                </ Col>
+                            </DetailsContainer>
+                        </BottomContent>
+                    </ProductInfo></> : <h1>Loading</h1>}
+            </ProductContainer>
+        </Container>
+
+    )
 }
 
+export default ProductDetails
 const Container = styled.div` 
     background-color: ${ColorTheme.bg1};
-    margin: 0 auto ;
+    margin: 100px 0px auto ;
     padding: 100px;
     
 `
@@ -133,65 +203,3 @@ const RowTitle = styled.div`
 const RowContent = styled.div`
     color: ${ColorTheme.brand1};
 `
-
-const ProductDetails = ({prod}) => {
-    return (
-        <Container>
-            <Hr />
-            <ProductContainer>
-                <ImgContainer>
-                    <BigImg>
-                        <Img src={item.img} />
-                    </BigImg>
-                    <SmallImgs>
-                        <SmallImg style={{ width: "200px" }} src={item.img} />
-                        <SmallImg style={{ width: "200px" }} src={item.img}/>
-                        <SmallImg style={{ width: "200px" }} src={item.img}/>
-                        <SmallImg style={{ width: "200px" }} src={item.img}/>
-                    </SmallImgs>
-                </ImgContainer>
-                <ProductInfo>
-                    <TopContent>
-                        <Title>{item.name}</Title>
-                        <Desc> RARE COFFEE TO DATE</Desc>
-                        <PriceContainer>
-                            <Price> $24</Price>
-                            <Vr />
-                            <Volume> 500G </Volume>
-                        </PriceContainer>
-                        <Button>ADD TO CART</Button>
-                    </TopContent>
-                    <BottomContent>
-                        <SmallTitle> INGREDIENT DETAILS: </SmallTitle>
-                        <DetailsContainer>
-                            <Col>
-                                <RowTitle> WASHING STATION:</RowTitle>
-                                <RowContent> NANO GENJI </RowContent>
-                                <RowTitle> ORIGIN:</RowTitle>
-                                <RowContent> ETHIOPIA</RowContent>
-                                <RowTitle> PROCESS:</RowTitle>
-                                <RowContent> NANO GENJI </RowContent>
-                                <RowTitle> VARIETAL: </RowTitle>
-                                <RowContent> ETHIOPIA HEIRLOOM</RowContent>
-                            </ Col>
-                            < Col>
-                                <RowTitle> ALTITUDE:</RowTitle>
-                                <RowContent> 1,900 - 2,200 METERS </RowContent>
-                                <RowTitle> TASTING NOTES:</RowTitle>
-                                <RowContent> JUICY PEACH, KEY LIME PIE, BLACK CHERRY TART.</RowContent>
-                                <RowTitle> ROAST LEVEL:</RowTitle>
-                                <RowContent> LIGHT </RowContent>
-                                <RowTitle> ROASTED</RowTitle>
-                                <RowContent> WEEKDAYS</RowContent>
-                            </ Col>
-
-                        </DetailsContainer>
-                    </BottomContent>
-                </ProductInfo>
-            </ProductContainer>
-        </Container>
-
-    )
-}
-
-export default ProductDetails

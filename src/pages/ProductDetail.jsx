@@ -9,15 +9,16 @@ import RelatedProducts from "../components/Products/RelatedProducts"
 
 
 
+
 const ProductDetail = (props) => {
-    console.log(props);
+
     return (
         <div >
-            <ProductDetails products = {props.products}/>
+            <ProductDetails />
             <Title title="Coffee Story" alignment="center" />
             <VideoBG width="50%" height="50vh" />
             <SubTitle />
-            <RelatedProducts products = {props.products} />
+            <RelatedProducts  />
         </div>
     )
 }

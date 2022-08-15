@@ -5,8 +5,83 @@ import LocalOfferIcon from '@mui/icons-material/LocalOffer';
 import Checkbox from '@mui/material/Checkbox';
 
 import { ColorTheme } from '../../ColorTheme';
+import { Context } from '../../App';
+import { useContext } from 'react'
+const CartDetails = () => {
+    const dataContext = useContext(Context)
+    const cartItems = JSON.parse(dataContext[2]);
+    console.log(cartItems);
+    var price = 0;
+    return (
+        <Container>
+            <WrapperTop>
+                <TableTop>
+                    <TableBody>
+                        <Row>
+                            {/* <TableTitle >
+                                <Checkbox {...properties} />
+                            </TableTitle> */}
+                            <TableTitle>            </TableTitle>
+                            <TableTitle> PRODUCT NAME </TableTitle>
+                            <TableTitle> DESCRIPTION </TableTitle>
+                            <TableTitle> PRICE </TableTitle>
+                            <TableTitle> QUANTITY  </TableTitle>
+                        </Row>
 
-const Container = styled.div` 
+                        {cartItems ? cartItems.map((item, index) => {
+                            return (
+                                <RowProd key={index}>
+                                    <Data> <Checkbox {...properties} /> </Data>
+                                    <Data>
+                                        <Img src={item.img} />
+                                    </Data>
+                                    <Data> {item.name} </Data>
+                                    <Data>{item.desc} </Data>
+                                    <Data> ${item.price} </Data>
+                                    <Data>
+                                        <ButtonData>
+                                            <Button type="dec"> - </Button>
+                                            <Amount> {cartItems.length} </Amount>
+                                            <Button type="inc"> + </Button>
+                                        </ButtonData>
+                                    </Data>
+                                    <Data >
+                                        <Icon >
+                                            <DeleteSweepOutlinedIcon />
+                                        </Icon>
+                                    </Data>
+                                </RowProd>
+                            )
+                        }) : null}
+                        <VoucherRow>
+                            {/* <Data colSpan={7}>
+                                <VoucherContainer>
+                                    <IconVoucher > <LocalOfferIcon />  </IconVoucher>
+                                    <Voucher style={{ color: "white" }}> Voucher: </Voucher>
+                                    <VoucherLink style={{ cursor: "pointer" }}> Select Voucher</VoucherLink>
+                                </VoucherContainer>
+                            </Data> */}
+                        </VoucherRow>
+                        <RowCheckOut>
+                            <Data >  <Checkbox {...properties} />  </Data>
+                            <Data align="left" >  SELECT ALL {cartItems.length} </Data>
+                            <Data align="right" colSpan={2} style={{ color: "white" }}> TOTAL: </Data>
+                            <Data colSpan={1}> {cartItems.map((item, key) => {
+                                price += parseInt(item.price)
+                            })} ${price} </Data>
+                            <Data colSpan={3}>
+                                <CheckOutButton type="checkout" >CHECKOUT</CheckOutButton>
+                            </Data>
+                        </RowCheckOut>
+                    </TableBody>
+                </TableTop>
+            </WrapperTop>
+        </Container>
+    )
+}
+
+const Container = styled.div`
+    margin-top:100px; 
     background: #211D1C;
     font-weight: 300;
     padding: 3em;
@@ -102,90 +177,6 @@ const properties = {
             color: "#C8765A",
         },
     }
-}
-
-const CartDetails = () => {
-    return (
-        <Container>
-
-            <WrapperTop>
-                <TableTop>
-                    <TableBody>
-                        <Row>
-                            {/* <TableTitle >
-                                <Checkbox {...properties} />
-                            </TableTitle> */}
-                            <TableTitle>            </TableTitle>
-                            <TableTitle> PRODUCT NAME </TableTitle>
-                            <TableTitle> DESCRIPTION </TableTitle>
-                            <TableTitle> PRICE </TableTitle>
-                            <TableTitle> QUANTITY  </TableTitle>
-                        </Row>
-                        <RowProd>
-                            <Data> <Checkbox {...properties} /> </Data>
-                            <Data>
-                                <Img src="https://images.squarespace-cdn.com/content/v1/59a44aa2e6f2e1db4cbd5252/1584724680455-VZVCMZBHDS4F4JB808X2/Supernova+Killer+Acid-01.png?format=750w" />
-                            </Data>
-                            <Data> Supernatural </Data>
-                            <Data> Natural Process Coffee | Guji, Ethiopia </Data>
-                            <Data> $20 </Data>
-                            <Data>
-                                <ButtonData>
-                                    <Button type="dec"> - </Button>
-                                    <Amount> 2 </Amount>
-                                    <Button type="inc"> + </Button>
-                                </ButtonData>
-                            </Data>
-                            <Data >
-                                <Icon >
-                                    <DeleteSweepOutlinedIcon />
-                                </Icon>
-                            </Data>
-                        </RowProd>
-                        <RowProd>
-                            <Data> <Checkbox {...properties} /> </Data>
-                            <Data>
-                                <Img src="https://images.squarespace-cdn.com/content/v1/59a44aa2e6f2e1db4cbd5252/1584724680455-VZVCMZBHDS4F4JB808X2/Supernova+Killer+Acid-01.png?format=750w" />
-                            </Data>
-                            <Data> Supernatural </Data>
-                            <Data> Natural Process Coffee | Guji, Ethiopia </Data>
-                            <Data> $20 </Data>
-                            <Data>
-                                <ButtonData>
-                                    <Button type="dec"> - </Button>
-                                    <Amount> 2 </Amount>
-                                    <Button type="inc"> + </Button>
-                                </ButtonData>
-                            </Data>
-                            <Data>
-                                <Icon>
-                                    <DeleteSweepOutlinedIcon />
-                                </Icon>
-                            </Data>
-                        </RowProd>
-                        <VoucherRow>
-                            <Data colSpan={7}>
-                                <VoucherContainer>
-                                    <IconVoucher > <LocalOfferIcon />  </IconVoucher>
-                                    <Voucher style ={{color: "white"}}> Voucher: </Voucher>
-                                    <VoucherLink style ={{cursor: "pointer"}}> Select Voucher</VoucherLink>
-                                </VoucherContainer>
-                            </Data>
-                        </VoucherRow>
-                        <RowCheckOut>
-                            <Data >  <Checkbox {...properties} />  </Data>
-                            <Data align="left" >  SELECT ALL {3} </Data>
-                            <Data align="right" colSpan={2} style ={{color: "white"}}> TOTAL: </Data>
-                            <Data colSpan={1}> $50 </Data>
-                            <Data colSpan={3}>
-                                <CheckOutButton type="checkout" >CHECKOUT</CheckOutButton>
-                            </Data>
-                        </RowCheckOut>
-                    </TableBody>
-                </TableTop>
-            </WrapperTop>
-        </Container>
-    )
 }
 
 export default CartDetails

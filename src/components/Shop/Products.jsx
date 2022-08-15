@@ -3,6 +3,31 @@ import Product from "../Products/Product";
 import { Pagination } from "@mui/material";
 import { coffeeProduct } from "../../FakeData";
 import { ColorTheme } from "../../ColorTheme";
+import { useContext } from "react";
+import { Context } from "../../App";
+
+
+const Products = () => {
+    const data = useContext(Context)
+    const products  = JSON.parse(data[0]);
+    return (
+        <Container>
+            <Title> Coffee</Title>
+            <FilterType>
+                <Filter type="espresso"> Espresso </Filter>
+                <Filter type="filter"> Filter  </Filter>
+            </FilterType>
+            {products ? <><ProductContainer>
+                {products.map(product => (
+                    <Product key={product.productid} product={product} />
+                ))}
+            </ProductContainer></> : <h1> Nothing found</h1>}
+            <PaginationContainer>
+                <Pagination color="secondary" count={7} shape="rounded" />
+            </PaginationContainer>
+        </Container>
+    )
+}
 
 const Container = styled.div` 
     display: flex;
@@ -46,25 +71,4 @@ const PaginationContainer = styled.div`
     justify-content: center;
     margin-top: 40px;
 `
-
-const Products = (props) => {
-    return (
-        <Container>
-            <Title> Coffee</Title>
-            <FilterType>
-                <Filter type="espresso"> Espresso </Filter>
-                <Filter type="filter"> Filter  </Filter>
-            </FilterType>
-            {props.products ? <><ProductContainer>
-                {props.products.map(product => (
-                    <Product key={product.productid} product={product} />
-                ))}
-            </ProductContainer></> : <h1> Nothing found</h1>}
-            <PaginationContainer>
-                <Pagination color="secondary" count={7} shape="rounded" />
-            </PaginationContainer>
-        </Container>
-    )
-}
-
 export default Products
