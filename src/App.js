@@ -17,24 +17,11 @@ import Blog from './pages/Blog';
 import TeamMember from './components/TeamMember';
 import Contact from './pages/Contact';
 import ShoppingCart from './pages/ShoppingCart';
-import { useState,
-useEffect } from "react";
 
-import {
-
-<<<<<<< HEAD
-Route,
-Routes,
-} from "react-router-dom";
+import {Route,Routes,} from "react-router-dom";
 
 import * as API from "./APIs/getRouter"
 
-import axios from "axios"
-=======
-  Route,
-  Routes,
-
-} from "react-router-dom";
 import { useEffect } from 'react';
 import axios from "axios"
 import { useState, } from 'react';
@@ -42,7 +29,7 @@ import { DataProvider, UseData } from './DataContext';
 import { createContext } from 'react';
 import { Button } from '@mui/material';
 import BlogDetails from './components/Blog/BlogDetails';
->>>>>>> 18039bc68006ce3feebe65ff031d483b348efb04
+
 
 const Container = styled.div`
 position: relative; 
