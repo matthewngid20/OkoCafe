@@ -66,7 +66,10 @@ const Container = styled.div`
         opacity: 1;
     }
     object-fit: contain;
-    
+    @media screen and (max-width: 500px) {
+        margin: 0px;
+
+       }
 `
 const Image = styled.img`
     height: 75%;

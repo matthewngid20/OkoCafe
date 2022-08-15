@@ -69,17 +69,15 @@ const NavBar = () => {
                 </Right>
             </TopCenter>
             {(toggleMenu || screenWidth > 500) &&
-                (<BottomCenter>
-
+                (<BottomCenter status = {toggleMenu} >
                             {links.map((link, index) => {
                                 return (
-                                    (<NavLink className="nav-bar-link" to={link.to} key={index}> {link.name} </NavLink>))
+                                    (<NavLink onClick={toggleNav} className="nav-bar-link" to={link.to} key={index}> {link.name} </NavLink>))
                             })}
-
                 </BottomCenter>
                 )}
             <div className='btn' onClick={toggleNav} >
-                <Icon color="red" > <MenuIcon style={{ fontSize: 30 }} /></Icon>
+                <Icon color="red" > <MenuIcon style={{ fontSize: '30px' }} /></Icon>
             </div>
         </Container>
     )
@@ -118,20 +116,12 @@ const TopCenter = styled.div`
     justify-content: center;
     align-items: center;
     @media screen and (max-width: 960px) {
-        
-        
-       
         width: 100%;
         display: flex;
-       justify-content: center;
-       align-items: center;
-       flex-direction: column;
-
-   
-      
-        
-
-       }
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
 `
 
 const LanguageContainer = styled.div` 
@@ -234,14 +224,16 @@ const BottomCenter = styled.div`
     justify-content: center;
     margin: 20px 0px;
     @media screen and (max-width: 500px) {
-        
         flex-direction: column;
-        font-size: 20px;
-       
-        
+        padding-top: 50px ;
+        margin: 0px;
+        font-size: 30px;
+        height: 100vh;
+        background-color: ${props => props.status === true ? 'black' : "blue"};
+        justify-content: flex-start;
+
     }
     
-
     
 `
 //const Link = styled.a`

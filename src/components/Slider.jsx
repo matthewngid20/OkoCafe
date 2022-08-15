@@ -8,17 +8,11 @@ import { ColorTheme } from "../ColorTheme";
 import { useContext } from "react";
 import { Context } from "../App";
 
-
-
-
 const Slider = () => {
     const contextData = useContext(Context)
     const stories = JSON.parse(contextData[1])
     useEffect(() => {
-
-
         return () => {
-
         }
     }, [])
 
@@ -38,6 +32,7 @@ const Slider = () => {
             </Intro>
             <Wrapper slideIndex={slideIndex}>
                 {stories ? stories.map((item, index) => (
+                    //<SliderContainer>
                     <Slide key={index}>
                         <LeftColumn >
                             <StoryNumber>{item.storyid}</StoryNumber>
@@ -48,7 +43,9 @@ const Slider = () => {
                         <ImgContainer>
                             <Image src={item.imageurl} />
                         </ImgContainer>
-                    </Slide>)) : <h1>Loading</h1>}
+                    </Slide>
+                    //</SliderContainer>
+                )) : <h1>Loading</h1>}
 
             </Wrapper>
             <Arrow direction="right" onClick={() => handleClick("right")}><ArrowForwardIosOutlinedIcon style={{ backgroundColor: "white" }} /></Arrow>
@@ -62,8 +59,6 @@ const Container = styled.div`
     background-color:${ColorTheme.bg1};
     position: relative;
     overflow: hidden;
-    
-
 `
 const Intro = styled.div`
     position: absolute;
@@ -86,7 +81,7 @@ const Arrow = styled.div`
     right: ${props => props.direction === 'right' && "10px"};
     opacity: 0.5;
     z-index:2;
-     @media screen and (max-width: 1050px) {
+    @media screen and (max-width: 1050px) {
         
      // position:relative;
         top:260px;
@@ -109,16 +104,17 @@ const Slide = styled.div`
     width: 100vw;
     height: 100vh;
     @media screen and (max-width: 1050px) {
-        
-   
-    font-size:20px;
-    display:flex;
-    align-items: center;
-    width: 100vw;
-    height: 100vh;
-        
-    }
+        font-size:20px;
+        display:flex;
+        align-items: center;
+        width: 100vw;
+        height: 100vh;
+    } 
+    @media screen and (max-width: 500px) {
+    } 
     
+`
+const SliderContainer = styled.div`
 `
 const LeftColumn = styled.div` 
     flex:1;
@@ -155,14 +151,9 @@ const Desc = styled.p`
     font-size: 24px;
     font-weight: 300;
     @media screen and (max-width: 1050px) {
-        
-        
-       
         font-size: 10px;
         position:relative;
         top:180px;
-   
-           
        }
 `
 const Button = styled.button` 
@@ -172,15 +163,15 @@ const Button = styled.button`
     font-size: 24px;
     padding: 10px;
     cursor: pointer;
-     @media screen and (max-width: 1050px) {
-        
-      position:relative;
+    @media screen and (max-width: 1050px) {
+        position:relative;
         left:80px;
         top:60px;
         font-size: 15px;
-        
-           
-       }
+    }
+    @media screen and (max-width: 500px) {
+        display: none;
+    }
 `
 
 const ImgContainer = styled.div` 
@@ -189,16 +180,14 @@ const ImgContainer = styled.div`
     display: flex;
     align-items: center;
     padding: 50px;
-    @media screen and (max-width: 1050px) {
-        
-        
-       
-       
+    @media screen and (max-width: 1050px) {      
         position:relative;
         top:250px;
-   
-           
-       }
+    }
+    @media screen and (max-width: 500px) {      
+        max-width: 100%;
+        max-height: 50%;
+    }
 
 
 `

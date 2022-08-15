@@ -7,7 +7,9 @@ const Container = styled.div`
     width:100%;
     height: ${props => props.height ? props.height : "100vh" };
     background-color:${ColorTheme.bg1};
-    
+    @media screen and (max-width: 500px) {
+        height: 70vh;
+    }
     `
 const Video = styled.video` 
     max-width:${props => props.width};
@@ -15,12 +17,9 @@ const Video = styled.video`
     display: block;
     margin: 0 auto;
     @media screen and (max-width: 960px) {
-        
-        
         height: 100%; 
-	 
-       
     }
+
 `
 const VideoContainer = styled.div` 
     position:absolute;

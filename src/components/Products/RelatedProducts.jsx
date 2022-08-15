@@ -61,10 +61,12 @@ const ProductsWrapper = styled.div`
     @media screen and (max-width: 1050px) {
         flex-direction: column;
         margin: 0 0 3rem;
-        font-size: 10px;
+        //font-size: 10px;
         padding:10em;
        }
-    
+    @media screen and (max-width: 500px) {
+        padding: 0px 10em
+       }
 `
 const ProductIntro = styled.div`
     align-self: center;
@@ -74,6 +76,10 @@ const ProductIntro = styled.div`
     @media screen and (max-width: 1050px) {
         font-size: 20px;
         padding:10em;
+       }
+    @media screen and (max-width: 500px) {
+        font-size: 40px;
+        padding:0;
        }
 `
 const Arrow = styled.div`
