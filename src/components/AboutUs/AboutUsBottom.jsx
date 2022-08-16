@@ -5,10 +5,8 @@ import SubTitle from "../SubTitle"
 import { TeamMembers } from "../../FakeData"
 
 const Container = styled.div` 
-    margin: 3rem 0px;
+    // margin: 2px 0px;
     @media screen and (max-width: 960px) {
-        
-        
         padding:3em;
     }
     
@@ -18,10 +16,10 @@ const Wrapper = styled.div`
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    padding: 1em;
     
 `
 const SubContainer = styled.div`
-    
     display:flex;
     justify-content: center;
     align-items: center;
@@ -31,7 +29,7 @@ const SubContainer = styled.div`
 const AboutUsBottom = () => {
     return (
         <Container>
-            <Title title="Our Team" />
+            <Title title="Our Team" alignment="center"/>
             <SubContainer>
                 <SubTitle description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, quisquam voluptatum cum cumque ea temporibus consequatur nesciunt pariatur harum explicabo non illo autem, neque ratione, earum quia repellat. Maxime, commodi!" />
             </SubContainer>

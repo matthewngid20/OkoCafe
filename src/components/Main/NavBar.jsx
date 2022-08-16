@@ -28,7 +28,7 @@ const NavBar = () => {
     const links = [
         { name: "Home", to: "/" },
         { name: "Shop", to: "/shop" },
-        { name: "About", to: "/aboutUs" },
+        { name: "About", to: "/aboutus" },
         { name: "Blog", to: "/blog" },
         { name: "Contact", to: "/contact" },
 
@@ -91,11 +91,10 @@ const Container = styled.div`
     top: 0;
     padding-top: 1em;
     z-index: 10000;
-
     background-color: #333;
     position: fixed;
     top: -50px;
-    width: 100%;
+    width: 100vw;
     display: block;
     transition: top 0.3s;
 `

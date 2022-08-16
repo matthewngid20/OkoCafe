@@ -18,9 +18,10 @@ import BlogDetails from './components/Blog/BlogDetails';
 
 
 const Container = styled.div`
-position: relative; 
-background-color: rgba(0,0,0,0.2); 
-background: linear-gradient(180deg, #211D1C 0%, rgba(33, 29, 28, 0) 49.29%); 
+  position: relative; 
+  background-color: rgba(0,0,0,0.2); 
+  background: linear-gradient(180deg, #211D1C 0%, rgba(33, 29, 28, 0) 49.29%); 
+  max-width: 100vw;
 `
 export const Context = createContext();
 function App() {
