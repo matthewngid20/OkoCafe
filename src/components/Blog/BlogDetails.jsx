@@ -6,10 +6,12 @@ import { BlogTitles } from "../../FakeData"
 const Container = styled.div` 
     margin: 3rem 0px;
     @media screen and (max-width: 960px) {
-        
-        
+
         padding:3em;
     }
+    // @media screen and (max-width:500px){
+    //     width: 100vw;
+    // }
     
 `
 const Wrapper = styled.div` 
@@ -17,6 +19,9 @@ const Wrapper = styled.div`
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    @media screen and (max-width:500px){
+        max-width: 100vw;
+    }
 `
 
 

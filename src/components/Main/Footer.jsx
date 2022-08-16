@@ -12,7 +12,6 @@ import {
 
 const Footer = () => {
     const [screenWidth, setScreenWidth] = useState(window.innerWidth)
-    console.log(screenWidth);
     const links = [
         { name: "Home", to: "/" },
         { name: "Shop", to: "/shop" },
@@ -72,7 +71,11 @@ const Container = styled.div`
     @media screen and (max-width: 960px) {
         flex-direction: column;
         width: 100%;
-        }
+    }
+    // @media screen and (max-width: 500px) {
+    //     position: fixed;
+    //     bottom: 0;
+    // }
 
 `
 const TopFooter = styled.div`

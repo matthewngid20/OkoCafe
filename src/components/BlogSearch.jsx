@@ -14,13 +14,16 @@ const Container = styled.div`
 
 `
 const InputSearch = styled.input`
-border: 0 solid ${ColorTheme.brandC} ;
-
-width: 30%;
-height: 30px;
-left: 0px;
-top: 206px;
-background: #D3987A;
+    border: 0 solid ${ColorTheme.brandC} ;
+    width: 30%;
+    height: 30px;
+    left: 0px;
+    top: 206px;
+    background: #D3987A;
+    @media screen and (max-width: 500px){
+        width: 70%;
+        margin-top:2em;
+    }
 
 `
 const DropDown = styled.div`
@@ -52,9 +55,11 @@ const ItemContainer = styled.div`
     display:flex;
     cursor: pointer;
     border-bottom: 2px solid ${ColorTheme.brand2};
+
 `
 const ImgContainer = styled.div`
     max-width: 70px;
+    
 `
 const Img = styled.img`
     width: 100%;
@@ -87,27 +92,27 @@ const BlogSearch = () => {
             <div className="gpt3__header section__padding" id="home">
                 <div className="gpt3__header-content">
                     <h1 className="gradient__text"></h1>
-                    <Title title ="Everything about coffee"></Title>
+                    <Title title="Everything about coffee"></Title>
                     <SubTitle description="Learn all about authentic and strong coffee with us" > </SubTitle>
                     <InputSearch placeholder="Search" onChange={(e) => getValue(e)} />
-                    <NavLink to="/blogdetail">  <DropDown display={searchQuery}>
-                        <BlogList>
-                            <Decoration></Decoration>
-                            {Blogs.map((blog) => (
-                                <ItemContainer key={blog.id}>
-                                    <ImgContainer>
-                                        <Img src={blog.img} />
-                                    </ImgContainer>
-                                    <ItemInfo>
-                                        <ItemName> {blog.name} </ItemName>
-                                        <Desc> {blog.position} </Desc>
-                                        <Subject> $ {blog.subject} </Subject>
-                                    </ItemInfo>
-                                </ItemContainer>
-
-                            ))}
-                        </BlogList>
-                    </DropDown>
+                    <NavLink to="/blogdetail">
+                        <DropDown display={searchQuery}>
+                            <BlogList>
+                                <Decoration></Decoration>
+                                {Blogs.map((blog) => (
+                                    <ItemContainer key={blog.id}>
+                                        <ImgContainer>
+                                            <Img src={blog.img} />
+                                        </ImgContainer>
+                                        <ItemInfo>
+                                            <ItemName> {blog.name} </ItemName>
+                                            <Desc> {blog.position} </Desc>
+                                            <Subject> $ {blog.subject} </Subject>
+                                        </ItemInfo>
+                                    </ItemContainer>
+                                ))}
+                            </BlogList>
+                        </DropDown>
                     </NavLink>
                 </div>
             </div>

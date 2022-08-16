@@ -7,6 +7,9 @@ import { Blogs } from "../../FakeData"
 
 const Container = styled.div` 
     margin: 3rem 0px;
+    @media screen and (max-width:500px){
+        margin: 0px
+    }
 `
 const Wrapper = styled.div` 
     display: flex;

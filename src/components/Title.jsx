@@ -9,10 +9,9 @@ const Container = styled.div`
     padding-bottom: 40px;
     font-family: "Abiral Fatface";
     background-color: ${ColorTheme.bg1};
-   
-     
-
-    
+    @media screen and (max-width: 500px){
+        font-size: 30px;
+    }
 `
 
 const Title = ({title,alignment}) => {

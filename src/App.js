@@ -54,7 +54,6 @@ function App() {
         setStories(JSON.stringify(res.data))
         setIsLoading(false)
       } else {
-        console.log(rej);
         return
       }
     })
@@ -67,7 +66,7 @@ function App() {
         sessionStorage.setItem('localProducts', JSON.stringify(res.data))
         setIsLoading(false)
       } else {
-        console.log(rej);
+
         return
       }
     })
@@ -79,7 +78,7 @@ function App() {
 
   // }
 
-  console.log(stories);
+
 
   return (
     <Context.Provider value={[products, stories, cart]}>

@@ -11,9 +11,9 @@ import { Link } from "react-router-dom";
 
 const Cart = () => {
     const [cartItems, setCartItems] = useState();
+    const [screenWidth, setScreenWidth] = useState(window.innerWidth)
     useEffect(() => {
         setCartItems(sessionStorage.getItem('cart'))
-        console.log(JSON.parse(sessionStorage.getItem('cart')));
     }, [sessionStorage.getItem('cart')])
 
     return (
@@ -29,20 +29,39 @@ const Cart = () => {
                         <ProductContainer>
 
                             {cartItems ? JSON.parse(cartItems).map((item, index) => {
-                                return (<CartProduct key={index}
-                                    imgSize="70px"
-                                    url={item.img}
-                                    coffeeName={item.name}
-                                    description={item.desc}
-                                    price={item.price}
-                                />)
+                                
+                                    return ( 
+                                        <CartProduct key={index}
+                                            imgSize="70px"
+                                            url={item.img}
+                                            coffeeName={item.name}
+                                            description={item.desc}
+                                            price={item.price}
+                                        />)
+                                
+                                // else {
+                                //     JSON.parse(cartItems).slice(0, 2).map((item, index) => {
+                                //         if (JSON.parse(cartItems).length > 2 && screenWidth < 500) {
+                                //             return (
+                                //                 <CartProduct key={index}
+                                //                     imgSize="70px"
+                                //                     url={item.img}
+                                //                     coffeeName={item.name}
+                                //                     description={item.desc}
+                                //                     price={item.price}
+                                //                 />)
+                                //         }
+
+                                //     })
+                                // }
+
                             }) : null}
                         </ProductContainer>
                         <ButtonContainer>
                             <Link to="/ShoppingCart">
                                 {cartItems && JSON.parse(cartItems).length > 0 ? <Button >
-                                    VIEW DETAIL
-                                </Button> :  null}
+                                    VIEW MORE ITEM DETAILS
+                                </Button> : null}
                             </Link>
                         </ButtonContainer>
                     </Items>
@@ -81,8 +100,10 @@ const Container = styled.div`
     &:hover ${CartDetails} {
         box-shadow: 0px 0px 8px 2px ${ColorTheme.brandC};
         transition: all 0.5s ease; 
+
     };
-    `
+
+`
 
 const CartItem = styled.div`
     font-weight: 200;
@@ -94,12 +115,7 @@ const DropDown = styled.div`
     position: absolute;
     margin-top: 43px;
     @media screen and (max-width: 960px) {
-        
-       
         font-size:20px;
-   
-       
-
        }
     `
 
@@ -114,7 +130,9 @@ const Decoration = styled.div`
     border-bottom: 10px solid ${ColorTheme.brand1};
     `
 const ProductContainer = styled.div`
-    
+    @media screen and (max-width: 500px) {
+        
+    }
 `
 
 const ButtonContainer = styled.div`

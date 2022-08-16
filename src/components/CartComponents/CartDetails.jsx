@@ -11,7 +11,6 @@ import StripCheckOut from 'react-stripe-checkout'
 const CartDetails = () => {
     const dataContext = useContext(Context)
     const cartItems = JSON.parse(dataContext[2]);
-    console.log(cartItems);
     var price = 0;
 
     const handleToken = (token,address) => {
@@ -103,13 +102,20 @@ const Container = styled.div`
     margin-top:100px; 
     background: #211D1C;
     font-weight: 300;
+    max-height:100vh 
     padding: 3em;
     color: ${ColorTheme.brandC};
+    @media screen and (max-width: 500px) {
+        padding: 1rem 0;
+    }
    
 `
 const WrapperTop = styled.div`
     width: 100%;
     margin-bottom: 1em;
+    @media screen and (max-width: 500px) {
+        padding: 1rem 0;
+    }
 `
 const TableTop = styled.table`
     width: 100%;
@@ -123,7 +129,7 @@ const TableBody = styled.tbody`
     font-size: 15px;
     top:50px;
          
-     }
+    }
 `
 const Row = styled.tr.attrs({
 
@@ -134,6 +140,7 @@ const RowCheckOut = styled.tr`
     border-bottom: 2mm ridge ${ColorTheme.brandC};
     border-left: 2mm ridge ${ColorTheme.brandC};
     border-right: 2mm ridge ${ColorTheme.brandC};
+
 
 `
 const RowProd = styled(Row)`
