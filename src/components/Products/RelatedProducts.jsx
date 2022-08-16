@@ -80,7 +80,7 @@ const ProductIntro = styled.div`
     @media screen and (max-width: 500px) {
         font-size: 40px;
         padding:0;
-       }
+    }
 `
 const Arrow = styled.div`
     position: absolute;
@@ -99,5 +99,8 @@ const Arrow = styled.div`
     right: ${props => props.direction === 'right' && "10px"};
     opacity: 0.5;
     z-index:2;
+    @media screen and (max-width: 500px) {
+        display:none;
+    }
 `
 export default RelatedProducts

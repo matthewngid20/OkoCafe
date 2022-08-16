@@ -9,7 +9,7 @@ import BlogDetails from "../components/Blog/BlogDetails"
 
 
 const Container = styled.div`
-background-image: linear-gradient(#211D1C, #211D1C);
+  background-image: linear-gradient(#211D1C, #211D1C);
 `
 const Blog = () => {
   return (

@@ -7,6 +7,8 @@ import { Subject } from "@mui/icons-material";
 import {
     NavLink
 } from "react-router-dom";
+import Title from "./Title";
+import SubTitle from "./SubTitle";
 
 const Container = styled.div` 
 
@@ -85,8 +87,8 @@ const BlogSearch = () => {
             <div className="gpt3__header section__padding" id="home">
                 <div className="gpt3__header-content">
                     <h1 className="gradient__text"></h1>
-                    <p>Everything  about coffee</p>
-                    <h2>Learn all about authentic and strong coffee with us</h2>
+                    <Title title ="Everything about coffee"></Title>
+                    <SubTitle description="Learn all about authentic and strong coffee with us" > </SubTitle>
                     <InputSearch placeholder="Search" onChange={(e) => getValue(e)} />
                     <NavLink to="/blogdetail">  <DropDown display={searchQuery}>
                         <BlogList>
@@ -99,7 +101,7 @@ const BlogSearch = () => {
                                     <ItemInfo>
                                         <ItemName> {blog.name} </ItemName>
                                         <Desc> {blog.position} </Desc>
-                                        <Subject> $ {blog.subejct} </Subject>
+                                        <Subject> $ {blog.subject} </Subject>
                                     </ItemInfo>
                                 </ItemContainer>
 

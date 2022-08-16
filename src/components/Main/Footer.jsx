@@ -107,7 +107,12 @@ const Logo = styled.div`
     text-align: center;
     @media screen and (max-width: 960px) {
         height: 20px;    
-       }
+    }
+    @media screen and (max-width: 500px) {
+        height: 50px;    
+        width: 50px;
+        margin-bottom:20px;
+    }
     `
 const SearchBox = styled.div`
     flex: 2;
@@ -117,6 +122,9 @@ const SearchBox = styled.div`
     margin-right:50px;
     align-items: center;
     //border: 1px black solid;
+    @media screen and (max-width: 500px) {
+        margin-right:0px;
+    }
    
 `
 const Input = styled.input`
@@ -148,6 +156,9 @@ const BottomFooter = styled.div`
         flex-direction: column;
 		width: 100%;
         font-size: 15px;
+    }
+    @media screen and (max-width: 500px) {      
+        display:none;
     }
 
 `

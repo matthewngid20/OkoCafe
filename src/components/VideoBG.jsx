@@ -19,6 +19,9 @@ const Video = styled.video`
     @media screen and (max-width: 960px) {
         height: 100%; 
     }
+    @media screen and (max-width: 500px) {
+        max-width:100%
+    }
 
 `
 const VideoContainer = styled.div` 
@@ -36,7 +39,6 @@ const VideoBG = ({width, height}) => {
             <VideoContainer>
                 <Video width = {width} autoPlay muted loop >
                     <source src={video} type='video/mp4' />
-                    
                 </Video>
             </VideoContainer>
         </Container>

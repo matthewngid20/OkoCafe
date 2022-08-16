@@ -92,6 +92,10 @@ const Container = styled.div`
     background-color: ${ColorTheme.bg1};
     margin: 100px 0px auto ;
     padding: 100px;
+    @media screen and (max-width:500px){
+        margin-top: 100px;
+        padding: 0;
+    }
     
 `
 const Hr = styled.hr` 
@@ -103,10 +107,20 @@ const Hr = styled.hr`
 const ProductContainer = styled.div`
     display: flex;
     flex: 1;
+    @media screen and (max-width:500px){
+        flex-direction: column;
+        padding: 2rem;
+    }
+
 `
 const ImgContainer = styled.div`
     flex: 1;
     display: flex;
+    @media screen and (max-width:500px){
+        margin: 0;
+        padding: 0;
+        
+    }
 `
 const BigImg = styled.div`
     flex: 2;

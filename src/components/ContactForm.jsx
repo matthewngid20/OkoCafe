@@ -6,168 +6,7 @@ import AddLocationOutlinedIcon from '@mui/icons-material/AddLocationOutlined';
 import PhoneOutlinedIcon from '@mui/icons-material/PhoneOutlined';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 
-const Container = styled.div`
-    padding: 5rem 15rem;
-    display: flex;
-    justify-content: space-between; 
-    align-items: center;
-    @media screen and (max-width: 960px) {
-        
-        
-       
-    
-        flex: 1;
-        border: 1px solid rgba(211, 152, 122, 0.5);
-        align-self: center;
-        padding:3em;
-        background: ${ColorTheme.bg1};
-        flex-direction: column;
-        font-size: 25px;
-      
-        
-       
-      }
-    
-`
-const Left = styled.div`
-    flex: 1;
-    padding: 0 5rem;
-`
-const Headliner = styled.h1`    
-    color: ${ColorTheme.brandC};
-    font-size: 42px;
-    font-weight: 400;
-    font-family: Abril Fatface;
-    @media screen and (max-width: 960px) {
-        
-        
-       
-    
-      
-       
-        align-self: center;
-        padding:5em;
-      
-        
-        font-size: 30px;
-      
-        
-       
-      }
-   
-`
-const White = styled.span`
-    color: ${ColorTheme.brand1};
-    display: inline;
-    margin: 0;  
-    @media screen and (max-width: 960px) {
-        
-        
-       
-    
-      
-       
-        align-self: center;
-        padding:5em;
-      
-        
-        font-size: 15px;
-      
-        
-       
-      }
-    
-`
 
-const LocationContainer = styled.div`
-    margin-top: 2em;
-    @media screen and (max-width: 960px) {
-        
-        
-       
-    
-      
-       
-        align-self: center;
-        padding:5em;
-      
-        
-        font-size: 15px;
-      
-        
-       
-      }
-`
-const Row = styled.address`
-    padding:1em;
-    display: flex;
-    align-items: center;
-    border-top: 2px solid pink;
-    border-bottom: 2px solid pink;
-`
-const Email = styled.a`
-    :link{
-        color: ${ColorTheme.brand2};
-    };
-    margin-left: 1em;
-`
-const Text = styled.span`
-    color: ${ColorTheme.brand2};
-    margin-left: 1em;
-`
-const Right = styled.div`
-    flex: 1;
-    border: 1px solid rgba(211, 152, 122, 0.5);
-    align-self: center;
-    padding:3em;
-    background: ${ColorTheme.bg1};
-    @media screen and (max-width: 960px) {
-        
-         align-self: center;
-        padding:5em;
-        font-size: 24px;
-      
- }
-    
-`
-const FormInfo = styled.form`
-    display: flex;
-    flex-direction: column;
-`
-const FormTitle = styled.h1`
-    color: ${ColorTheme.brand1};
-`
-const Input = styled.input`
-    min-width: 80%;
-    padding: 1em;
-    background: rgba(249, 244, 241, 0.08);
-
-`
-const Label = styled.label` 
-    color: ${ColorTheme.brand2};
-    padding: 1em 0 0 0;
-`
-const TextArea = styled.textarea` 
-    min-width: 80%;
-    padding: 1em;
-    background: rgba(249, 244, 241, 0.08);
-`
-
-const ButtonContainer = styled.div` 
-    display:flex;
-    justify-content: flex-end;
-    margin-top: 2rem; 
-`
-const Button = styled.button` 
-    display: block;
-    align-self: right;
-    background: ${ColorTheme.brand3};
-    width: 30%;
-    padding: 1em;
-    color: ${ColorTheme.brand1};
-    cursor: pointer;
-   
-`
 const ContactForm = () => {
     return (
         <Container>
@@ -211,5 +50,149 @@ const ContactForm = () => {
         </Container>
     )
 }
+const Container = styled.div`
+    padding: 5rem 15rem;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    @media screen and (max-width: 960px) {
+        flex: 1;
+        border: 1px solid rgba(211, 152, 122, 0.5);
+        align-self: center;
+        padding:3em;
+        background: ${ColorTheme.bg1};
+        flex-direction: column;
+        font-size: 25px;    
+      }
+    @media screen and (max-width: 500px) {
+        padding:0;
+    }
+    
+`
+const Left = styled.div`
+    flex: 1;
+    padding: 0 5rem;
+`
+const Headliner = styled.h1`    
+    color: ${ColorTheme.brandC};
+    font-size: 42px;
+    font-weight: 400;
+    font-family: Abril Fatface;
+    @media screen and (max-width: 960px) {
+        align-self: center;
+        padding:5em;
+        font-size: 30px;
+    }
+    @media screen and (max-width: 500px) {
+        padding-top:5em;
+        padding:5em 0 0 0 ;
+    }
+   
+`
+const White = styled.span`
+    color: ${ColorTheme.brand1};
+    display: inline;
+    margin: 0;  
+    @media screen and (max-width: 960px) {
+        align-self: center;
+        padding:5em;
+        font-size: 15px;
+    }
+    @media screen and (max-width: 500px) {
+        padding:5em 0 0 0 ;
+        display: block;
+        text-align: center;
+    }
+    
+`
 
+const LocationContainer = styled.div`
+    margin-top: 2em;
+    @media screen and (max-width: 960px) {
+        align-self: center;
+        padding:5em;
+        font-size: 15px;
+    }
+    @media screen and (max-width: 500px) {
+        padding:1em 0 0 0 ;
+        
+    }
+      
+`
+const Row = styled.address`
+    padding:1em;
+    display: flex;
+    align-items: center;
+    border-top: 2px solid pink;
+    border-bottom: 2px solid pink;
+`
+const Email = styled.a`
+    :link{
+        color: ${ColorTheme.brand2};
+    };
+    margin-left: 1em;
+`
+const Text = styled.span`
+    color: ${ColorTheme.brand2};
+    margin-left: 1em;
+`
+const Right = styled.div`
+    flex: 1;
+    border: 1px solid rgba(211, 152, 122, 0.5);
+    align-self: center;
+    padding:3em;
+    background: ${ColorTheme.bg1};
+    @media screen and (max-width: 960px) {
+        align-self: center;
+        padding:5em;
+        font-size: 24px;
+    }
+    @media screen and (max-width: 500px) {
+        padding:1em 2em 2em 2em ;
+        
+    }
+    
+`
+const FormInfo = styled.form`
+    display: flex;
+    flex-direction: column;
+    @media screen and (max-width: 500px) {
+        padding: 0;
+    }
+    
+`
+const FormTitle = styled.h1`
+    color: ${ColorTheme.brand1};
+`
+const Input = styled.input`
+    min-width: 80%;
+    padding: 1em;
+    background: rgba(249, 244, 241, 0.08);
+
+`
+const Label = styled.label` 
+    color: ${ColorTheme.brand2};
+    padding: 1em 0 0 0;
+`
+const TextArea = styled.textarea` 
+    min-width: 80%;
+    padding: 1em;
+    background: rgba(249, 244, 241, 0.08);
+`
+
+const ButtonContainer = styled.div` 
+    display:flex;
+    justify-content: flex-end;
+    margin-top: 2rem; 
+`
+const Button = styled.button` 
+    display: block;
+    align-self: right;
+    background: ${ColorTheme.brand3};
+    width: 30%;
+    padding: 1em;
+    color: ${ColorTheme.brand1};
+    cursor: pointer;
+   
+`
 export default ContactForm

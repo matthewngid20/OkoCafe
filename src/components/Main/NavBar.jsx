@@ -58,11 +58,11 @@ const NavBar = () => {
                 </Right>
             </TopCenter>
             {(toggleMenu || screenWidth > 500) &&
-                (<BottomCenter status = {toggleMenu} >
-                            {links.map((link, index) => {
-                                return (
-                                    (<NavLink onClick={toggleNav} className="nav-bar-link" to={link.to} key={index}> {link.name} </NavLink>))
-                            })}
+                (<BottomCenter status={toggleMenu} >
+                    {links.map((link, index) => {
+                        return (
+                            (<NavLink onClick={toggleNav} className="nav-bar-link" to={link.to} key={index}> {link.name} </NavLink>))
+                    })}
                 </BottomCenter>
                 )}
             <div className='btn' onClick={toggleNav} >
@@ -79,7 +79,7 @@ const Left = styled.div`
 `
 const Container = styled.div`
     margin:40px auto;
-    max-height: 15vh;
+    max-height: 20vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -97,6 +97,9 @@ const Container = styled.div`
     width: 100vw;
     display: block;
     transition: top 0.3s;
+    @media screen and (max-width: 500px) {
+        flex-direction: row;
+    }
 `
 const TopCenter = styled.div`
     width: 100%;
@@ -110,12 +113,23 @@ const TopCenter = styled.div`
         align-items: center;
         flex-direction: column;
     }
+    @media screen and (max-width: 500px) {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        
+    }
 `
 
 const LanguageContainer = styled.div` 
     display: flex;
     justify-content: center;
     align-items: center;
+    @media screen and (max-width: 500px) {
+        display:none;
+    }
 `
 const Language = styled.div`
     cursor: pointer;
@@ -126,6 +140,9 @@ const Language = styled.div`
 const IconContainer = styled.div`
     display: flex;
     margin-left: 10px;
+    @media screen and (max-width: 500px) {
+        display:none;
+    }
 `
 const Icon = styled.div`
     margin-left: 20px;
@@ -141,6 +158,7 @@ const Icon = styled.div`
         background-color: #${props => props.color};
         transition: all 2s ease;
     }
+    
 `
 const Center = styled.div`
     flex: 1;
@@ -155,14 +173,14 @@ const LeftText = styled.div`
     margin-right: 20px;
     font-size: 20px;
     @media screen and (max-width: 960px) {
-        
-        
         font-weight: 600;
         color: #C8765A;
         margin-right: 20px;
         font-size: 10px;
-        
-        }
+    }
+    @media screen and (max-width: 500px) {
+        display:none;
+    }
 `
 const Brand = styled.div`// h1 For now
     width: 80px;
@@ -176,9 +194,8 @@ const Brand = styled.div`// h1 For now
     align-items: center;
     text-align: center;
     @media screen and (max-width: 960px) {
-        
         width: 60px;
-        height: 40px;
+        height: 60px;
         border-radius:50%;
         cursor: pointer;
         border: 1px solid #C8765A;
@@ -187,8 +204,7 @@ const Brand = styled.div`// h1 For now
         justify-content: center;
         align-items: center;
         text-align: center;
-		
- }
+    }
 `
 const RightText = styled.div`
     font-size: 20px;
@@ -196,14 +212,14 @@ const RightText = styled.div`
     color: #C8765A;
     margin-left: 20px;
      @media screen and (max-width: 960px) {
-        
-        
         font-weight: 600;
         color: #C8765A;
         margin-right: 20px;
-        font-size: 10px;
-        
-        }
+        font-size: 10px;  
+    }
+    @media screen and (max-width: 500px) {
+        display:none;
+    }
 `
 const BottomCenter = styled.div`
     display: flex;

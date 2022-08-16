@@ -48,7 +48,7 @@ const Slider = () => {
                 )) : <h1>Loading</h1>}
 
             </Wrapper>
-            <Arrow direction="right" onClick={() => handleClick("right")}><ArrowForwardIosOutlinedIcon style={{ backgroundColor: "white" }} /></Arrow>
+            <Arrow direction="right" onClick={() => handleClick("right")}><ArrowForwardIosOutlinedIcon  /></Arrow>
         </Container>
     )
 }
@@ -85,6 +85,10 @@ const Arrow = styled.div`
         
      // position:relative;
         top:260px;
+    }
+    @media screen and (max-width: 1050px) {
+        width: 30px;
+        height: 30px;
     }
 `
 const Wrapper = styled.div` 
@@ -127,6 +131,9 @@ const StoryNumber = styled.span`
     @media screen and (max-width: 1050px) {
         position:relative;
         top:180px;
+    }
+    @media screen and (max-width: 500px) {
+        display: none;
    }
 `
 const Title = styled.h1` 
@@ -154,7 +161,10 @@ const Desc = styled.p`
         font-size: 10px;
         position:relative;
         top:180px;
-       }
+    }
+    @media screen and (max-width: 500px) {
+        padding: 0;
+    }
 `
 const Button = styled.button` 
     border: 1px solid white;
@@ -185,8 +195,10 @@ const ImgContainer = styled.div`
         top:250px;
     }
     @media screen and (max-width: 500px) {      
+        position:relative;
         max-width: 100%;
         max-height: 50%;
+        margin-right:50px;
     }
 
 
