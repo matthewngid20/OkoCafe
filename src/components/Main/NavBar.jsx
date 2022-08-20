@@ -24,7 +24,17 @@ const NavBar = () => {
     const [screenWidth, setScreenWidth] = useState(window.innerWidth)
     useEffect(() => {
     }, [])
+    useEffect(() => {
 
+        const changeWidth = () => {
+          setScreenWidth(window.innerWidth);
+        }
+    
+        return () => {
+            window.removeEventListener('resize', changeWidth)
+        }
+    
+      }, [])
     const links = [
         { name: "Home", to: "/" },
         { name: "Shop", to: "/shop" },
@@ -228,7 +238,7 @@ const BottomCenter = styled.div`
     justify-content: center;
     margin: 20px 0px;
     @media screen and (max-width: 500px) {
-        flex-direction: column;
+       flex-direction: column;
         padding-top: 50px ;
         margin: 0px;
         font-size: 30px;
