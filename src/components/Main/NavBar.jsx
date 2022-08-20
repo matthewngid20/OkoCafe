@@ -23,17 +23,7 @@ const NavBar = () => {
     }
     const [screenWidth, setScreenWidth] = useState(window.innerWidth)
    
-    useEffect(() => {
-
-        const changeWidth = () => {
-          setScreenWidth(window.innerWidth);
-        }
-    
-        return () => {
-            window.removeEventListener('resize', changeWidth)
-        }
-    
-      }, [])
+   
     const links = [
         { name: "Home", to: "/" },
         { name: "Shop", to: "/shop" },
