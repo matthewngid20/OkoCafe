@@ -22,8 +22,7 @@ const NavBar = () => {
         setToggleMenu(!toggleMenu)
     }
     const [screenWidth, setScreenWidth] = useState(window.innerWidth)
-    useEffect(() => {
-    }, [])
+   
     useEffect(() => {
 
         const changeWidth = () => {
