@@ -6,7 +6,9 @@ import coffee1 from '../assets/coffee1.jpeg'
 
 const Container = styled.div`
 background-image: linear-gradient(#211D1C, #211D1C);
-
+@media screen and (max-width: 500px) {
+    margin: -7rem;
+}
 `
 
 
@@ -38,7 +40,7 @@ flex-grow: 0;
     
     align-items: center;
     justify-content: center;
-    font-size: 20px;
+    font-size: 13px;
 
 
 }
@@ -100,10 +102,10 @@ flex-grow: 0;
 @media screen and (max-width: 960px) {
 
     display: flex;
-    width:100%;
+    width:90%;
     align-items: center;
     justify-content: right;
-    
+    font-size:11px;
 
 
     
@@ -155,6 +157,8 @@ flex-grow: 0;
     width: 100%;
     align-items: center;
     justify-content: center;
+    font-size:12px;
+
    
 
 
@@ -185,10 +189,10 @@ order: 0;
 @media screen and (max-width: 960px) {
 
     display: flex;
-    width: 80%;
+    width: 100%;
     align-items: center;
     justify-content: center;
-    
+    font-size:12px;
 
 
 }
@@ -217,14 +221,15 @@ color: #F8E6DB;
 flex: none;
 order: 1;
 flex-grow: 0;
+
 @media screen and (max-width: 960px) {
 
     display: flex;
     width: 90%;
     align-items: center;
     justify-content: center;
-    
-
+    font-size:10px;
+   
 
 }
 `
@@ -252,11 +257,11 @@ flex-grow: 0;
 @media screen and (max-width: 960px) {
 
     display: flex;
-    width: 90%;
+    width: 100%;
     align-items: center;
     justify-content: center;
+    font-size:12px;
     
-
 
 }
 `
@@ -287,10 +292,10 @@ flex-grow: 0;
 @media screen and (max-width: 960px) {
 
     display: flex;
-    width: 90%;
+    width: 80%;
     align-items: center;
     justify-content: center;
-    
+    font-size:12px;
 
 
 }
@@ -320,9 +325,10 @@ flex-grow: 0;
 @media screen and (max-width: 960px) {
 
     display: flex;
-    width: 80%;
+    width: 100%;
     align-items: center;
     justify-content: center;
+    font-size:15px;
     
 
 
@@ -355,10 +361,10 @@ flex-grow: 0;
 @media screen and (max-width: 960px) {
 
     display: flex;
-    width: 100%;
+    width: 90%;
     align-items: center;
     justify-content: center;
-    
+    font-size:10px;
 
 
 }
@@ -387,7 +393,7 @@ flex-grow: 0;
 @media screen and (max-width: 960px) {
 
     display: flex;
-    width: 80%;
+    width: 100%;
     align-items: center;
     justify-content: center;
     font-size:15px;
