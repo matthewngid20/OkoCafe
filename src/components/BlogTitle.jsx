@@ -102,10 +102,12 @@ flex-grow: 0;
 @media screen and (max-width: 960px) {
 
     display: flex;
-    width:90%;
+    width:60%;
     align-items: center;
     justify-content: right;
     font-size:11px;
+    position:relative;
+    left:100px;
 
 
     
@@ -158,7 +160,7 @@ flex-grow: 0;
     align-items: center;
     justify-content: center;
     font-size:12px;
-
+    
    
 
 
@@ -225,11 +227,12 @@ flex-grow: 0;
 @media screen and (max-width: 960px) {
 
     display: flex;
-    width: 90%;
+    width: 60%;
     align-items: center;
     justify-content: center;
     font-size:10px;
-   
+    position:relative;
+    left:100px;
 
 }
 `
@@ -292,11 +295,12 @@ flex-grow: 0;
 @media screen and (max-width: 960px) {
 
     display: flex;
-    width: 80%;
+    width: 60%;
     align-items: center;
     justify-content: center;
     font-size:12px;
-
+    position:relative;
+    left:100px;
 
 }
 `
@@ -361,11 +365,21 @@ flex-grow: 0;
 @media screen and (max-width: 960px) {
 
     display: flex;
-    width: 90%;
+    width: 60%;
     align-items: center;
     justify-content: center;
     font-size:10px;
+    position:relative;
+    left:100px;
 
+}
+`
+const Coffee = styled.image`
+@media screen and (max-width: 960px) {
+
+    width:10%;
+    position:relative;
+    top:10px;
 
 }
 `
@@ -428,15 +442,16 @@ flex-grow: 0;
 @media screen and (max-width: 960px) {
 
     display: flex;
-    width: 100%;
+    width: 60%;
     align-items: center;
     justify-content: center;
-    
-
+    position:relative;
+    left:100px;
+    font-size:12px;
 
 }
 `
-const   LastTitle = styled.p`
+const LastTitle = styled.p`
 
 width: 784px;
 height: 27px;
@@ -612,7 +627,7 @@ const BlogTitle = ({ name, postion, desc, url, secondTitle, smallTitle,
             <ThirdDesc>{thirdDesc}</ThirdDesc>
             <FourthTitle>{fourthTitle}</FourthTitle>
             <FourthDesc>{fourthDesc}</FourthDesc>
-            <img src={coffee1} height={300} width={558} right={340} top={2597} />
+            <Coffee><img src={coffee1} height={300} width={558} right={340} top={2597} /></Coffee>
             <QuestionTitle>{questionTitle}</QuestionTitle>
             <LastDesc>{lastDesc}</LastDesc>
             <LastTitle>{lastTitle}</LastTitle>
